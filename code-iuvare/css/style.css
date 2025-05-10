@@ -1,0 +1,341 @@
+:root {
+    --soft-black: #262626;
+    --light-grey: #D9D9D9;
+    --light-wheat: #EEECE1;
+    --dark-sage: #707B6D;
+    --powdery-pink: #EEE2DF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--light-wheat);
+    color: var(--soft-black);
+    line-height: 1.6;
+    /*overflow-x: hidden;*/
+}
+
+header {
+    background: var(--powdery-pink);
+    color: black;
+    /*padding: 1rem;*/
+    text-align: left;
+    height: 70px;
+}
+
+.navbar-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--powdery-pink);
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    /*font-weight: bold;*/
+    font-size: 1.5rem;
+}
+
+.menu a{
+        color: black;
+        margin: 0 1rem;
+        text-decoration: none;
+        /*font-weight: bold;*/
+}
+
+.menu a:hover {
+    color: var(--dark-sage);
+}
+
+main {
+    padding: 2rem;
+    padding-bottom: 300px;
+}
+
+/* Service block (다른 페이지에서 사용) */
+section.service-block {
+    background-color: var(--light-grey);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-left: 5px solid var(--dark-sage);
+    animation: slideUp 1s ease-in;
+}
+
+/* Mission Statement */
+.intro-text {
+    background-color: var(--light-grey);
+    padding: 2rem;
+    margin: 2rem auto;
+    border-left: 5px solid var(--soft-black);
+}
+
+.intro-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro-text p {
+    /*opacity: 0;*/
+    /*transform: translateY(30px);*/
+}
+
+
+.values {
+    padding: 2rem;
+    background-color: var(--light-wheat);
+    margin-bottom: 4rem;
+}
+
+.values-list {
+    /* margin-top: 1000px; ← 제거해서 너무 아래로 내려가지 않도록 */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* 등장 전 초기 상태 */
+.values-list li {
+    /*background-color: red;*/
+    color: black;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 등장 후 애니메이션 상태 */
+.values-list li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Guide to Good Practice */
+/*.values {*/
+/*    padding: 2rem;*/
+/*    background-color: var(--powdery-pink);*/
+/*    height : 6000px;*/
+/*    !*margin-bottom: 2rem;*!*/
+/*}*/
+
+/*.values h3 {*/
+/*    font-size: 1.5rem;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*.values-list {*/
+/*    margin-top: 1000px;*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 1rem;*/
+/*}*/
+/*.values-list li {*/
+/*    opacity: 0;*/
+/*    transform: translateY(20px);*/
+/*    transition: opacity 0.6s ease, transform 0.6s ease;*/
+/*}*/
+
+/*.values-list li.visible {*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
+
+
+
+/*.values-list li {*/
+/*    background-color: var(--dark-sage);*/
+/*    color: white;*/
+/*    padding: 0.6rem 1.2rem;*/
+/*    border-radius: 20px;*/
+/*    font-size: 0.95rem;*/
+/*    !*opacity: 0;*!*/
+/*    transform: translateY(20px);*/
+/*    transition: opacity 0.6s ease, transform 0.6s ease;*/
+/*}*/
+
+/*.values-list li.visible {*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
+/* 버튼 */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--dark-sage);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* 아이콘 이미지 (Contact 등에서 사용) */
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    object-fit: contain;
+}
+
+/* 하단 푸터 */
+footer {
+    background: var(--dark-sage);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 0rem;
+    height: 500px;
+}
+
+/* CSS 키프레임 예비 애니메이션 (필요시) */
+@keyframes fadeInFromTop {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}.logo {
+     animation: fadeInFromTop 3s ease-out forwards;
+ }
+.connect-left {
+    animation: fadeInFromLeft 2s ease-out forwards;
+}
+.connect-center {
+    animation: fadeInFromRight 4s ease-out forwards;
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.scene {
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+}
+.scene.one {
+    background-image: url(../assets/images/heic0910e.jpg); /* 경로 수정 */
+}
+.scene.two {
+    background-image: url(../assets/images/heic1501a.jpg); /* 경로 수정 */
+}
+.scene.three {
+    background-image: url(../assets/images/heic1608a.jpg); /* 경로 수정 */
+}
+.scene header{
+    color:white;
+    max-width: 80%;
+    position: relative;
+    left:50%;
+    top:50%;
+    transform:translateX(-50%) translateY(-50%);
+    font-size:1.5rem;
+    text-align: center;
+}
+.scene header h1{
+    font-size:2rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+.scene header h1:after{
+    content:'';
+    border-bottom:1px solid white;
+    width:8rem;
+    display: block;
+    margin:0 auto;
+    margin-top:1rem;
+}
+
+.connect-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    /*background-color: #9aa99f; !* Cedar 느낌의 초록빛 배경 *!*/
+    color: white;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.connect-left{
+    margin-left: 15rem;
+}
+.connect-center img{
+    margin-right: 10rem;
+    width: 380px;
+}
+/*.connect-right {*/
+/*    flex: 1;*/
+/*    text-align: center;*/
+/*}*/
+
+.contact-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.contact-button:hover {
+    background-color: white;
+    color: var(--dark-sage); /* Cedar-style 배경색 또는 원하는 색상 */
+}
+
+.social-icons img {
+    width: 32px;
+    margin: 0 0.5rem;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+

@@ -1,0 +1,14 @@
+<svg width="100" height="100" viewBox="0 0 100 100"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded square -->
+  <rect x="5" y="5" width="90" height="90" rx="20"
+        fill="none" stroke="white" stroke-width="8"/>
+  <!-- "in" 문자 -->
+  <circle cx="35" cy="35" r="6"
+          fill="none" stroke="white" stroke-width="8"/>
+  <rect x="30" y="46" width="10" height="24"
+        fill="none" stroke="white" stroke-width="8"/>
+  <path d="M50,70 V50 h8 a15,15 0 0 0 0,30 z"
+        fill="none" stroke="white" stroke-width="8"
+        stroke-linejoin="round"/>
+</svg>
