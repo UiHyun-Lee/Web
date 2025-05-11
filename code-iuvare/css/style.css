@@ -1,3 +1,4 @@
+
 :root {
     --soft-black: #262626;
     --light-grey: #D9D9D9;
@@ -60,7 +61,7 @@ header {
 }
 
 main {
-    padding: 2rem;
+    padding: 0;
     padding-bottom: 300px;
 }
 
@@ -75,10 +76,11 @@ section.service-block {
 
 /* Mission Statement */
 .intro-text {
-    background-color: var(--light-grey);
+    background-color: var(--dark-sage);
     padding: 2rem;
-    margin: 2rem auto;
-    border-left: 5px solid var(--soft-black);
+    margin: 0 auto;
+    color : var(--light-wheat);
+
 }
 
 .intro-text h3 {
@@ -90,91 +92,59 @@ section.service-block {
     /*opacity: 0;*/
     /*transform: translateY(30px);*/
 }
-
-
 .values {
-    padding: 2rem;
-    background-color: var(--light-wheat);
-    margin-bottom: 4rem;
+    margin-top: 40px;
 }
 
-.values-list {
-    /* margin-top: 1000px; ← 제거해서 너무 아래로 내려가지 않도록 */
+.marquee-row {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.marquee-content {
+    display: inline-flex;
+    gap: 3rem;
+}
+
+.marquee-content li {
     list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
 }
 
-/* 등장 전 초기 상태 */
-.values-list li {
-    /*background-color: red;*/
-    color: black;
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+.marquee-content li::before {
+    content: "· ";
+    margin-right: 0.5rem;
 }
 
-/* 등장 후 애니메이션 상태 */
-.values-list li.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* 윗줄: 왼쪽 → 오른쪽 */
+.left-to-right .marquee-content {
+    animation: scroll-left-to-right 25s linear infinite;
 }
-/* Guide to Good Practice */
-/*.values {*/
-/*    padding: 2rem;*/
-/*    background-color: var(--powdery-pink);*/
-/*    height : 6000px;*/
-/*    !*margin-bottom: 2rem;*!*/
-/*}*/
 
-/*.values h3 {*/
-/*    font-size: 1.5rem;*/
-/*    margin-bottom: 1rem;*/
-/*}*/
+/* 아랫줄: 오른쪽 → 왼쪽 */
+.right-to-left .marquee-content {
+    animation: scroll-right-to-left 25s linear infinite;
+    animation-delay: -6s; /* 시작 위치를 반 주기 앞당김 */
+}
 
-/*.values-list {*/
-/*    margin-top: 1000px;*/
-/*    list-style: none;*/
-/*    padding: 0;*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    gap: 1rem;*/
-/*}*/
-/*.values-list li {*/
-/*    opacity: 0;*/
-/*    transform: translateY(20px);*/
-/*    transition: opacity 0.6s ease, transform 0.6s ease;*/
-/*}*/
+/* 왼쪽에서 오른쪽 */
+@keyframes scroll-left-to-right {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
 
-/*.values-list li.visible {*/
-/*    opacity: 1;*/
-/*    transform: translateY(0);*/
-/*}*/
+/* 오른쪽에서 왼쪽 */
+@keyframes scroll-right-to-left {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
 
 
-
-/*.values-list li {*/
-/*    background-color: var(--dark-sage);*/
-/*    color: white;*/
-/*    padding: 0.6rem 1.2rem;*/
-/*    border-radius: 20px;*/
-/*    font-size: 0.95rem;*/
-/*    !*opacity: 0;*!*/
-/*    transform: translateY(20px);*/
-/*    transition: opacity 0.6s ease, transform 0.6s ease;*/
-/*}*/
-
-/*.values-list li.visible {*/
-/*    opacity: 1;*/
-/*    transform: translateY(0);*/
-/*}*/
-/* 버튼 */
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
