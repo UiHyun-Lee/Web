@@ -78,15 +78,26 @@ main {
     font-family: 'Comic Neue', cursive;
     background-color: var(--powdery-pink);
 }
-
+.service-block-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background-color: var(--light-wheat);
+}
 /* Service block (다른 페이지에서 사용) */
-section.service-block {
-    background-color: var(--light-grey);
-    margin-bottom: 2rem;
+.service-block {
+    flex: 1;
+    min-width: 300px;
+    max-width: 32%;
+    background-color: var(--powdery-pink);
     padding: 2rem;
-    border-left: 5px solid var(--dark-sage);
+    border-radius: 6px;
+    box-sizing: border-box;
     animation: slideUp 1s ease-in;
 }
+
 
 /* Mission Statement */
 .intro-text {
