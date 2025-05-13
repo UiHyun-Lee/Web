@@ -69,33 +69,60 @@ main {
     padding: 0;
     padding-bottom: 300px;
 }
-.main-text{
+.main-text {
     font-size: 5rem;
     font-weight: 900; /* Lato Light */
     text-align: center;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 100px;
     font-family: 'Comic Neue', cursive;
-    background-color: var(--powdery-pink);
+    /*background-color: white;*/
 }
+
 .service-block-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 3rem 2rem;
-    background-color: var(--light-wheat);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    /*background-color: white;*/
 }
-/* Service block (다른 페이지에서 사용) */
+
 .service-block {
-    flex: 1;
-    min-width: 300px;
-    max-width: 32%;
-    background-color: var(--powdery-pink);
-    padding: 2rem;
-    border-radius: 6px;
-    box-sizing: border-box;
-    animation: slideUp 1s ease-in;
+    margin-bottom: 1.5rem;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.accordion-header h2 {
+    font-size: 3rem; /* 글씨 크게 */
+    font-weight: 700;
+    margin: 0;
+}
+
+.toggle-icon {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-left: 1rem;
+}
+
+.accordion-content {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0.4s ease, opacity 0.4s ease;
+}
+
+
+.accordion-content.open {
+    opacity: 1;
+    height: auto;
 }
 
 
@@ -273,14 +300,14 @@ footer {
     font-weight: 200;
 }
 .scene.one {
-    background-image: url(../assets/images/heic0910e.jpg); /* 경로 수정 */
+    background-image: url(../assets/images/background1.jpg); /* 경로 수정 */
 }
 .scene.two {
-    background-image: url(../assets/images/heic1501a.jpg); /* 경로 수정 */
+    background-image: url(../assets/images/background2.jpg); /* 경로 수정 */
 }
-.scene.three {
-    background-image: url(../assets/images/heic1608a.jpg); /* 경로 수정 */
-}
+/*.scene.three {*/
+/*    background-image: url(../assets/images/heic1608a.jpg); !* 경로 수정 *!*/
+/*}*/
 .scene header{
     color:white;
     max-width: 80%;
