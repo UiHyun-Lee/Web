@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     <title>(code)Iuvare</title>
 </head>
 <body>
@@ -80,26 +82,45 @@
     <div class="center-button-wrapper">
         <a href="services.html" class="btn btn-black">OUR SERVICES</a>
     </div>
-</main>
 
-<section class="scene one">
-    <header>
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit
-        sint ab beatae nihi
-    </header>
-</section>
-<section class="scene two">
-    <header>
-        orem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit
-        sint ab beatae nihi
-    </header>
-</section>
-<section class="scene three">
-    <header>
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit
-        sint ab beatae nihi
-    </header>
-</section>
+
+</main>
+<div class="aurora-parallax-wrapper">
+    <img src="assets/images/nightsky.png" class="backgrounds" />
+    <img src="assets/images/cccc.png" alt="Layer" class="parallax moon"/>
+    <img src="assets/images/skyline.png" alt="Layer" class="parallax skyline"/>
+<!--    <img src="assets/images/buildingDown.png" alt="Layer" class="parallax green-layer"/>-->
+
+    <div class="starfield">
+        <div class="star" style="top:10%; left:20%; animation-delay: 0s;"></div>
+        <div class="star" style="top:40%; left:50%; animation-delay: 1s;"></div>
+        <div class="star" style="top:70%; left:80%; animation-delay: 2s;"></div>
+        <div class="star" style="top:30%; left:70%; animation-delay: 0.5s;"></div>
+        <div class="star" style="top:50%; left:40%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:10%; left:40%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:20%; left:30%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:30%; left:70%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:40%; left:90%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:50%; left:80%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:90%; left:70%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:80%; left:90%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:90%; left:80%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:90%; right:70%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:80%; right:90%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top:90%; right:80%; animation-delay: 1.5s;"></div>
+
+    </div>
+
+    <div class="aurora green"></div>
+    <div class="aurora blue"></div>
+    <div class="aurora purple"></div>
+    <div class="aurora-svg-wrapper">
+        <svg viewBox="0 0 1000 300" class="aurora-svg">
+            <path id="auroraPath" d="M0,150 Q250,100 500,150 T1000,150" />
+        </svg>
+    </div>
+
+</div>
 <footer>
     <section class="connect-section">
         <div class="connect-left">
@@ -115,32 +136,6 @@
         <p>© 2025 codeIuvare – All rights reserved</p>
     </section>
 </footer>
-<!-- Todo-->
-<!-- footer must be worked infinite -->
-<script>
-    const batches = ['batch-1', 'batch-2', 'batch-3', 'batch-4'];
-
-    batches.forEach(batch => {
-        const items = document.querySelectorAll(`.values-list li.${batch}`);
-
-        if (items.length === 0) return;
-
-        const trigger = items[0];
-
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    items.forEach(item => {
-                        item.classList.add('visible');
-                    });
-                    obs.unobserve(entry.target); // 한 번만 트리거
-                }
-            });
-        });
-
-        observer.observe(trigger);
-    });
-</script>
-
+<script src="js/main.js"></script>
 </body>
 </html>
