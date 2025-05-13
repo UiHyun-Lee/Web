@@ -1,4 +1,3 @@
-
 :root {
     --soft-black: #262626;
     --light-grey: #D9D9D9;
@@ -13,32 +12,43 @@ body {
     background-color: var(--light-wheat);
     color: var(--soft-black);
     line-height: 1.6;
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 
 header {
-    background: var(--powdery-pink);
+    background: transparent;
     color: black;
     /*padding: 1rem;*/
     text-align: left;
-    height: 70px;
+    /*height: 0px;*/
 }
 
 .navbar-wrapper {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--powdery-pink);
+    top: 1rem; /* 페이지 상단에서 살짝 내려오게 */
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
+    width: 80%;
+    background-color: rgba(238, 226, 223, 0.8); /* powdery-pink의 투명도 조정 */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px); /* 배경 흐림 효과로 더 고급스러움 */
+    /*-webkit-backdrop-filter: blur(8px); !* 사파리 호환 *!*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: #4A90E2;
+
 }
+
 
 .navbar {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 
@@ -49,11 +59,17 @@ header {
     font-size: 1.5rem;
 }
 
-.menu a{
-        color: black;
-        margin: 0 1rem;
-        text-decoration: none;
-        /*font-weight: bold;*/
+.menu {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.menu a {
+    color: black;
+    margin: 0 1rem;
+    text-decoration: none;
 }
 
 .menu a:hover {
@@ -128,22 +144,14 @@ main {
 
 /* Mission Statement */
 .intro-text {
-    background-color: var(--dark-sage);
+    background-color: transparent;
     padding: 2rem;
     margin: 0 auto;
-    color : var(--light-wheat);
+    color : var(--dark-sage);
     font-family: 'Lato', sans-serif;
-}
-
-.intro-text h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
     font-weight: 900; /* Lato Light */
+    font-size: 1.5rem;
 
-}
-
-.intro-text p {
-    font-weight: 400; /* Lato Light */
 }
 
 .values {
@@ -267,14 +275,7 @@ footer {
         transform: translateX(0);
     }
 }
-.intro-text h3{
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-}
-.intro-text p{
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-}
+
 .logo {
      animation: fadeInFromTop 3s ease-out forwards;
  }
@@ -290,47 +291,7 @@ footer {
 }
 
 
-.scene {
-    height: 100vh;
-    overflow: hidden;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: transparent;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 200;
-}
-.scene.one {
-    background-image: url(../assets/images/background1.jpg); /* 경로 수정 */
-}
-.scene.two {
-    background-image: url(../assets/images/background2.jpg); /* 경로 수정 */
-}
-/*.scene.three {*/
-/*    background-image: url(../assets/images/heic1608a.jpg); !* 경로 수정 *!*/
-/*}*/
-.scene header{
-    color:white;
-    max-width: 80%;
-    position: relative;
-    left:50%;
-    top:50%;
-    transform:translateX(-50%) translateY(-50%);
-    font-size:1.5rem;
-    text-align: center;
-}
-.scene header h1{
-    font-size:2rem;
-    margin-bottom: 1rem;
-    font-weight: 300;
-}
-.scene header h1:after{
-    content:'';
-    border-bottom:1px solid white;
-    width:8rem;
-    display: block;
-    margin:0 auto;
-    margin-top:1rem;
-}
+
 
 .connect-section {
     display: flex;
@@ -377,4 +338,62 @@ footer {
     margin: 0 0.5rem;
 }
 
+.scene {
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    position: relative;
 
+}
+
+.scene img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.scene.one {
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    transition: clip-path 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+.curtain.left {
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.curtain.right {
+    right: 0; /* ✅ 꼭 필요함 */
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.scene.two {
+}
+
+.scene.two h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: red;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
