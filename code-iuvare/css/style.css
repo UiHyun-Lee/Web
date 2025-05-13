@@ -387,13 +387,24 @@ footer {
 .scene.two {
 }
 
-.scene.two h1 {
+/*.scene.two h1 {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    font-size: 3rem;*/
+/*    color: red;*/
+/*    z-index: 2;*/
+/*    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
+/*}*/
+
+#scene-text {
     position: absolute;
-    top: 50%;
+    top: 10vh; /* 화면 상단에서 조금 떨어져 시작 */
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: red;
+    transform: translateX(-50%) scale(1); /* 가운데 정렬 + 초기 크기 */
+    transition: transform 0.1s ease-out;
     z-index: 2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 3rem;
+    color: var(--light-wheat); /* 또는 원하는 색 */
 }
