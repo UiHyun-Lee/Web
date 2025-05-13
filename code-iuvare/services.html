@@ -27,41 +27,58 @@
 
 <main>
     <div class="main-text">Our Services</div>
+
     <div class="service-block-wrapper">
-        <section class="service-block foundation">
-            <h2>I. Foundation</h2>
-            <p>
-                Eine gründliche Analyse und Plausibilisierung Ihrer Annahmen ist die Grundvoraussetzung für eine
-                erfolgreiche Projektarbeit.
-                Wir stellen sicher, dass die Vorgaben aus Ihrem Business Case zu Budget und Timeline plausibel und
-                realistisch sind.
-                Stakeholder werden identifiziert, Meilensteine und Projektbeteiligte definiert.
-                <br><br>
-                Mit der Foundation konzipieren wir für Sie das ideale Projektsetup. Am Ende dieser Phase sind Sie in der
-                Lage,
-                das Projekt individuell und fundiert aufzubauen.
-            </p>
+        <section class="service-block">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h2>I. Foundation</h2>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Eine gründliche Analyse und Plausibilisierung Ihrer Annahmen ist die Grundvoraussetzung für eine
+                    erfolgreiche Projektarbeit.
+                    Wir stellen sicher, dass die Vorgaben aus Ihrem Business Case zu Budget und Timeline plausibel und
+                    realistisch sind.
+                    Stakeholder werden identifiziert, Meilensteine und Projektbeteiligte definiert.
+                    <br><br>
+                    Mit der Foundation konzipieren wir für Sie das ideale Projektsetup. Am Ende dieser Phase sind Sie in der
+                    Lage,
+                    das Projekt individuell und fundiert aufzubauen.
+                </p>
+            </div>
         </section>
 
-        <section class="service-block blueprint">
-            <h2>II. Blueprint</h2>
-            <p>
-                Aufbauend auf der Foundation entwickeln wir gemeinsam den Blueprint Ihres Projekts. Anforderungen,
-                Vision, Look&Feel und Zielgruppen werden präzisiert.
-                Das Ergebnis: ein validiertes Konzept und KPIs, mit denen Sie alle Beteiligten klar briefen können.
-            </p>
+        <section class="service-block">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h2>II. Blueprint</h2>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Aufbauend auf der Foundation entwickeln wir gemeinsam den Blueprint Ihres Projekts. Anforderungen,
+                    Vision, Look&Feel und Zielgruppen werden präzisiert.
+                    Das Ergebnis: ein validiertes Konzept und KPIs, mit denen Sie alle Beteiligten klar briefen können.
+                </p>
+            </div>
         </section>
 
-        <section class="service-block action">
-            <h2>III. Action</h2>
-            <p>
-                Zeit für die Umsetzung! Die Action-Phase bringt den Blueprint ins Leben.
-                Wir stellen sicher, dass alle Leistungen effizient platziert werden und begleiten Sie auf Wunsch bei
-                Reportings, Verträgen und Planungsabstimmungen –
-                damit die Qualität Ihres Produkts jederzeit gesichert bleibt.
-            </p>
+        <section class="service-block">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h2>III. Action</h2>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <p>
+                    Zeit für die Umsetzung! Die Action-Phase bringt den Blueprint ins Leben.
+                    Wir stellen sicher, dass alle Leistungen effizient platziert werden und begleiten Sie auf Wunsch bei
+                    Reportings, Verträgen und Planungsabstimmungen –
+                    damit die Qualität Ihres Produkts jederzeit gesichert bleibt.
+                </p>
+            </div>
         </section>
     </div>
+
 </main>
 
 <footer>
@@ -79,5 +96,24 @@
         <p>© 2025 codeIuvare – All rights reserved</p>
     </section>
 </footer>
+<script>
+    function toggleAccordion(headerEl) {
+        const contentEl = headerEl.nextElementSibling;
+        const icon = headerEl.querySelector('.toggle-icon');
+
+        const isOpen = contentEl.style.height && contentEl.style.height !== "0px";
+
+        if (isOpen) {
+            contentEl.style.height = "0px";
+            contentEl.style.opacity = "0";
+            icon.textContent = "+";
+        } else {
+            // 펼치기 전 높이 계산 후 적용
+            contentEl.style.height = contentEl.scrollHeight + "px";
+            contentEl.style.opacity = "1";
+            icon.textContent = "−";
+        }
+    }
+</script>
 </body>
 </html>
