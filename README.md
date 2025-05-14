@@ -33,7 +33,7 @@ code-iuvare/
 └── README.md
 
 
-## 🚀 Live Preview
+## 🧑🏻‍💻 Live Preview
 
 > Coming soon at: [https://code-iuvare.com](https://code-iuvare.com)
 
