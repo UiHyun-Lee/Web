@@ -81,11 +81,11 @@ window.addEventListener("scroll", () => {
             aboutText.style.left = `${xOffset}%`;
             aboutText.style.transform = `translateX(-50%) scale(${scale})`;
         } else {
-            // 섹션 안 보이면 항상 기본 색
+            // default
             aboutText.style.color = "#2c3e50";
         }
     }
-
+    // about parallax
     document.querySelector('.about-background')
         .style.backgroundPositionY = `${scrollY * 0.5}px`;
 });
