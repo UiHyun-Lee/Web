@@ -4,6 +4,7 @@
     --light-wheat: #EEECE1;
     --dark-sage: #707B6D;
     --powdery-pink: #EEE2DF;
+    --dark-blue: #2c3e50;
 }
 
 body {
@@ -457,17 +458,6 @@ footer {
     overflow: hidden; /* 내려간 부분 잘라내기 */
 }
 
-/*.intro-image img {*/
-/*    position: absolute;  !* ✅ 핵심: 절대 위치! *!*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    transform: translateY(0);*/
-/*    transition: transform 0.2s ease-out;*/
-/*    z-index: 5;*/
-/*}*/
-
 
 
 .intro-image {
@@ -483,4 +473,65 @@ footer {
     display: block;
     transform: translateY(0); /* 초기값 */
     transition: transform 0.1s ease-out;
+}
+
+
+/*about*/
+
+/*.about-wrapper {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: flex-start;*/
+/*    padding: 5rem 10vw;*/
+/*    gap: 5vw;*/
+/*    background-color: white;*/
+/*    font-family: 'Source Sans Pro', sans-serif;*/
+/*}*/
+
+.about-background{
+    background-image: url('../assets/images/background3.jpg');
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    position: relative;
+
+}
+
+.about-background h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+
+}
+.about-section{
+    background-color: transparent;
+    height: 500px;
+}
+.about-section p{
+    color: var(--dark-blue);
+    font-size: 1rem;
+    margin-top : 0px;
+    text-align: center;
+
+}
+
+#about-text {
+    position: fixed;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    /*transition: transform 0.1s ease-out;*/
+    transition: transform 0.1s ease-out, color 0.3s ease;
+    font-size: 3rem;
+    z-index: 999;
+    color: var(--dark-blue);
 }

@@ -21,19 +21,6 @@ window.addEventListener("scroll", () => {
         rightCurtain.style.clipPath = `polygon(100% 0, 100% 100%, ${rightX}% 0)`;
     }
 
-
-
-    // const bg1 = document.querySelector(".scene.one img");
-    // const bg2 = document.querySelector(".scene.two img");
-    //
-    // if (bg1) {
-    //     bg1.style.transform = `translateY(${scrollY * 0.7}px)`; // 느리게
-    // }
-    //
-    // if (bg2) {
-    //     bg2.style.transform = `translateY(${scrollY * 0.3}px)`; // 빠르게
-    // }
-
     // text parallax + scale
     const text = document.querySelector("#scene-text");
     if (text) {
@@ -50,6 +37,54 @@ window.addEventListener("scroll", () => {
         const offset = scrollY * 0.2;
         image.style.transform = `translateY(${offset}px)`;
     }
+
+    // about text parallax
+    const aboutText = document.querySelector("#about-text");
+    const aboutSection = document.querySelector(".about-background");
+    const targetSection = document.querySelector(".about-section");
+
+    if (aboutText && aboutSection && targetSection) {
+        let xOffset = 50 - ratio * 100;
+        const rawYOffset = 30 + ratio * 100;
+        const scale = 1 + ratio * 3.5;
+        const yOffset = Math.min(rawYOffset, 50);
+
+        xOffset = Math.max(xOffset, 15);
+
+        aboutText.style.left = `${xOffset}%`;
+        aboutText.style.top = `${yOffset}vh`;
+        aboutText.style.transform = `translateX(-50%) scale(${scale})`;
+
+        const sectionTopInPage = targetSection.offsetTop;
+        const viewportBottom = window.scrollY + window.innerHeight;
+
+        if (viewportBottom > sectionTopInPage) {
+            const textRect = aboutText.getBoundingClientRect();
+            const sectionRect = targetSection.getBoundingClientRect();
+            const textCenter = textRect.top + textRect.height / 2;
+            const sectionCenter = sectionRect.top + sectionRect.height / 2;
+            const textCenterTop = sectionCenter - textRect.height / 2;
+
+            if (textRect.bottom > sectionRect.top) {
+                aboutText.style.color = "#ffffff";
+            } else {
+                aboutText.style.color = "#2c3e50";
+            }
+
+            if (Math.abs(textCenter - sectionCenter) < 2) {
+                aboutText.style.top = `${textCenterTop}px`;
+            } else {
+                const yOffset = Math.min(rawYOffset, 50);
+                aboutText.style.top = `${yOffset}vh`;
+            }
+
+            aboutText.style.left = `${xOffset}%`;
+            aboutText.style.transform = `translateX(-50%) scale(${scale})`;
+        } else {
+            // 섹션 안 보이면 항상 기본 색
+            aboutText.style.color = "#2c3e50";
+        }
+    }
 });
 
 // TypeIt text typing effect
@@ -58,3 +93,4 @@ new TypeIt(".intro-text", {
     lifeLike: false,
     waitUntilVisible: true
 }).pause(1000).go();
+document.querySelector("#about-text")
