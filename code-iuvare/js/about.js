@@ -12,43 +12,52 @@ window.addEventListener("scroll", () => {
     const aboutSection = document.querySelector(".about-background");
     const targetSection = document.querySelector(".about-block");
 
+
     if (aboutText && aboutSection && targetSection) {
         let xOffset = 50 - ratio * 100;
         const rawYOffset = 30 + ratio * 100;
-        const scale = 1 + ratio * 3.5;
-        const yOffset = Math.min(rawYOffset, 50);
-
+        let scale = 1 + ratio * 3.5;
+        const yOffset = Math.min(rawYOffset, 60);
         xOffset = Math.max(xOffset, 15);
 
         aboutText.style.left = `${xOffset}%`;
         aboutText.style.top = `${yOffset}vh`;
         aboutText.style.transform = `translateX(-50%) scale(${scale})`;
 
+
+        const textRect = aboutText.getBoundingClientRect();
+        const sectionRect = targetSection.getBoundingClientRect();
+        const textCenter = textRect.top + textRect.height / 2;
+        const sectionCenter = sectionRect.top + sectionRect.height / 2;
+
+        // text opacity
+        let opacity = 1;
+        const fadeThreshold = sectionRect.height / 2;
+
+        if (textCenter > sectionRect.top && textCenter < sectionRect.bottom) {
+            const distance = Math.abs(textCenter - sectionCenter);
+            opacity = Math.max(0, 1 - distance / fadeThreshold);
+        } else if (textRect.bottom > sectionRect.bottom) {
+            opacity = 0;
+        } else {
+            opacity = 1;
+        }
+
+        aboutText.style.opacity = opacity.toFixed(2);
+
+        // text color
         const sectionTopInPage = targetSection.offsetTop;
         const viewportBottom = window.scrollY + window.innerHeight;
 
         if (viewportBottom > sectionTopInPage) {
             const textRect = aboutText.getBoundingClientRect(); // about text
             const sectionRect = targetSection.getBoundingClientRect(); // about section
-            const textCenter = textRect.top + textRect.height / 2;
-            const sectionCenter = sectionRect.top + sectionRect.height / 2;
-            const textCenterTop = sectionCenter - textRect.height / 2;
 
             if (textRect.bottom > sectionRect.top) {
                 aboutText.style.color = "#ffffff";
             } else {
                 aboutText.style.color = "#2c3e50";
             }
-
-            if (Math.abs(textCenter - sectionCenter) < 2) {
-                aboutText.style.top = `${textCenterTop}px`;
-            } else {
-                const yOffset = Math.min(rawYOffset, 50);
-                aboutText.style.top = `${yOffset}vh`;
-            }
-
-            aboutText.style.left = `${xOffset}%`;
-            aboutText.style.transform = `translateX(-50%) scale(${scale})`;
         } else {
             // default
             aboutText.style.color = "#2c3e50";
