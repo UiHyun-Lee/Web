@@ -19,18 +19,27 @@ This site was created to:
 
 ## 🏠 Project Structure
 
+<pre>
 code-iuvare/
-├── home.html # Landing page
-├── about.html # About section
-├── contact.html # Contact information
+├── home.html            → Landing page
+├── about.html           → About section
+├── service.html         → Service section
+├── contact.html         → Contact information
 ├── css/
-│ └── style.css # Main styles
+│   ├── style.css        → Global styles
+│   ├── home.css         → Home-specific styles
+│   ├── about.css        → About-specific styles
+│   ├── service.css      → Service-specific styles
 ├── js/
-│ └── main.js # Scroll, parallax, interaction logic
+│   ├── main.js          → Global scroll, parallax, interaction logic
+│   ├── home.js          → Home scroll / effects
+│   ├── about.js         → About scroll / effects
+│   ├── service.js       → (Not implemented yet)
+│   ├── contact.js       → (Not implemented yet)
 ├── assets/
-│ ├── images/ # Backgrounds, content visuals
-│ └── fonts/ # Custom web fonts
+│   └── images/          → Backgrounds, content visuals
 └── README.md
+</pre>
 
 
 ## 🧑🏻‍💻 Live Preview
