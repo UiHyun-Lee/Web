@@ -85,6 +85,9 @@ window.addEventListener("scroll", () => {
             aboutText.style.color = "#2c3e50";
         }
     }
+
+    document.querySelector('.about-background')
+        .style.backgroundPositionY = `${scrollY * 0.5}px`;
 });
 
 // TypeIt text typing effect
