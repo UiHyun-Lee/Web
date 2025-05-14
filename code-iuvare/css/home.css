@@ -1,0 +1,168 @@
+.center-button-wrapper {
+    display: flex;
+    justify-content: center; /* 수평 가운데 */
+    align-items: center; /* 수직 가운데 (필요 시) */
+    margin: 2rem 0; /* 위아래 간격 */
+}
+.intro-block {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.intro-text {
+    color: var(--dark-sage);
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    z-index: 2;
+    position: relative;
+    padding: 1.5rem 1rem 0.5rem 1rem; /* 하단 패딩 줄이기 */
+    margin: 0
+}
+
+.intro-image {
+    position: relative;
+    width: 100%;
+    height: 200px; /* 고정 높이 */
+    overflow: hidden; /* 내려간 부분 잘라내기 */
+}
+
+
+.intro-image {
+    position: relative; /* 시작은 고정 */
+    width: 100%;
+    height: 30%;
+    z-index: 1;
+}
+
+.intro-image img {
+    top: 0;
+    width: 100%;
+    display: block;
+    transform: translateY(0); /* 초기값 */
+    transition: transform 0.1s ease-out;
+}
+.scene {
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    position: relative;
+
+}
+
+.scene.one {
+    height: 100vh;
+    background-image: url('../assets/images/background1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.scene.two {
+    height: 100vh;
+    background-image: url('../assets/images/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    transition: clip-path 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+.curtain.left {
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.curtain.right {
+    right: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+#scene-text {
+    position: absolute;
+    top: 10vh; /* 화면 상단에서 조금 떨어져 시작 */
+    left: 50%;
+    transform: translateX(-50%) scale(1); /* 가운데 정렬 + 초기 크기 */
+    transition: transform 0.1s ease-out;
+    z-index: 2;
+    font-size: 3rem;
+    color: var(--light-wheat); /* 또는 원하는 색 */
+}
+
+.values {
+    margin-top: 70px;
+}
+
+.marquee-row {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.marquee-content {
+    display: inline-flex;
+    gap: 3rem;
+}
+
+.marquee-content li {
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+}
+
+.marquee-content li::before {
+    content: "· ";
+    margin-right: 0.5rem;
+}
+
+/* 윗줄: 왼쪽 → 오른쪽 */
+.left-to-right .marquee-content {
+    animation: scroll-left-to-right 25s linear infinite;
+}
+
+/* 아랫줄: 오른쪽 → 왼쪽 */
+.right-to-left .marquee-content {
+    animation: scroll-right-to-left 25s linear infinite;
+    animation-delay: -6s; /* 시작 위치를 반 주기 앞당김 */
+}
+
+/* 왼쪽에서 오른쪽 */
+@keyframes scroll-left-to-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 오른쪽에서 왼쪽 */
+@keyframes scroll-right-to-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

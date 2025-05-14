@@ -1,0 +1,86 @@
+.about-background {
+    background-position: center;
+    background-image: url('../assets/images/background3.jpg');
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    position: relative;
+
+}
+
+.about-background h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--dark-blue)
+}
+
+.about-fake-left {
+    flex: 1;
+}
+
+.about-divider {
+    width: 4px;
+    background-color: white;
+    height: 800px;
+    align-self: center; /* 세로 가운데 정렬 */
+    color: red;
+    margin-left: 20rem;
+    z-index: 999;
+}
+
+.about-section {
+    flex: 2;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    padding: 5rem 3rem;
+    width: 50vw; /* 화면 오른쪽 절반만 차지 */
+    margin-left: auto; /* 왼쪽 여백을 최대화 → 오른쪽으로 밀림 */
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+
+}
+
+.about-section p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 5rem 3rem;
+    color: white;
+    text-align: left;
+    font-size: 1.5rem;
+    background-color: var(--dark-blue);
+    box-sizing: border-box;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#about-text {
+    position: fixed;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    /*transition: transform 0.1s ease-out;*/
+    transition: transform 0.1s ease-out, color 0.3s ease;
+    font-size: 3rem;
+    z-index: 999;
+    color: var(--dark-blue);
+}
+
