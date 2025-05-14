@@ -142,17 +142,7 @@ main {
 }
 
 
-/* Mission Statement */
-.intro-text {
-    background-color: transparent;
-    padding: 2rem;
-    margin: 0 auto;
-    color : var(--dark-sage);
-    font-family: 'Lato', sans-serif;
-    font-weight: 900; /* Lato Light */
-    font-size: 1.5rem;
 
-}
 
 .values {
     margin-top: 70px;
@@ -359,6 +349,7 @@ footer {
 .scene.one {
     overflow: hidden;
     object-fit: cover;
+
 }
 
 .curtain {
@@ -407,4 +398,79 @@ footer {
     z-index: 2;
     font-size: 3rem;
     color: var(--light-wheat); /* 또는 원하는 색 */
+}
+
+/*.intro-text {*/
+/*    background-color: transparent;*/
+/*    padding: 2rem;*/
+/*    margin: 0 auto;*/
+/*    color : var(--dark-sage);*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    font-weight: 900; !* Lato Light *!*/
+/*    font-size: 1.5rem;*/
+
+/*}*/
+/*.intro-image{*/
+/*    width: 100%;*/
+/*    margin-top:0px;*/
+/*}*/
+
+/*.intro-image img{*/
+/*    width: 100%;*/
+/*    height: 20%;*/
+/*    display: block;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+.intro-block {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.intro-text {
+    color: var(--dark-sage);
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    z-index: 2;
+    position: relative;
+    padding: 1.5rem 1rem 0.5rem 1rem; /* 하단 패딩 줄이기 */
+    margin: 0
+}
+
+.intro-image {
+    position: relative;
+    width: 100%;
+    height: 200px; /* 고정 높이 */
+    overflow: hidden; /* 내려간 부분 잘라내기 */
+}
+
+/*.intro-image img {*/
+/*    position: absolute;  !* ✅ 핵심: 절대 위치! *!*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    transform: translateY(0);*/
+/*    transition: transform 0.2s ease-out;*/
+/*    z-index: 5;*/
+/*}*/
+
+
+
+.intro-image {
+    position: relative;  /* 시작은 고정 */
+    width: 100%;
+    height: 30%;
+    z-index: 1;
+}
+
+.intro-image img {
+    top: 0;
+    width: 100%;
+    display: block;
+    transform: translateY(0); /* 초기값 */
+    transition: transform 0.1s ease-out;
 }
