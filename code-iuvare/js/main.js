@@ -21,19 +21,6 @@ window.addEventListener("scroll", () => {
         rightCurtain.style.clipPath = `polygon(100% 0, 100% 100%, ${rightX}% 0)`;
     }
 
-
-
-    // const bg1 = document.querySelector(".scene.one img");
-    // const bg2 = document.querySelector(".scene.two img");
-    //
-    // if (bg1) {
-    //     bg1.style.transform = `translateY(${scrollY * 0.7}px)`; // 느리게
-    // }
-    //
-    // if (bg2) {
-    //     bg2.style.transform = `translateY(${scrollY * 0.3}px)`; // 빠르게
-    // }
-
     // text parallax + scale
     const text = document.querySelector("#scene-text");
     if (text) {
@@ -46,10 +33,10 @@ window.addEventListener("scroll", () => {
     // image parallax
     const image = document.querySelector(".intro-image img");
     if (image) {
-
         const offset = scrollY * 0.2;
         image.style.transform = `translateY(${offset}px)`;
     }
+
 });
 
 // TypeIt text typing effect
@@ -58,3 +45,4 @@ new TypeIt(".intro-text", {
     lifeLike: false,
     waitUntilVisible: true
 }).pause(1000).go();
+document.querySelector("#about-text")

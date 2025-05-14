@@ -1,0 +1,61 @@
+main {
+    padding: 0;
+    padding-bottom: 300px;
+}
+
+.main-text {
+    font-size: 5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    font-family: 'Comic Neue', cursive;
+    /*background-color: white;*/
+}
+
+.service-block-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    /*background-color: white;*/
+}
+
+.service-block {
+    margin-bottom: 1.5rem;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.accordion-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.toggle-icon {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-left: 1rem;
+}
+
+.accordion-content {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0.4s ease, opacity 0.4s ease;
+}
+
+
+.accordion-content.open {
+    opacity: 1;
+    height: auto;
+}
+
