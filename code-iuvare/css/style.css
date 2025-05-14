@@ -12,32 +12,43 @@ body {
     background-color: var(--light-wheat);
     color: var(--soft-black);
     line-height: 1.6;
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 
 header {
-    background: var(--powdery-pink);
+    background: transparent;
     color: black;
     /*padding: 1rem;*/
     text-align: left;
-    height: 70px;
+    /*height: 0px;*/
 }
 
 .navbar-wrapper {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--powdery-pink);
+    top: 1rem; /* 페이지 상단에서 살짝 내려오게 */
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
+    width: 80%;
+    background-color: rgba(238, 226, 223, 0.8); /* powdery-pink의 투명도 조정 */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px); /* 배경 흐림 효과로 더 고급스러움 */
+    /*-webkit-backdrop-filter: blur(8px); !* 사파리 호환 *!*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: #4A90E2;
+
 }
+
 
 .navbar {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 
@@ -48,142 +59,163 @@ header {
     font-size: 1.5rem;
 }
 
-.menu a{
-        color: black;
-        margin: 0 1rem;
-        text-decoration: none;
-        /*font-weight: bold;*/
+.menu {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.menu a {
+    color: black;
+    margin: 0 1rem;
+    text-decoration: none;
 }
 
 .menu a:hover {
     color: var(--dark-sage);
 }
-
+.center-button-wrapper {
+    display: flex;
+    justify-content: center; /* 수평 가운데 */
+    align-items: center;     /* 수직 가운데 (필요 시) */
+    margin: 2rem 0;          /* 위아래 간격 */
+}
 main {
-    padding: 2rem;
+    padding: 0;
     padding-bottom: 300px;
 }
-
-/* Service block (다른 페이지에서 사용) */
-section.service-block {
-    background-color: var(--light-grey);
-    margin-bottom: 2rem;
-    padding: 2rem;
-    border-left: 5px solid var(--dark-sage);
-    animation: slideUp 1s ease-in;
+.main-text {
+    font-size: 5rem;
+    font-weight: 900; /* Lato Light */
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    font-family: 'Comic Neue', cursive;
+    /*background-color: white;*/
 }
 
-/* Mission Statement */
-.intro-text {
-    background-color: var(--light-grey);
-    padding: 2rem;
-    margin: 2rem auto;
-    border-left: 5px solid var(--soft-black);
+.service-block-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    /*background-color: white;*/
 }
 
-.intro-text h3 {
-    font-size: 1.5rem;
+.service-block {
+    margin-bottom: 1.5rem;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
     margin-bottom: 1rem;
 }
 
-.intro-text p {
-    /*opacity: 0;*/
-    /*transform: translateY(30px);*/
+.accordion-header h2 {
+    font-size: 3rem; /* 글씨 크게 */
+    font-weight: 700;
+    margin: 0;
 }
+
+.toggle-icon {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-left: 1rem;
+}
+
+.accordion-content {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0.4s ease, opacity 0.4s ease;
+}
+
+
+.accordion-content.open {
+    opacity: 1;
+    height: auto;
+}
+
+
 
 
 .values {
-    padding: 2rem;
-    background-color: var(--light-wheat);
-    margin-bottom: 4rem;
+    margin-top: 70px;
 }
 
-.values-list {
-    /* margin-top: 1000px; ← 제거해서 너무 아래로 내려가지 않도록 */
+.marquee-row {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.marquee-content {
+    display: inline-flex;
+    gap: 3rem;
+}
+
+.marquee-content li {
     list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
 }
 
-/* 등장 전 초기 상태 */
-.values-list li {
-    /*background-color: red;*/
-    color: black;
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+.marquee-content li::before {
+    content: "· ";
+    margin-right: 0.5rem;
 }
 
-/* 등장 후 애니메이션 상태 */
-.values-list li.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* 윗줄: 왼쪽 → 오른쪽 */
+.left-to-right .marquee-content {
+    animation: scroll-left-to-right 25s linear infinite;
 }
-/* Guide to Good Practice */
-/*.values {*/
-/*    padding: 2rem;*/
-/*    background-color: var(--powdery-pink);*/
-/*    height : 6000px;*/
-/*    !*margin-bottom: 2rem;*!*/
-/*}*/
 
-/*.values h3 {*/
-/*    font-size: 1.5rem;*/
-/*    margin-bottom: 1rem;*/
-/*}*/
+/* 아랫줄: 오른쪽 → 왼쪽 */
+.right-to-left .marquee-content {
+    animation: scroll-right-to-left 25s linear infinite;
+    animation-delay: -6s; /* 시작 위치를 반 주기 앞당김 */
+}
 
-/*.values-list {*/
-/*    margin-top: 1000px;*/
-/*    list-style: none;*/
-/*    padding: 0;*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    gap: 1rem;*/
-/*}*/
-/*.values-list li {*/
-/*    opacity: 0;*/
-/*    transform: translateY(20px);*/
-/*    transition: opacity 0.6s ease, transform 0.6s ease;*/
-/*}*/
+/* 왼쪽에서 오른쪽 */
+@keyframes scroll-left-to-right {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
 
-/*.values-list li.visible {*/
-/*    opacity: 1;*/
-/*    transform: translateY(0);*/
-/*}*/
+/* 오른쪽에서 왼쪽 */
+@keyframes scroll-right-to-left {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
 
-
-
-/*.values-list li {*/
-/*    background-color: var(--dark-sage);*/
-/*    color: white;*/
-/*    padding: 0.6rem 1.2rem;*/
-/*    border-radius: 20px;*/
-/*    font-size: 0.95rem;*/
-/*    !*opacity: 0;*!*/
-/*    transform: translateY(20px);*/
-/*    transition: opacity 0.6s ease, transform 0.6s ease;*/
-/*}*/
-
-/*.values-list li.visible {*/
-/*    opacity: 1;*/
-/*    transform: translateY(0);*/
-/*}*/
-/* 버튼 */
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: var(--dark-sage);
-    color: white;
+    border: 2px solid white;
     text-decoration: none;
-    border-radius: 5px;
+    margin-top: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
-
+.btn-white{
+    /*background-color: white;*/
+    color: white;
+    border-color: white;
+}
+.btn-black{
+    margin-top: 50px;
+    color: black;
+    border-color: black;
+}
 /* 아이콘 이미지 (Contact 등에서 사용) */
 .icon {
     width: 24px;
@@ -202,6 +234,11 @@ footer {
     height: 500px;
 }
 
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
 /* CSS 키프레임 예비 애니메이션 (필요시) */
 @keyframes fadeInFromTop {
     from { opacity: 0; transform: translateY(-20px); }
@@ -227,7 +264,9 @@ footer {
         opacity: 1;
         transform: translateX(0);
     }
-}.logo {
+}
+
+.logo {
      animation: fadeInFromTop 3s ease-out forwards;
  }
 .connect-left {
@@ -242,46 +281,7 @@ footer {
 }
 
 
-.scene {
-    height: 100vh;
-    overflow: hidden;
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 200;
-}
-.scene.one {
-    background-image: url(../assets/images/heic0910e.jpg); /* 경로 수정 */
-}
-.scene.two {
-    background-image: url(../assets/images/heic1501a.jpg); /* 경로 수정 */
-}
-.scene.three {
-    background-image: url(../assets/images/heic1608a.jpg); /* 경로 수정 */
-}
-.scene header{
-    color:white;
-    max-width: 80%;
-    position: relative;
-    left:50%;
-    top:50%;
-    transform:translateX(-50%) translateY(-50%);
-    font-size:1.5rem;
-    text-align: center;
-}
-.scene header h1{
-    font-size:2rem;
-    margin-bottom: 1rem;
-    font-weight: 300;
-}
-.scene header h1:after{
-    content:'';
-    border-bottom:1px solid white;
-    width:8rem;
-    display: block;
-    margin:0 auto;
-    margin-top:1rem;
-}
+
 
 .connect-section {
     display: flex;
@@ -301,25 +301,26 @@ footer {
     margin-right: 10rem;
     width: 380px;
 }
-/*.connect-right {*/
-/*    flex: 1;*/
-/*    text-align: center;*/
+
+
+/*.contact-button {*/
+/*    display: inline-block;*/
+/*    padding: 0.75rem 1.5rem;*/
+/*    border: 2px solid white;*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    margin-top: 1rem;*/
+/*    border-radius: 70px;*/
+/*    font-weight: bold;*/
 /*}*/
 
-.contact-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid white;
-    color: white;
-    text-decoration: none;
-    margin-top: 1rem;
-    border-radius: 30px;
-    font-weight: bold;
-}
-
-.contact-button:hover {
+.btn-white:hover {
     background-color: white;
     color: var(--dark-sage); /* Cedar-style 배경색 또는 원하는 색상 */
+}
+.btn-black:hover {
+    background-color: black;
+    color: var(--light-grey); /* Cedar-style 배경색 또는 원하는 색상 */
 }
 
 .social-icons img {
@@ -327,15 +328,159 @@ footer {
     margin: 0 0.5rem;
 }
 
-.contact-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid white;
-    color: white;
-    text-decoration: none;
-    margin-top: 1rem;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+.scene {
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    position: relative;
+
 }
 
+/*.scene img{*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    display: block;*/
+/*}*/
+
+.scene.one {
+    height: 100vh;
+    background-image: url('../assets/images/background1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* ✅ 핵심! */
+}
+
+.scene.two {
+    height: 100vh;
+    background-image: url('../assets/images/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    transition: clip-path 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+.curtain.left {
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.curtain.right {
+    right: 0; /* ✅ 꼭 필요함 */
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.scene.two {
+}
+
+/*.scene.two h1 {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    font-size: 3rem;*/
+/*    color: red;*/
+/*    z-index: 2;*/
+/*    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);*/
+/*}*/
+
+#scene-text {
+    position: absolute;
+    top: 10vh; /* 화면 상단에서 조금 떨어져 시작 */
+    left: 50%;
+    transform: translateX(-50%) scale(1); /* 가운데 정렬 + 초기 크기 */
+    transition: transform 0.1s ease-out;
+    z-index: 2;
+    font-size: 3rem;
+    color: var(--light-wheat); /* 또는 원하는 색 */
+}
+
+/*.intro-text {*/
+/*    background-color: transparent;*/
+/*    padding: 2rem;*/
+/*    margin: 0 auto;*/
+/*    color : var(--dark-sage);*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    font-weight: 900; !* Lato Light *!*/
+/*    font-size: 1.5rem;*/
+
+/*}*/
+/*.intro-image{*/
+/*    width: 100%;*/
+/*    margin-top:0px;*/
+/*}*/
+
+/*.intro-image img{*/
+/*    width: 100%;*/
+/*    height: 20%;*/
+/*    display: block;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+.intro-block {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.intro-text {
+    color: var(--dark-sage);
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    z-index: 2;
+    position: relative;
+    padding: 1.5rem 1rem 0.5rem 1rem; /* 하단 패딩 줄이기 */
+    margin: 0
+}
+
+.intro-image {
+    position: relative;
+    width: 100%;
+    height: 200px; /* 고정 높이 */
+    overflow: hidden; /* 내려간 부분 잘라내기 */
+}
+
+/*.intro-image img {*/
+/*    position: absolute;  !* ✅ 핵심: 절대 위치! *!*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    transform: translateY(0);*/
+/*    transition: transform 0.2s ease-out;*/
+/*    z-index: 5;*/
+/*}*/
+
+
+
+.intro-image {
+    position: relative;  /* 시작은 고정 */
+    width: 100%;
+    height: 30%;
+    z-index: 1;
+}
+
+.intro-image img {
+    top: 0;
+    width: 100%;
+    display: block;
+    transform: translateY(0); /* 초기값 */
+    transition: transform 0.1s ease-out;
+}

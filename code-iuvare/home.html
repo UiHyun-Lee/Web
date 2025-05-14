@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>(code)Iuvare</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet">
-    <!--    &lt;!&ndash; GSAP & ScrollTrigger CDN &ndash;&gt;-->
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>-->
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <title>(code)Iuvare</title>
 </head>
+
 <body>
 <header>
     <div class="navbar-wrapper">
@@ -18,7 +19,6 @@
                 <a href="home.html" class="active">(code)luvāre</a>
             </div>
             <div class="menu">
-                <a href="home.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
@@ -28,110 +28,98 @@
 </header>
 
 <main>
-    <!-- Mission Statement -->
-    <section class="intro-text">
-        <h3>Mission Statement</h3>
-        <p>Die Durchführung eines erfolgreichen Projekts ist komplex und mit vielen Risiken verbunden. Häufig werden
-            Grundstücke oder bestehende Objekte unter der Prämisse angekauft, dass daraus ein profitables Projekt
-            entwickelt werden soll – so weit, so gut.</p>
-        <p>Was aber ist das „Projekt“? Wie ist es definiert? Welche Vision und Zielvorgaben dienen als Briefing für die
-            Projektbeteiligten?</p>
-        <p>Mehr als die Nutzungsklasse, prognostizierte Erträge, ein Baubudget mit vagen Qualitätsangaben und
-            phantasievolle Renderings sind zur Beantwortung dieser Frage in der Regel nicht vorhanden. Jedes Projekt ist
-            ein Unikat, jedes Team individuell – ein Standardschema gibt es nicht.</p>
-        <p>(code)Iuvare unterstützt Sie bei der Plausibilisierung der Ankaufsannahmen, der Erstellung der
-            Bedarfsanalyse, definiert die technischen Anforderungen, Projektstruktur und kreiert gemeinsam mit Ihnen die
-            DNA des Projekts.</p>
-    </section>
+    <!-- Background images and text -->
+    <div class="scene one">
+<!--        <img src="assets/images/background1.jpg" alt="Background Image1"/>-->
+        <div class="curtain left"></div>
+        <div class="curtain right"></div>
+    </div>
+    <div class="scene two">
+<!--        <img src="assets/images/background2.jpg" alt="Background Image2"/>-->
+        <h1 id="scene-text">Mission Statement</h1>
+    </div>
+
+    <!-- Mission Statement text -->
+    <Section class = "intro-block">
+        <section class="intro-text">
+            <p>Die Durchführung eines erfolgreichen Projekts ist komplex und mit vielen Risiken verbunden. Häufig werden
+                Grundstücke oder bestehende Objekte unter der Prämisse angekauft, dass daraus ein profitables Projekt
+                entwickelt werden soll – so weit, so gut.<br>
+                Was aber ist das „Projekt“? Wie ist es definiert? Welche Vision und Zielvorgaben dienen als Briefing für
+                die
+                Projektbeteiligten?<br>
+                Mehr als die Nutzungsklasse, prognostizierte Erträge, ein Baubudget mit vagen Qualitätsangaben und
+                phantasievolle Renderings sind zur Beantwortung dieser Frage in der Regel nicht vorhanden. Jedes Projekt
+                ist
+                ein Unikat, jedes Team individuell – ein Standardschema gibt es nicht.<br>
+                (code)Iuvare unterstützt Sie bei der Plausibilisierung der Ankaufsannahmen, der Erstellung der
+                Bedarfsanalyse, definiert die technischen Anforderungen, Projektstruktur und kreiert gemeinsam mit Ihnen
+                die
+                DNA des Projekts.</p>
+        </section>
+        <div class ="intro-image">
+            <img src="assets/images/skyline.png" alt="skyline img"/>
+        </div>
+    </Section>
 
     <!-- Guide to Good Practice -->
-
     <section class="values">
-        <h3>Guide to Good Practice</h3>
-        <ul class="values-list">
-            <li class="batch-1">kommunikativ</li>
-            <li class="batch-1">empathisch</li>
-            <li class="batch-1">effizient</li>
-            <li class="batch-2">flexibel</li>
-            <li class="batch-2">organisiert</li>
-            <li class="batch-2">fokussiert</li>
-            <li class="batch-3">vorausschauend</li>
-            <li class="batch-3">custom-made</li>
-            <li class="batch-3">individuell</li>
-            <li class="batch-4">kreativ</li>
-            <li class="batch-4">strukturiert</li>
-        </ul>
-    </section>
+        <div class="marquee-row left-to-right">
+            <ul class="marquee-content">
+                <li>kommunikativ</li>
+                <li>empathisch</li>
+                <li>effizient</li>
+                <li>flexibel</li>
+                <li>organisiert</li>
+                <li>fokussiert</li>
+                <li>vorausschauend</li>
+                <li>custom-made</li>
+                <li>individuell</li>
+                <li>kreativ</li>
+                <li>strukturiert</li>
+            </ul>
+        </div>
 
+        <div class="marquee-row right-to-left">
+            <ul class="marquee-content">
+                <li>kommunikativ</li>
+                <li>empathisch</li>
+                <li>effizient</li>
+                <li>flexibel</li>
+                <li>organisiert</li>
+                <li>fokussiert</li>
+                <li>vorausschauend</li>
+                <li>custom-made</li>
+                <li>individuell</li>
+                <li>kreativ</li>
+                <li>strukturiert</li>
+            </ul>
+        </div>
+    </section>
+    <div class="center-button-wrapper">
+        <a href="services.html" class="btn btn-black">OUR SERVICES</a>
+    </div>
 </main>
 
-<section class="scene one">
-    <header>
-        <h1>Lorem ipsum dolor sit amet.</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit
-        sint ab beatae nihi
-    </header>
-</section>
-<section class="scene two">
-    <header>
-        <h1>Lorem ipsum dolor sit amet.</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit
-        sint ab beatae nihi
-    </header>
-</section>
-<section class="scene three">
-    <header>
-        <h1>Lorem ipsum dolor sit amet.</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam suscipit
-        sint ab beatae nihi
-    </header>
-</section>
+<!-- Footer -->
 <footer>
     <section class="connect-section">
         <div class="connect-left">
             <h2>LET’S CONNECT!</h2>
             <p>Reach out for a free consultation.</p>
-            <a href="contact.html" class="contact-button">Contact Us</a>
+            <a href="contact.html" class="btn btn-white">Contact Us</a>
         </div>
         <a href="home.html">
             <div class="connect-center">
                 <img src="assets/images/seal_logo_transparent.png" alt="Logo"/>
             </div>
         </a>
-        <!--        <div class="connect-right">-->
-        <!--            <h2>FOLLOW US</h2>-->
-        <!--            <div class="social-icons">-->
-        <!--&lt;!&ndash;                <img src="assets/images/pin.png" alt="Location Icon" class="icon">&ndash;&gt;-->
-        <!--                <img src="assets/images/instagram-logo.svg" alt="Instagram" />-->
-        <!--                <img src="assets/images/facebook-logo.svg" alt="Facebook" />-->
-        <!--                <img src="assets/images/linkedin-logo.svg" alt="LinkedIn" />-->
-        <!--            </div>-->
-        <!--        </div>-->
+        <p>© 2025 codeIuvare – All rights reserved</p>
+
     </section>
-    <p>© 2025 codeIuvare – All rights reserved</p>
 </footer>
 
-<script>
-    const batches = ['batch-1', 'batch-2', 'batch-3', 'batch-4'];
-
-    batches.forEach(batch => {
-        const items = document.querySelectorAll(`.values-list li.${batch}`);
-
-        if (items.length === 0) return;
-
-        const trigger = items[0];
-
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    items.forEach(item => {
-                        item.classList.add('visible');
-                    });
-                    obs.unobserve(entry.target); // 한 번만 트리거
-                }
-            });
-        });
-
-        observer.observe(trigger);
-    });
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
