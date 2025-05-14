@@ -38,7 +38,7 @@
     width: 4px;
     background-color: white;
     height: 800px;
-    align-self: center; /* 세로 가운데 정렬 */
+    align-self: center;
     color: red;
     margin-left: 20rem;
     z-index: 999;
@@ -51,8 +51,8 @@
     font-size: 1.5rem;
     line-height: 1.6;
     padding: 5rem 3rem;
-    width: 50vw; /* 화면 오른쪽 절반만 차지 */
-    margin-left: auto; /* 왼쪽 여백을 최대화 → 오른쪽으로 밀림 */
+    width: 50vw;
+    margin-left: auto;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;

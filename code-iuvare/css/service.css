@@ -5,7 +5,7 @@ main {
 
 .main-text {
     font-size: 5rem;
-    font-weight: 900; /* Lato Light */
+    font-weight: 900;
     text-align: center;
     margin-top: 0px;
     margin-bottom: 100px;
@@ -35,7 +35,7 @@ main {
 }
 
 .accordion-header h2 {
-    font-size: 3rem; /* 글씨 크게 */
+    font-size: 3rem;
     font-weight: 700;
     margin: 0;
 }

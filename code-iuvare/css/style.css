@@ -73,9 +73,6 @@ header {
     color: var(--dark-sage);
 }
 
-
-
-
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -99,7 +96,6 @@ header {
     border-color: black;
 }
 
-
 /* footer */
 footer {
     background: var(--dark-sage);
@@ -116,7 +112,6 @@ footer {
     }
 }
 
-/* CSS 키프레임 예비 애니메이션 (필요시) */
 @keyframes fadeInFromTop {
     from {
         opacity: 0;
@@ -194,10 +189,10 @@ footer {
 
 .btn-white:hover {
     background-color: white;
-    color: var(--dark-sage); /* Cedar-style 배경색 또는 원하는 색상 */
+    color: var(--dark-sage);
 }
 
 .btn-black:hover {
     background-color: black;
-    color: var(--light-grey); /* Cedar-style 배경색 또는 원하는 색상 */
+    color: var(--light-grey);
 }
