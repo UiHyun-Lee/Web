@@ -9,7 +9,6 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 200;
     position: relative;
-
 }
 
 .about-background h1 {
@@ -37,11 +36,14 @@
 .about-divider {
     width: 4px;
     background-color: white;
-    height: 800px;
+    height: 900px;
     align-self: center;
     color: red;
     margin-left: 20rem;
     z-index: 999;
+    transform: translateY(0);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .about-section {
@@ -84,3 +86,101 @@
     color: var(--dark-blue);
 }
 
+
+.head-shot-wrapper {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: flex-start;
+    gap: 4rem; /* 요소 간 간격 */
+    padding: 4rem 2rem;
+    max-width: 1200px; /* 중앙 정렬을 위한 최대 너비 */
+    margin: 0 auto; /* 진짜 중앙 정렬 핵심 */
+    flex-wrap: wrap;
+    height: 800px /* 반응형 대응 */
+}
+
+.head-shot {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    background-image: url('../assets/images/background1.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    flex-shrink: 0;
+    margin-right: 150px;
+    margin-top: 50px;
+}
+
+.container-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    gap: 4rem; /* 각 카운터 간 간격 */
+    text-align: right;
+}
+
+.container h4 {
+    color: var(--dark-blue);
+    font-size: 2rem;
+    margin-left: 100px;
+}
+
+.container strong {
+    color: white;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+}
+
+.counter {
+    display: inline-block;
+    min-width: 200px; /* 숫자 길이에 따라 적절히 조정 */
+    text-align: right; /* 오른쪽 정렬 */
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 100px;
+    text-align: right;
+}
+
+/*.head-shot-divider {*/
+/*    width: 4px;*/
+/*    height: 600px;*/
+/*    background-color: var(--dark-blue);*/
+/*    margin: 0 2rem;*/
+/*    align-self: stretch;*/
+/*    flex-shrink: 0;*/
+/*    margin-top: 70px;*/
+
+/*    transform: translateY(0);*/
+/*    transition: transform 0.05s linear;*/
+/*    !*opacity: 0;*!*/
+/*    !*transform: translateY(-30px);*!*/
+/*    !*transition: opacity 0.8s ease, transform 0.8s ease;*!*/
+/*}*/
+
+
+
+
+.head-shot-divider {
+    width: 4px;
+    height: 600px;
+    background-color: var(--dark-blue);
+    margin: 0 2rem;
+    flex-shrink: 0;
+
+    transform: translateY(-60px); /* 초기 위로 숨겨져 있음 */
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.head-shot-divider.show {
+    /*transform: translateY(0);*/
+    opacity: 1;
+}
+
+.about-divider.show{
+    opacity: 1;
+}
