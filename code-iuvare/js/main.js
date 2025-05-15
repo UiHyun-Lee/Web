@@ -1,6 +1,19 @@
 window.addEventListener("load", () => {
     window.dispatchEvent(new Event("scroll"));
 });
+// initializing
+const leftCurtain = document.querySelector(".curtain.left");
+const rightCurtain = document.querySelector(".curtain.right");
+const image = document.querySelector(".intro-image img");
+const text = document.querySelector("#scene-text");
+
+// TypeIt text typing effect
+new TypeIt(".intro-text", {
+    speed: 20,
+    lifeLike: false,
+    waitUntilVisible: true
+}).pause(1000).go();
+document.querySelector("#about-text")
 
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
@@ -8,8 +21,6 @@ window.addEventListener("scroll", () => {
     const ratio = Math.min(scrollY / max, 1);
 
     // Curtain
-    const leftCurtain = document.querySelector(".curtain.left");
-    const rightCurtain = document.querySelector(".curtain.right");
     const opacity = ratio * 0.7;
     const leftX = 100 - ratio * 100;
     const rightX = ratio * 100;
@@ -22,7 +33,6 @@ window.addEventListener("scroll", () => {
     }
 
     // text parallax + scale
-    const text = document.querySelector("#scene-text");
     if (text) {
         const topOffset = 10 + ratio * 70;
         const scale = 1 + ratio * 1.5;
@@ -31,18 +41,10 @@ window.addEventListener("scroll", () => {
     }
 
     // image parallax
-    const image = document.querySelector(".intro-image img");
     if (image) {
         const offset = scrollY * 0.2;
         image.style.transform = `translateY(${offset}px)`;
     }
-
 });
 
-// TypeIt text typing effect
-new TypeIt(".intro-text", {
-    speed: 20,
-    lifeLike: false,
-    waitUntilVisible: true
-}).pause(1000).go();
-document.querySelector("#about-text")
+

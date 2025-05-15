@@ -2,16 +2,35 @@ window.addEventListener("load", () => {
     window.dispatchEvent(new Event("scroll"));
 });
 
+// about text parallax
+const aboutText = document.querySelector("#about-text");
+const aboutSection = document.querySelector(".about-background");
+const targetSection = document.querySelector(".about-block");
+const counters = document.querySelectorAll(".counter");
+const aboutDivider = document.querySelector('.about-divider');
+const divider = document.querySelector('.head-shot-divider');
+const wrapper = document.querySelector('.head-shot-wrapper');
+let dividerActive = false;
+
+
+if (divider && wrapper) {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                divider.classList.add('show');   // opacity = 1
+                dividerActive = true;
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.3});
+
+    observer.observe(wrapper);
+}
+
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
     const max = window.innerHeight * 1.5;
     const ratio = Math.min(scrollY / max, 1);
-
-    // about text parallax
-    const aboutText = document.querySelector("#about-text");
-    const aboutSection = document.querySelector(".about-background");
-    const targetSection = document.querySelector(".about-block");
-
 
     if (aboutText && aboutSection && targetSection) {
         let xOffset = 50 - ratio * 100;
@@ -68,8 +87,6 @@ window.addEventListener("scroll", () => {
         .style.backgroundPositionY = `${scrollY * 0.5}px`;
 
     // count-up aniamtion
-    const counters = document.querySelectorAll(".counter");
-
     const counterObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             entry.target.textContent = '0';
@@ -77,7 +94,7 @@ window.addEventListener("scroll", () => {
             if (entry.isIntersecting) {
                 const targetStr = entry.target.getAttribute('data-target');
                 const targetNum = parseFloat(targetStr);
-                const unit = entry.target.getAttribute('data-unit') || ''; // 단위
+                const unit = entry.target.getAttribute('data-unit') || '';
 
                 const decimalPlaces = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
 
@@ -99,29 +116,36 @@ window.addEventListener("scroll", () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.3 });
+    }, {threshold: 0.3});
 
     counters.forEach((counter) => {
         counterObserver.observe(counter);
     });
 
+    // divider parallax
+    if (dividerActive && divider) {
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const scrollProgress = Math.min(1, Math.max(0, 1 - wrapperRect.top / windowHeight));
 
+        const moveY = -300 + scrollProgress * 300;
+        divider.style.transform = `translateY(${moveY}px)`;
+    }
+    // about-divider parallax
+    if (aboutDivider) {
+        window.addEventListener('scroll', () => {
+            const rect = aboutDivider.getBoundingClientRect();
+            const triggerPoint = window.innerHeight / 2;
+
+            if (rect.top < triggerPoint) {
+                const scrollRatio = Math.min(1, Math.max(0, 1 - (rect.top / triggerPoint)));
+                const moveY = scrollRatio * 100;
+                aboutDivider.style.transform = `translateY(${moveY}px)`;
+                aboutDivider.style.opacity = '1';
+            }
+        });
+    }
 });
-//
-// // article slide-up animation
-// const articles = document.querySelectorAll(".article");
-//
-// const articleObserver = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('show');
-//         } else {
-//             entry.target.classList.remove('show');
-//         }
-//     });
-// }, { threshold: 0.3 });
-//
-// articles.forEach(article => {
-//     articleObserver.observe(article);
-// });
-//
+
+
+
