@@ -21,18 +21,18 @@
     position: relative;
     padding: 1.5rem 1rem 0.5rem 1rem;
     margin: 0
+
 }
+/*.intro-image {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    height: 200px;*/
+/*    overflow: hidden;*/
+/*}*/
 
 .intro-image {
     position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-
-.intro-image {
-    position: relative;
+    margin-top: 0px;
     width: 100%;
     height: 30%;
     z-index: 1;
@@ -110,6 +110,8 @@
 
 .values {
     margin-top: 70px;
+    /*margin-left: 10%;*/
+    width: 100%
 }
 
 .marquee-row {
@@ -126,10 +128,10 @@
 
 .marquee-content li {
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 4rem;
     font-weight: 300;
     font-family: 'Playfair Display', serif;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .marquee-content li::before {
