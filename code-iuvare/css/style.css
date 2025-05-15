@@ -38,7 +38,6 @@ header {
     transition: border 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-color: #4A90E2;
 
 }
 

@@ -2,10 +2,10 @@ window.addEventListener("load", () => {
     window.dispatchEvent(new Event("scroll"));
 });
 // initializing
-const leftCurtain = document.querySelector(".curtain.left");
-const rightCurtain = document.querySelector(".curtain.right");
-const image = document.querySelector(".intro-image img");
 const text = document.querySelector("#scene-text");
+const navbar = document.querySelector(".navbar-wrapper");
+const sceneOne = document.querySelector(".scene.one");
+const sceneOneText = document.getElementById("scene-one-text");
 
 // TypeIt text typing effect
 new TypeIt(".intro-text", {
@@ -20,18 +20,6 @@ window.addEventListener("scroll", () => {
     const max = window.innerHeight * 1.5;
     const ratio = Math.min(scrollY / max, 1);
 
-    // Curtain
-    const opacity = ratio * 0.7;
-    const leftX = 100 - ratio * 100;
-    const rightX = ratio * 100;
-
-    if (leftCurtain && rightCurtain) {
-        leftCurtain.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-        rightCurtain.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-        leftCurtain.style.clipPath = `polygon(0 0, ${leftX}% 0, 0 100%)`;
-        rightCurtain.style.clipPath = `polygon(100% 0, 100% 100%, ${rightX}% 0)`;
-    }
-
     // text parallax + scale
     if (text) {
         const topOffset = 10 + ratio * 70;
@@ -39,12 +27,72 @@ window.addEventListener("scroll", () => {
         text.style.top = `${topOffset}vh`;
         text.style.transform = `translateX(-50%) scale(${scale})`;
     }
-
-    // image parallax
-    if (image) {
-        const offset = scrollY * 0.2;
-        image.style.transform = `translateY(${offset}px)`;
-    }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    navbar.classList.remove("visible");
+                } else {
+                    navbar.classList.add("visible");
+                }
+            });
+        },
+        {
+            root: null, // viewport
+            threshold: 0.1
+        }
+    );
+    observer.observe(sceneOne);
+});
 
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // 애니메이션 클래스 추가 후 잠시 뒤 제거 (재실행 가능하게)
+                    sceneOneText.classList.add("jump-animate");
+
+                    setTimeout(() => {
+                        sceneOneText.classList.remove("jump-animate");
+                    }, 600); // 애니메이션 시간과 일치
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+        }
+    );
+    observer.observe(sceneOne);
+});
+
+// document.addEventListener("DOMContentLoaded", () => {
+//
+//     let ticking = false;
+//
+//     function checkJumpTrigger() {
+//         const rect = sceneOneText.getBoundingClientRect();
+//         const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+//
+//         if (isVisible) {
+//             sceneOneText.classList.add("jump-animate");
+//
+//             setTimeout(() => {
+//                 sceneOneText.classList.remove("jump-animate");
+//             }, 600);
+//         }
+//     }
+//
+//     window.addEventListener("scroll", () => {
+//         if (!ticking) {
+//             window.requestAnimationFrame(() => {
+//                 checkJumpTrigger();
+//                 ticking = false;
+//             });
+//             ticking = true;
+//         }
+//     });
+// });
