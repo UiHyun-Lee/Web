@@ -26,6 +26,42 @@ if (divider && wrapper) {
 
     observer.observe(wrapper);
 }
+// count-up aniamtion
+const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        entry.target.textContent = '0';
+
+        if (entry.isIntersecting) {
+            const targetStr = entry.target.getAttribute('data-target');
+            const targetNum = parseFloat(targetStr);
+            const unit = entry.target.getAttribute('data-unit') || '';
+
+            const decimalPlaces = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
+
+            let count = 0;
+            const increment = targetNum / 100;
+
+            const updateCounter = () => {
+                count += increment;
+
+                if (count >= targetNum) {
+                    entry.target.textContent = Number(targetNum).toFixed(decimalPlaces) + unit;
+                } else {
+                    entry.target.textContent = count.toFixed(decimalPlaces) + unit;
+                    requestAnimationFrame(updateCounter);
+                }
+            };
+
+            updateCounter();
+            observer.unobserve(entry.target);
+        }
+    });
+}, {threshold: 0.3});
+
+counters.forEach((counter) => {
+    counterObserver.observe(counter);
+});
+
 
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
@@ -85,42 +121,6 @@ window.addEventListener("scroll", () => {
     // about parallax
     document.querySelector('.about-background')
         .style.backgroundPositionY = `${scrollY * 0.5}px`;
-
-    // count-up aniamtion
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            entry.target.textContent = '0';
-
-            if (entry.isIntersecting) {
-                const targetStr = entry.target.getAttribute('data-target');
-                const targetNum = parseFloat(targetStr);
-                const unit = entry.target.getAttribute('data-unit') || '';
-
-                const decimalPlaces = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
-
-                let count = 0;
-                const increment = targetNum / 100;
-
-                const updateCounter = () => {
-                    count += increment;
-
-                    if (count >= targetNum) {
-                        entry.target.textContent = Number(targetNum).toFixed(decimalPlaces) + unit;
-                    } else {
-                        entry.target.textContent = count.toFixed(decimalPlaces) + unit;
-                        requestAnimationFrame(updateCounter);
-                    }
-                };
-
-                updateCounter();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {threshold: 0.3});
-
-    counters.forEach((counter) => {
-        counterObserver.observe(counter);
-    });
 
     // divider parallax
     if (dividerActive && divider) {
