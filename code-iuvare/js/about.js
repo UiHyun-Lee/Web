@@ -66,4 +66,62 @@ window.addEventListener("scroll", () => {
     // about parallax
     document.querySelector('.about-background')
         .style.backgroundPositionY = `${scrollY * 0.5}px`;
+
+    // count-up aniamtion
+    const counters = document.querySelectorAll(".counter");
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            entry.target.textContent = '0';
+
+            if (entry.isIntersecting) {
+                const targetStr = entry.target.getAttribute('data-target');
+                const targetNum = parseFloat(targetStr);
+                const unit = entry.target.getAttribute('data-unit') || ''; // 단위
+
+                const decimalPlaces = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
+
+                let count = 0;
+                const increment = targetNum / 100;
+
+                const updateCounter = () => {
+                    count += increment;
+
+                    if (count >= targetNum) {
+                        entry.target.textContent = Number(targetNum).toFixed(decimalPlaces) + unit;
+                    } else {
+                        entry.target.textContent = count.toFixed(decimalPlaces) + unit;
+                        requestAnimationFrame(updateCounter);
+                    }
+                };
+
+                updateCounter();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    counters.forEach((counter) => {
+        counterObserver.observe(counter);
+    });
+
+
 });
+//
+// // article slide-up animation
+// const articles = document.querySelectorAll(".article");
+//
+// const articleObserver = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('show');
+//         } else {
+//             entry.target.classList.remove('show');
+//         }
+//     });
+// }, { threshold: 0.3 });
+//
+// articles.forEach(article => {
+//     articleObserver.observe(article);
+// });
+//
