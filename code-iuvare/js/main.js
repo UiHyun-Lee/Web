@@ -22,7 +22,7 @@ window.addEventListener("scroll", () => {
 
     // text parallax + scale
     if (text) {
-        const topOffset = 10 + ratio * 70;
+        const topOffset = 10 + ratio * 90;
         const scale = 1 + ratio * 1.5;
         text.style.top = `${topOffset}vh`;
         text.style.transform = `translateX(-50%) scale(${scale})`;

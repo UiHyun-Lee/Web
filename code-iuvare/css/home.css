@@ -25,6 +25,8 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .intro-text {
@@ -113,38 +115,8 @@ h1 span:nth-child(12) {
     animation-delay: 1.1s;
 }
 
-@keyframes bounce {
-    100% {
-        top: -20px;
-        text-shadow: 0 1px 0 #f9c5d1,
-        0 2px 0 #f4a4b8,
-        0 3px 0 #e76b92,
-        0 4px 0 #d14c7d,
-        0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-}
-
-@keyframes glow {
-    0% {
-        text-shadow:
-                0 0 5px #999999,
-                0 0 10px #999999,
-                0 0 15px #666666;
-    }
-    50% {
-        text-shadow:
-                0 0 10px #aaaaaa,
-                0 0 20px #888888,
-                0 0 30px #555555;
-    }
-    100% {
-        text-shadow:
-                0 0 5px #999999,
-                0 0 10px #999999,
-                0 0 15px #666666;
-    }
-}
 .scene.one {
+    position: relative; /* 자식인 .arrow-down의 absolute 기준 */
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -153,12 +125,21 @@ h1 span:nth-child(12) {
     text-align: center;
 }
 
-#scroll-icon {
-    margin-top: 35%;
-    font-size: 2rem;
-    font-weight: 900;
-}
+.arrow-down {
+    position: absolute;          /* 위치 제어를 위해 absolute 사용 */
+    left: 50%;                   /* 가운데 정렬 */
+    bottom: 40px;                /* 하단에서 조금 위로 */
+    transform: translateX(-50%); /* 가운데 정렬 보정 */
 
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #333;
+
+    animation: bounce-down 1.2s infinite;
+    cursor: pointer;
+}
 .scene.two {
     height: 100vh;
     background-image: url('../assets/images/background2.jpg');
@@ -231,5 +212,44 @@ h1 span:nth-child(12) {
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+@keyframes bounce-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+@keyframes bounce {
+    100% {
+        top: -20px;
+        text-shadow: 0 1px 0 #f9c5d1,
+        0 2px 0 #f4a4b8,
+        0 3px 0 #e76b92,
+        0 4px 0 #d14c7d,
+        0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow:
+                0 0 5px #999999,
+                0 0 10px #999999,
+                0 0 15px #666666;
+    }
+    50% {
+        text-shadow:
+                0 0 10px #aaaaaa,
+                0 0 20px #888888,
+                0 0 30px #555555;
+    }
+    100% {
+        text-shadow:
+                0 0 5px #999999,
+                0 0 10px #999999,
+                0 0 15px #666666;
     }
 }
