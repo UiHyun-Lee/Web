@@ -6,6 +6,7 @@ const text = document.querySelector("#scene-text");
 const navbar = document.querySelector(".navbar-wrapper");
 const sceneOne = document.querySelector(".scene.one");
 const sceneOneText = document.getElementById("scene-one-text");
+// document.querySelector("#about-text");
 
 // TypeIt text typing effect
 new TypeIt(".intro-text", {
@@ -13,7 +14,18 @@ new TypeIt(".intro-text", {
     lifeLike: false,
     waitUntilVisible: true
 }).pause(1000).go();
-document.querySelector("#about-text")
+
+//
+// const hello = document.querySelector(".hello__div");
+// setInterval(hello__function, 20000);
+//
+// function hello__function() {
+//     hello.style.display = "none";
+//     setTimeout(function () {
+//         hello.style.display = "flex";
+//     }, 10);
+// }
+//
 
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
@@ -96,3 +108,4 @@ document.addEventListener("DOMContentLoaded", () => {
 //         }
 //     });
 // });
+

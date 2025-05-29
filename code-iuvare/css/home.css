@@ -67,53 +67,69 @@ h1 span {
     animation: bounce 0.5s ease-out infinite alternate, glow 2s ease-in-out infinite alternate;
 }
 
-h1 span:nth-child(1) {
-    animation-delay: 0.0s;
-}
 
-h1 span:nth-child(2) {
-    animation-delay: 0.1s;
-}
 
-h1 span:nth-child(3) {
-    animation-delay: 0.2s;
-}
 
-h1 span:nth-child(4) {
-    animation-delay: 0.3s;
-}
 
-h1 span:nth-child(5) {
-    animation-delay: 0.4s;
-}
+/*body {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+/*.new__bg {*/
+/*    height: 100%;*/
+/*    min-height: 500px;*/
+/*    background: linear-gradient(*/
+/*            217deg,*/
+/*            rgba(255, 159, 237),*/
+/*            rgba(255, 0, 0, 0) 70.71%*/
+/*    ),*/
+/*    linear-gradient(127deg, rgba(118, 164, 255), rgba(0, 255, 0, 0) 65%),*/
+/*    linear-gradient(336deg, rgba(255, 191, 138), rgba(0, 0, 255, 0) 70.71%);*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+/*.hello__div {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+/*    margin: 0 auto;*/
+/*    text-align: center;*/
+/*    width: 100%;*/
+/*    max-width: 600px;*/
+/*}*/
+/*.hello__svg {*/
+/*    fill: none;*/
+/*    stroke: #fff;*/
+/*    stroke-linecap: round;*/
+/*    stroke-miterlimit: 10;*/
+/*    stroke-width: 48px;*/
+/*    stroke-dasharray: 5800px;*/
+/*    stroke-dashoffset: 5800px;*/
+/*    animation: anim__hello linear 5s forwards;*/
+/*    width: 100%;*/
 
-h1 span:nth-child(6) {
-    animation-delay: 0.5s;
-}
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+/*    margin: 0 auto;*/
+/*    text-align: center;*/
+/*}*/
 
-h1 span:nth-child(7) {
-    animation-delay: 0.6s;
-}
+/*@keyframes anim__hello {*/
+/*    0% {*/
+/*        stroke-dashoffset: 5800;*/
+/*    }*/
+/*    25% {*/
+/*        stroke-dashoffset: 5800;*/
+/*    }*/
+/*    100% {*/
+/*        stroke-dashoffset: 0;*/
+/*    }*/
+/*}*/
 
-h1 span:nth-child(8) {
-    animation-delay: 0.7s;
-}
 
-h1 span:nth-child(9) {
-    animation-delay: 0.8s;
-}
 
-h1 span:nth-child(10) {
-    animation-delay: 0.9s;
-}
 
-h1 span:nth-child(11) {
-    animation-delay: 1.0s;
-}
-
-h1 span:nth-child(12) {
-    animation-delay: 1.1s;
-}
 
 .scene.one {
     position: relative; /* 자식인 .arrow-down의 absolute 기준 */
@@ -252,4 +268,52 @@ h1 span:nth-child(12) {
                 0 0 10px #999999,
                 0 0 15px #666666;
     }
+}
+
+h1 span:nth-child(1) {
+    animation-delay: 0.0s;
+}
+
+h1 span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+h1 span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+h1 span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+h1 span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+h1 span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+h1 span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+h1 span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+h1 span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+h1 span:nth-child(10) {
+    animation-delay: 0.9s;
+}
+
+h1 span:nth-child(11) {
+    animation-delay: 1.0s;
+}
+
+h1 span:nth-child(12) {
+    animation-delay: 1.1s;
 }

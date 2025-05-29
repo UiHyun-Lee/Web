@@ -85,7 +85,7 @@ header {
 
 .btn-white {
     /*background-color: white;*/
-    color: white;
+    color: black;
     border-color: white;
 }
 
@@ -95,15 +95,6 @@ header {
     border-color: black;
 }
 
-/* footer */
-footer {
-    background: var(--dark-sage);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 0rem;
-    height: 500px;
-}
 
 @keyframes fadeIn {
     to {
@@ -154,37 +145,48 @@ footer {
     }
 }
 
+/* footer */
+footer {
+    background: var(--powdery-pink);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 0rem;
+    height: 500px;
+}
+
+
 .logo {
     animation: fadeInFromTop 3s ease-out forwards;
 }
 
-.connect-left {
-    animation: fadeInFromLeft 2s ease-out forwards;
-}
 
-.connect-center {
-    animation: fadeInFromRight 4s ease-out forwards;
-}
 
-.connect-section {
+.footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2rem;
-    /*background-color: #9aa99f; !* Cedar 느낌의 초록빛 배경 *!*/
-    color: white;
+    color: black;
     flex-wrap: wrap;
     gap: 2rem;
+
+    /*align-items: flex-start;*/
+    flex-wrap: wrap;
 }
 
-.connect-left {
+.footer-left {
     margin-left: 15rem;
+    animation: fadeInFromLeft 2s ease-out forwards;
+
 }
 
-.connect-center img {
+.footer-right img {
     margin-right: 10rem;
     width: 380px;
+    animation: fadeInFromRight 4s ease-out forwards;
 }
+
+
 
 .btn-white:hover {
     background-color: white;
