@@ -75,24 +75,32 @@ header {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    border: 2px solid white;
     text-decoration: none;
     margin-top: 1rem;
-    border-radius: 10px;
+    border-radius: 15px;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .btn-white {
-    /*background-color: white;*/
     color: black;
-    border-color: white;
+    border: 8px solid white;
 }
 
 .btn-black {
+    border: 2px solid black;
     margin-top: 50px;
     color: black;
-    border-color: black;
+}
+
+.btn-white:hover {
+    background-color: white;
+    color: var(--dark-sage);
+}
+
+.btn-black:hover {
+    background-color: black;
+    color: var(--light-grey);
 }
 
 
@@ -151,7 +159,7 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 0rem;
-    height: 500px;
+    height: 800px;
 }
 
 
@@ -159,24 +167,22 @@ footer {
     animation: fadeInFromTop 3s ease-out forwards;
 }
 
-
-
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     color: black;
     flex-wrap: wrap;
     gap: 2rem;
-
-    /*align-items: flex-start;*/
     flex-wrap: wrap;
 }
 
 .footer-left {
     margin-left: 15rem;
     animation: fadeInFromLeft 2s ease-out forwards;
+    font-size: 2.5rem;
+    text-align: left;
 
 }
 
@@ -186,14 +192,22 @@ footer {
     animation: fadeInFromRight 4s ease-out forwards;
 }
 
-
-
-.btn-white:hover {
-    background-color: white;
-    color: var(--dark-sage);
+.logo-text{
+    font-size: 15vw; /* 화면 전체 너비 대비 글씨 자동 계산 */
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 200;
+    line-height: 1;
 }
 
-.btn-black:hover {
-    background-color: black;
-    color: var(--light-grey);
+.footer-bottom{
+    display: flex;
+    justify-content: right;
+    gap: 3rem;
+    color: black;
+}
+.impressum a,
+.datenschutz a {
+    text-decoration: none;
+    color: black;         /* 보라색 제거용 */
 }
