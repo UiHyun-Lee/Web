@@ -173,14 +173,13 @@ footer {
     padding: 2rem 2rem;
     color: black;
     flex-wrap: wrap;
-    gap: 2rem;
-    flex-wrap: wrap;
+    margin-bottom: 5%;
 }
 
 .footer-left {
     margin-left: 15rem;
     animation: fadeInFromLeft 2s ease-out forwards;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: left;
 
 }
@@ -192,7 +191,7 @@ footer {
 }
 
 .logo-text{
-    font-size: 15vw; /* 화면 전체 너비 대비 글씨 자동 계산 */
+    font-size: 15vw;
     text-align: center;
     white-space: nowrap;
     font-weight: 200;
@@ -205,8 +204,9 @@ footer {
     gap: 3rem;
     color: black;
 }
+
 .impressum a,
 .datenschutz a {
     text-decoration: none;
-    color: black;         /* 보라색 제거용 */
+    color: black;
 }

@@ -30,10 +30,11 @@
     <div class="main-text">Our Services</div>
 
     <div class="service-block-wrapper">
+
         <section class="service-block">
             <div class="accordion-header" onclick="toggleAccordion(this)">
                 <h2>I. Foundation</h2>
-                <span class="toggle-icon">+</span>
+                <img src="assets/images/blueprint.png" class="toggle-icon">
             </div>
             <div class="accordion-content">
                 <p>
@@ -53,7 +54,7 @@
         <section class="service-block">
             <div class="accordion-header" onclick="toggleAccordion(this)">
                 <h2>II. Blueprint</h2>
-                <span class="toggle-icon">+</span>
+                <img src ="assets/images/foundation.png" class="toggle-icon" onclick="rotateImage()">
             </div>
             <div class="accordion-content">
                 <p>
@@ -67,7 +68,7 @@
         <section class="service-block">
             <div class="accordion-header" onclick="toggleAccordion(this)">
                 <h2>III. Action</h2>
-                <span class="toggle-icon">+</span>
+                <img src = "assets/images/action.png" class="toggle-icon">
             </div>
             <div class="accordion-content">
                 <p>
@@ -109,23 +110,8 @@
     </div>
 </footer>
 
-<script>
-    function toggleAccordion(headerEl) {
-        const contentEl = headerEl.nextElementSibling;
-        const icon = headerEl.querySelector('.toggle-icon');
 
-        const isOpen = contentEl.style.height && contentEl.style.height !== "0px";
+    <script src="js/services.js"></script>
 
-        if (isOpen) {
-            contentEl.style.height = "0px";
-            contentEl.style.opacity = "0";
-            icon.textContent = "+";
-        } else {
-            contentEl.style.height = contentEl.scrollHeight + "px";
-            contentEl.style.opacity = "1";
-            icon.textContent = "−";
-        }
-    }
-</script>
 </body>
 </html>
