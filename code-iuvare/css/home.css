@@ -205,12 +205,12 @@ h1 span {
 }
 
 .left-to-right .marquee-content {
-    animation: scroll-left-to-right 25s linear infinite;
+    animation: scroll-left-to-right 40s linear infinite;
 }
 
 .right-to-left .marquee-content {
-    animation: scroll-right-to-left 25s linear infinite;
-    animation-delay: -6s;
+    animation: scroll-right-to-left 40s linear infinite;
+    animation-delay: -12s;
 }
 
 @keyframes scroll-left-to-right {

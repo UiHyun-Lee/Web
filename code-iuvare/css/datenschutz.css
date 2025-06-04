@@ -1,0 +1,30 @@
+body{
+    background-color: white;
+
+}
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
+}

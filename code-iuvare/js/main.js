@@ -1,31 +1,55 @@
-window.addEventListener("load", () => {
-    window.dispatchEvent(new Event("scroll"));
-});
-// initializing
 const text = document.querySelector("#scene-text");
 const navbar = document.querySelector(".navbar-wrapper");
 const sceneOne = document.querySelector(".scene.one");
 const sceneOneText = document.getElementById("scene-one-text");
-// document.querySelector("#about-text");
+const paragraph = document.getElementById("intro-paragraph");
+const introBlock = document.querySelector(".intro-block");
+let typingInstance = null;
+const originalHTML = paragraph.innerHTML; // back up for the full text of Mission statement
 
-// TypeIt text typing effect
-new TypeIt(".intro-text", {
-    speed: 20,
-    lifeLike: false,
-    waitUntilVisible: true
-}).pause(1000).go();
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            paragraph.style.visibility = "visible";
+            paragraph.innerHTML = "";
 
+            if (typingInstance) typingInstance.reset();
+
+            typingInstance = new TypeIt("#intro-paragraph", {
+                speed: 20,
+                lifeLike: false,
+                waitUntilVisible: false
+            }).type(originalHTML).go();
+        } else {
+            if (typingInstance) {
+                typingInstance.reset();
+                typingInstance = null;
+            }
+            paragraph.innerHTML = "";
+            paragraph.style.visibility = "hidden";
+        }
+    });
+}, { threshold: 0.3 });
+observer.observe(introBlock);
+
+window.addEventListener("load", () => {
+    window.dispatchEvent(new Event("scroll"));
+});
+
+// const observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             paragraph.style.visibility = "visible";
+//         }
+//         if (!entry.isIntersecting && typingInstance) {
+//             typingInstance.freeze()
+//             // paragraph.style.visibility = "hidden";
+//         }
+//     });
+// }, {threshold: 0.3}); // if 30% then go
 //
-// const hello = document.querySelector(".hello__div");
-// setInterval(hello__function, 20000);
-//
-// function hello__function() {
-//     hello.style.display = "none";
-//     setTimeout(function () {
-//         hello.style.display = "flex";
-//     }, 10);
-// }
-//
+// observer.observe(introBlock);
+
 
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
@@ -40,6 +64,7 @@ window.addEventListener("scroll", () => {
         text.style.transform = `translateX(-50%) scale(${scale})`;
     }
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
@@ -81,6 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(sceneOne);
 });
 
+//
+// const hello = document.querySelector(".hello__div");
+// setInterval(hello__function, 20000);
+//
+// function hello__function() {
+//     hello.style.display = "none";
+//     setTimeout(function () {
+//         hello.style.display = "flex";
+//     }, 10);
+// }
+//
 // document.addEventListener("DOMContentLoaded", () => {
 //
 //     let ticking = false;

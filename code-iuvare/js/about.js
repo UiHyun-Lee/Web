@@ -1,8 +1,3 @@
-window.addEventListener("load", () => {
-    window.dispatchEvent(new Event("scroll"));
-});
-
-// about text parallax
 const aboutText = document.querySelector("#about-text");
 const aboutSection = document.querySelector(".about-background");
 const targetSection = document.querySelector(".about-block");
@@ -12,6 +7,9 @@ const divider = document.querySelector('.head-shot-divider');
 const wrapper = document.querySelector('.head-shot-wrapper');
 let dividerActive = false;
 
+window.addEventListener("load", () => {
+    window.dispatchEvent(new Event("scroll"));
+});
 
 if (divider && wrapper) {
     const observer = new IntersectionObserver((entries, observer) => {
