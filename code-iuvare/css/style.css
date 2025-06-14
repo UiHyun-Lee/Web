@@ -6,7 +6,9 @@
     --powdery-pink: #EEE2DF;
     --dark-blue: #2c3e50;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
@@ -22,31 +24,39 @@ header {
     /*padding: 1rem;*/
     text-align: left;
     /*height: 0px;*/
+
 }
 
 /*navbar*/
 .navbar-wrapper {
     position: fixed;
     top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    width: 80%;
     background-color: rgba(238, 226, 223, 0.8);
-    border: 2px solid transparent;
     border-radius: 10px;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
 }
 
 .navbar {
-    max-width: 1200px;
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 2rem;
+    min-width: 0;
+}
+
+/* 왼쪽 로고 */
+.logo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
 }
 
 .logo a {
@@ -55,23 +65,27 @@ header {
     font-size: 1.5rem;
 }
 
+/* 메뉴 */
 .menu {
     display: flex;
     gap: 2rem;
     justify-content: flex-end;
-    flex: 1;
+    white-space: nowrap;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    overflow: visible;
 }
 
 .menu a {
     color: black;
-    margin: 0 1rem;
     text-decoration: none;
+    font-size: 1rem;
 }
-
 .menu a:hover {
     color: var(--dark-sage);
 }
-
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -82,21 +96,22 @@ header {
     transition: all 0.3s ease;
 }
 
-.btn-white {
-    color: black;
-    border: 8px solid white;
-}
+/*.btn-white {*/
+/*    color: black;*/
+/*    border: 8px solid white;*/
+/*}*/
 
 .btn-black {
     border: 2px solid black;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     color: black;
+    font-size: 1rem;
 }
 
-.btn-white:hover {
-    background-color: white;
-    color: var(--dark-sage);
-}
+/*.btn-white:hover {*/
+/*    background-color: white;*/
+/*    color: var(--dark-sage);*/
+/*}*/
 
 .btn-black:hover {
     background-color: black;
@@ -158,8 +173,8 @@ footer {
     background: var(--powdery-pink);
     text-align: center;
     padding: 1rem;
-    margin-top: 0rem;
-    height: 800px;
+    margin-top: 5%;
+    height: 630px;
 }
 
 .logo {
@@ -173,22 +188,16 @@ footer {
     padding: 2rem 2rem;
     color: black;
     flex-wrap: wrap;
-    margin-bottom: 5%;
+    margin-bottom: 0px;
 }
 
 .footer-left {
-    margin-left: 15rem;
+    margin-left: 2rem;
     animation: fadeInFromLeft 2s ease-out forwards;
     font-size: 1.5rem;
     text-align: left;
-
 }
 
-.footer-right img {
-    margin-right: 10rem;
-    width: 380px;
-    animation: fadeInFromRight 4s ease-out forwards;
-}
 
 .logo-text{
     font-size: 15vw;
@@ -196,6 +205,8 @@ footer {
     white-space: nowrap;
     font-weight: 200;
     line-height: 1;
+    transform: scaleX(1.2);     /* 좌우로 늘리기 */
+
 }
 
 .footer-bottom{

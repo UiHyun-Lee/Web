@@ -22,11 +22,14 @@
 
 .intro-block {
     position: relative;
-    margin: 0;
+    margin-top: -8rem;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-bottom: 20%;
     padding: 0;
     overflow: hidden;
-    width: 80%;
-    margin-left: 10%;
+    width: 50%;
+
 }
 
 .intro-text {
@@ -34,7 +37,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 900;
     font-size: 1.5rem;
-    z-index: 2;
+    z-index: 3;
     position: relative;
     padding: 1.5rem 1rem 0.5rem 1rem;
     margin: 0
@@ -128,9 +131,6 @@ h1 span {
 /*}*/
 
 
-
-
-
 .scene.one {
     position: relative; /* 자식인 .arrow-down의 absolute 기준 */
     height: 100vh;
@@ -156,9 +156,25 @@ h1 span {
     animation: bounce-down 1.2s infinite;
     cursor: pointer;
 }
+.landing-img {
+    height: 10vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.landing-img1 {
+    /*background-image: url('../assets/images/background1.jpg');*/
+    background-color: green;
+}
+.landing-img2 {
+    /*background-image: url('../assets/images/background2.jpg');*/
+    background-color: blue;
+}
 .scene.two {
+    background-color: yellow;
     height: 100vh;
-    background-image: url('../assets/images/background2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -169,15 +185,18 @@ h1 span {
     position: absolute;
     top: 10vh;
     left: 50%;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-150%) scale(1);
     transition: transform 0.1s ease-out;
     z-index: 2;
     font-size: 3rem;
-    color: var(--light-wheat);
+    color: black;
+    color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
 }
 
 .values {
-    margin-top: 70px;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .marquee-row {
