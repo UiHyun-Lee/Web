@@ -3,6 +3,7 @@ const navbar = document.querySelector(".navbar-wrapper");
 const sceneOne = document.querySelector(".scene.one");
 const paragraph = document.getElementById("intro-paragraph");
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const childNodes = Array.from(paragraph.childNodes);
     paragraph.innerHTML = '';
@@ -40,58 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-// const paragraph = document.getElementById("intro-paragraph");
-// const introBlock = document.querySelector(".intro-block");
-// let typingInstance = null;
-// const originalHTML = paragraph.innerHTML; // back up for the full text of Mission statement
-//
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             paragraph.style.visibility = "visible";
-//             paragraph.innerHTML = "";
-//
-//             if (typingInstance) typingInstance.reset();
-//
-//             typingInstance = new TypeIt("#intro-paragraph", {
-//                 speed: 20,
-//                 lifeLike: false,
-//                 waitUntilVisible: false
-//             }).type(originalHTML).go();
-//         } else {
-//             if (typingInstance) {
-//                 typingInstance.reset();
-//                 typingInstance = null;
-//             }
-//             paragraph.innerHTML = "";
-//             paragraph.style.visibility = "hidden";
-//         }
-//     });
-// }, { threshold: 0.3 });
-// observer.observe(introBlock);
-//
-// window.addEventListener("load", () => {
-//     window.dispatchEvent(new Event("scroll"));
-// });
 
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             paragraph.style.visibility = "visible";
-//         }
-//         if (!entry.isIntersecting && typingInstance) {
-//             typingInstance.freeze()
-//             // paragraph.style.visibility = "hidden";
-//         }
-//     });
-// }, {threshold: 0.3}); // if 30% then go
-//
-// observer.observe(introBlock);
-
-
+// mission statement text
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
-    const max = window.innerHeight * 1.5;
+    const max = window.innerHeight * 7.5; // Todo
     const ratio = Math.min(scrollY / max, 1);
 
     // text parallax + scale
@@ -122,63 +76,64 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     observer.observe(sceneOne);
 });
-//
-// document.addEventListener("DOMContentLoaded", () => {
-//     const observer = new IntersectionObserver(
-//         (entries) => {
-//             entries.forEach((entry) => {
-//                 if (entry.isIntersecting) {
-//                     sceneOneText.classList.add("jump-animate");
-//
-//                     setTimeout(() => {
-//                         sceneOneText.classList.remove("jump-animate");
-//                     }, 600);
-//                 }
-//             });
-//         },
-//         {
-//             threshold: 0.5,
-//         }
-//     );
-//     observer.observe(sceneOne);
-// });
 
-//
-// const hello = document.querySelector(".hello__div");
-// setInterval(hello__function, 20000);
-//
-// function hello__function() {
-//     hello.style.display = "none";
-//     setTimeout(function () {
-//         hello.style.display = "flex";
-//     }, 10);
-// }
-//
-// document.addEventListener("DOMContentLoaded", () => {
-//
-//     let ticking = false;
-//
-//     function checkJumpTrigger() {
-//         const rect = sceneOneText.getBoundingClientRect();
-//         const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-//
-//         if (isVisible) {
-//             sceneOneText.classList.add("jump-animate");
-//
-//             setTimeout(() => {
-//                 sceneOneText.classList.remove("jump-animate");
-//             }, 600);
-//         }
-//     }
-//
-//     window.addEventListener("scroll", () => {
-//         if (!ticking) {
-//             window.requestAnimationFrame(() => {
-//                 checkJumpTrigger();
-//                 ticking = false;
-//             });
-//             ticking = true;
-//         }
-//     });
-// });
+// Logo holo
+const container = document.querySelector('.text-card-container');
+const overlay = container.querySelector('.overlay');
+const texts = container.querySelector('.shiny-text');
 
+let ticking = false;
+let isMouseInside = false;
+let lastX = 0, lastY = 0;
+let leaveTimeout = null;
+
+container.addEventListener('mouseenter', () => {
+    isMouseInside = true;
+    clearTimeout(leaveTimeout);
+});
+
+container.addEventListener('mousemove', (e) => {
+    isMouseInside = true;
+    clearTimeout(leaveTimeout);
+
+    const rect = container.getBoundingClientRect();
+    const offsetX = Math.floor((e.clientX - rect.left) / 10) * 10;
+    const offsetY = Math.floor((e.clientY - rect.top) / 10) * 10;
+
+    if (Math.abs(offsetX - lastX) < 5 && Math.abs(offsetY - lastY) < 5) return;
+    lastX = offsetX;
+    lastY = offsetY;
+
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const centerX = container.clientWidth / 2;
+            const centerY = container.clientHeight / 2;
+
+            const rotateX = (offsetY - centerY) / 10;
+            const rotateY = (offsetX - centerX) / -10;
+            const fontSize = parseFloat(window.getComputedStyle(texts).fontSize);
+            const blurRadius = fontSize * 0.3;
+
+            container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            overlay.style.opacity = 1;
+            overlay.style.background = `radial-gradient(circle at ${offsetX}px ${offsetY}px, rgba(255,255,255,0.6), transparent 60%)`;
+            texts.style.textShadow = `${(offsetX - centerX)/10}px ${(offsetY - centerY)/10}px ${blurRadius}px rgba(255,255,255,0.4)`;
+
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
+container.addEventListener('mouseleave', () => {
+    isMouseInside = false;
+
+    leaveTimeout = setTimeout(() => {
+        if (!isMouseInside) {
+            container.style.transition = 'transform 0.9s ease';
+            container.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            overlay.style.opacity = 0;
+            texts.style.textShadow = 'none';
+        }
+    }, 300);
+});
