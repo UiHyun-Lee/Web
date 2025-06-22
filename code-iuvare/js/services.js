@@ -38,3 +38,18 @@ window.addEventListener("scroll", () => {
         block.style.transform = `translateY(${translateY}px)`;
     });
 });
+
+const text = document.querySelector(".main-text");
+
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const max = window.innerHeight * 1.5;
+    const ratio = Math.min(scrollY / max, 1);
+
+    if (text) {
+        const yOffset = (1 - ratio) * 30; // 위로 갈수록 작아짐
+        const scale = 1 + ratio * 0.5;
+
+        text.style.transform = `translateY(-${yOffset}vh) scale(${scale})`;
+    }
+});

@@ -9,10 +9,13 @@ main {
     font-size: 5rem;
     font-weight: 900;
     text-align: center;
-    margin-top: 0px;
     margin-bottom: 150px;
-    /*font-family: 'Comic Neue', cursive;*/
-    /*background-color: white;*/
+
+    position: relative;
+    top: 0;
+    transition: transform 0.8s ease-in-out;
+    will-change: transform;
+
 }
 
 .service-block-wrapper {

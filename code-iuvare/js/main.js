@@ -4,6 +4,7 @@ const sceneOne = document.querySelector(".scene.one");
 const paragraph = document.getElementById("intro-paragraph");
 
 
+// Typing effect for the intro paragraph
 document.addEventListener("DOMContentLoaded", () => {
     const childNodes = Array.from(paragraph.childNodes);
     paragraph.innerHTML = '';
@@ -57,7 +58,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-
+// nav bar
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
         (entries) => {

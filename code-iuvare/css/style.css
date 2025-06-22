@@ -210,6 +210,8 @@ footer {
 }
 
 .footer-bottom{
+    margin-top: 1rem;
+    margin-bottom: 0;
     display: flex;
     justify-content: right;
     gap: 3rem;
