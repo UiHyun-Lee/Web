@@ -193,10 +193,13 @@
 }
 
 .values {
-
     margin-top: 10%;
     background-color: white;
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 3rem;
 }
 
@@ -204,7 +207,6 @@
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
-    margin-bottom: 20px;
     align-items: center;
 }
 
