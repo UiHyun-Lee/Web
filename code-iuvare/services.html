@@ -27,63 +27,69 @@
 </header>
 
 <main>
-    <div class="main-text">Our Services</div>
+    <section class="services">
+        <div class="service-main-text">Our Services</div>
 
-    <div class="service-block-wrapper">
+        <div class="service-block-wrapper">
+            <section class="service-block">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>I. Foundation</h2>
+                    <img src="assets/images/blueprint.png" class="toggle-icon">
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Eine gründliche Analyse und Plausibilisierung Ihrer Annahmen ist die Grundvoraussetzung für eine
+                        erfolgreiche Projektarbeit.
+                        Wir stellen sicher, dass die Vorgaben aus Ihrem Business Case zu Budget und Timeline plausibel
+                        und
+                        realistisch sind.
+                        Stakeholder werden identifiziert, Meilensteine und Projektbeteiligte definiert.
+                        <br><br>
+                        Mit der Foundation konzipieren wir für Sie das ideale Projektsetup. Am Ende dieser Phase sind
+                        Sie in der
+                        Lage,
+                        das Projekt individuell und fundiert aufzubauen.
+                    </p>
+                </div>
+            </section>
 
-        <section class="service-block">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <h2>I. Foundation</h2>
-                <img src="assets/images/blueprint.png" class="toggle-icon">
-            </div>
-            <div class="accordion-content">
-                <p>
-                    Eine gründliche Analyse und Plausibilisierung Ihrer Annahmen ist die Grundvoraussetzung für eine
-                    erfolgreiche Projektarbeit.
-                    Wir stellen sicher, dass die Vorgaben aus Ihrem Business Case zu Budget und Timeline plausibel und
-                    realistisch sind.
-                    Stakeholder werden identifiziert, Meilensteine und Projektbeteiligte definiert.
-                    <br><br>
-                    Mit der Foundation konzipieren wir für Sie das ideale Projektsetup. Am Ende dieser Phase sind Sie in der
-                    Lage,
-                    das Projekt individuell und fundiert aufzubauen.
-                </p>
-            </div>
-        </section>
+            <section class="service-block">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>II. Blueprint</h2>
+                    <img src="assets/images/foundation.png" class="toggle-icon" onclick="rotateImage()">
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Aufbauend auf der Foundation entwickeln wir gemeinsam den Blueprint Ihres Projekts.
+                        Anforderungen,
+                        Vision, Look&Feel und Zielgruppen werden präzisiert.
+                        Das Ergebnis: ein validiertes Konzept und KPIs, mit denen Sie alle Beteiligten klar briefen
+                        können.
+                    </p>
+                </div>
+            </section>
 
-        <section class="service-block">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <h2>II. Blueprint</h2>
-                <img src ="assets/images/foundation.png" class="toggle-icon" onclick="rotateImage()">
-            </div>
-            <div class="accordion-content">
-                <p>
-                    Aufbauend auf der Foundation entwickeln wir gemeinsam den Blueprint Ihres Projekts. Anforderungen,
-                    Vision, Look&Feel und Zielgruppen werden präzisiert.
-                    Das Ergebnis: ein validiertes Konzept und KPIs, mit denen Sie alle Beteiligten klar briefen können.
-                </p>
-            </div>
-        </section>
-
-        <section class="service-block">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <h2>III. Action</h2>
-                <img src = "assets/images/action.png" class="toggle-icon">
-            </div>
-            <div class="accordion-content">
-                <p>
-                    Zeit für die Umsetzung! Die Action-Phase bringt den Blueprint ins Leben.
-                    Wir stellen sicher, dass alle Leistungen effizient platziert werden und begleiten Sie auf Wunsch bei
-                    Reportings, Verträgen und Planungsabstimmungen –
-                    damit die Qualität Ihres Produkts jederzeit gesichert bleibt.
-                </p>
-            </div>
-        </section>
-    </div>
+            <section class="service-block">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>III. Action</h2>
+                    <img src="assets/images/action.png" class="toggle-icon">
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Zeit für die Umsetzung! Die Action-Phase bringt den Blueprint ins Leben.
+                        Wir stellen sicher, dass alle Leistungen effizient platziert werden und begleiten Sie auf Wunsch
+                        bei
+                        Reportings, Verträgen und Planungsabstimmungen –
+                        damit die Qualität Ihres Produkts jederzeit gesichert bleibt.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </section>
 </main>
 
 <!-- Footer -->
-<footer class="footer" id ="footer">
+<footer class="footer" id="footer">
     <div class="footer-content">
         <div class="footer-left">
             <h2>LET’S CONNECT!</h2>
@@ -105,7 +111,7 @@
     </div>
 </footer>
 
-    <script src="js/services.js"></script>
+<script src="js/services.js"></script>
 
 </body>
 </html>

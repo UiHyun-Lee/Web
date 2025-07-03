@@ -1,17 +1,76 @@
-.navbar-wrapper {
-    top: 1rem;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
+/*.navbar-wrapper {*/
+/*    opacity: 0;*/
+/*    pointer-events: none;*/
+/*    transform: translateY(-100%);*/
+/*    transition: opacity 0.4s, transform 0.4s;*/
+/*    position: fixed;*/
+/*    top: 1rem;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    z-index: 1000;*/
+/*    !* 기타 기존 스타일 *!*/
+/*}*/
 
-.navbar-wrapper.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
+/*.navbar-wrapper.visible {*/
+/*    opacity: 1;*/
+/*    pointer-events: auto;*/
+/*    transform: translateY(0);*/
+/*    top: 1rem;*/
+/*    bottom: auto;*/
+/*}*/
+
+/*.navbar-wrapper.visible-bottom {*/
+/*    opacity: 1;*/
+/*    pointer-events: auto;*/
+/*    transform: none;*/
+/*    top: auto;*/
+/*    bottom: 2rem;   !* 하단 여백 *!*/
+/*}*/
+
+
+/*.navbar-wrapper {*/
+/*    position: fixed;*/
+/*    top: 1rem;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    z-index: 1000;*/
+/*    opacity: 0;*/
+/*    pointer-events: none;*/
+/*    transform: translateY(-100%);*/
+/*    transition: opacity 0.4s, transform 0.4s;*/
+/*}*/
+
+/*!* 평소 위에 고정되어 나타나는 네비 *!*/
+/*.navbar-wrapper.visible {*/
+/*    opacity: 1;*/
+/*    pointer-events: auto;*/
+/*    transform: translateY(0);*/
+/*}*/
+
+/*!* landing-img2 진입시 바닥에서 나타나게(예시, 원하면 아래쪽 위치/효과 수정!) *!*/
+/*.navbar-wrapper.visible-bottom {*/
+/*    opacity: 1;*/
+/*    pointer-events: auto;*/
+/*    transform: translateY(80vh);  !* 아래쪽에서 슬라이드 인. 원하는 위치/transition 수정 가능 *!*/
+/*}*/
+
+
+/*.navbar-wrapper {*/
+/*    top: 1rem;*/
+/*    position: fixed;*/
+/*    width: 100%;*/
+/*    z-index: 100;*/
+/*    opacity: 0;*/
+/*    pointer-events: none;*/
+/*    transform: translateY(-100%);*/
+/*    transition: opacity 0.4s ease, transform 0.4s ease;*/
+/*}*/
+
+/*.navbar-wrapper.visible {*/
+/*    opacity: 1;*/
+/*    pointer-events: auto;*/
+/*    transform: translateY(0);*/
+/*}*/
 
 .center-button-wrapper {
     display: flex;
@@ -20,7 +79,7 @@
     margin: 2rem 0;
 }
 
-.intro-block {
+.home-intro-block {
     position: relative;
     margin: -8rem 5% 20% auto;
     padding: 0;
@@ -29,7 +88,7 @@
 
 }
 
-.intro-text {
+.home-intro-text {
     color: var(--dark-sage);
     font-family: 'Lato', sans-serif;
     font-weight: 900;
@@ -121,21 +180,24 @@
 
 #scene-text {
     position: absolute;
-    height: 300px;
-    top: 10vh;
+    /*height: 300px;*/
+    top: 0vh;
     left: 50%;
-    transform: translateX(-150%) scale(1);
+    transform: translateX(-150%) scale(0.6);
     transition: transform 0.1s ease-out;
     z-index: 2;
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: black;
     color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(2px);
 }
 
 .values {
+
     margin-top: 10%;
-    margin-bottom: 10%;
+    background-color: white;
+    height: 80vh;
+    gap: 3rem;
 }
 
 .marquee-row {
@@ -143,6 +205,7 @@
     white-space: nowrap;
     width: 100%;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .marquee-content {
@@ -190,75 +253,74 @@
 }
 
 
+/*.text-card-container {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    padding: 3rem;*/
+/*    transform-style: preserve-3d;*/
+/*    perspective: 600px;*/
+/*    transition: transform 0.2s ease;*/
+/*    margin-top: 5%;*/
+/*}*/
 
-.text-card-container {
-    position: relative;
-    display: inline-block;
-    padding: 3rem;
-    transform-style: preserve-3d;
-    perspective: 600px;
-    transition: transform 0.2s ease;
-    margin-top: 5%;
-}
+/*.shiny-text {*/
+/*    font-family: 'Orbitron', sans-serif;*/
+/*    font-size: 14rem;*/
+/*    font-weight: bold;*/
+/*    color: black;*/
+/*    background: none;*/
+/*    background-size: 200% 200%;*/
+/*    !*-webkit-background-clip: text;*!*/
+/*    !*-webkit-text-fill-color: transparent;*!*/
+/*    mix-blend-mode: screen;*/
+/*    transition: background-position 0.2s, text-shadow 0.2s;*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*    line-height: 1;*/
+/*}*/
 
-.shiny-text {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14rem;
-    font-weight: bold;
-    color: black;
-    background: none;
-    background-size: 200% 200%;
-    /*-webkit-background-clip: text;*/
-    /*-webkit-text-fill-color: transparent;*/
-    mix-blend-mode: screen;
-    transition: background-position 0.2s, text-shadow 0.2s;
-    position: relative;
-    z-index: 1;
-    line-height: 1;
-}
+/*.shiny-text::before {*/
+/*    content: attr(data-text);*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background: conic-gradient(*/
+/*            from 0deg,*/
+/*            #ff33cc, #33ccff, #ccff33, #ffcc33, #ff33cc*/
+/*    );*/
+/*    background-size: 300% 300%;*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*    animation: holo-shift 4s linear infinite;*/
+/*    mix-blend-mode: screen;*/
+/*    z-index: -1;*/
+/*}*/
 
-.shiny-text::before {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: conic-gradient(
-            from 0deg,
-            #ff33cc, #33ccff, #ccff33, #ffcc33, #ff33cc
-    );
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: holo-shift 4s linear infinite;
-    mix-blend-mode: screen;
-    z-index: -1;
-}
+/*.overlay {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    pointer-events: none;*/
+/*    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent 70%);*/
+/*    mix-blend-mode: multiply;*/
+/*    opacity: 0;*/
+/*    transition: background 0.1s ease;*/
+/*    border-radius: 25% 10%;*/
+/*}*/
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent 70%);
-    mix-blend-mode: multiply;
-    opacity: 0;
-    transition: background 0.1s ease;
-    border-radius: 25% 10%;
-}
-
-@keyframes holo-shift {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
-}
+/*@keyframes holo-shift {*/
+/*    0% {*/
+/*        background-position: 0 50%;*/
+/*    }*/
+/*    50% {*/
+/*        background-position: 100% 50%;*/
+/*    }*/
+/*    100% {*/
+/*        background-position: 0 50%;*/
+/*    }*/
+/*}*/

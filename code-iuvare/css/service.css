@@ -1,14 +1,11 @@
-main {
-    padding: 0;
-    padding-bottom: 300px;
-    margin-top: 10%;
-
+.services{
+    height: 200vh;
 }
-
-.main-text {
+.service-main-text {
     font-size: 5rem;
     font-weight: 900;
     text-align: center;
+    margin-top: 40%;
     margin-bottom: 150px;
 
     position: relative;

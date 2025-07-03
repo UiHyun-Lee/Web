@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/about.css"/>
+    <link rel="stylesheet" href="css/service.css"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<!--    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>-->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js"></script>
     <title>(code)Iuvare</title>
 </head>
 
 <body>
+
 <header>
     <div class="navbar-wrapper">
         <nav class="navbar">
@@ -20,8 +27,9 @@
                 <a href="home.html" class="active">(code)luvāre</a>
             </div>
             <div class="menu">
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
+                <a href="#landing-img">Mission</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
                 <a href="#footer">Contact</a>
             </div>
         </nav>
@@ -29,96 +37,224 @@
 </header>
 
 <main>
-    <!-- Background images and text -->
-    <div class="scene one">
-        <div class="text-card-container">
-            <div class="overlay"></div>
-            <h2 class="shiny-text">(code)luvāre</h2>
+    <!-- HOME SECTION-->
+    <section id="home">
+        <div class="scene one">
+<!--            <div class="text-card-container">-->
+<!--                <div class="overlay"></div>-->
+<!--                <h2 class="shiny-text">(code)luvāre</h2>-->
+<!--            </div>-->
+
+            <div class="scroll-hint">
+                <span class="scroll-text">scroll</span>
+                <span class="scroll-icon">v<br>v</span>
+            </div>
+        </div>
+        <div class="landing-img landing-img1" id = "landing-img"></div>
+        <div class="landing-img landing-img2" id ="trigger-nav"></div>
+
+        <div class="scene two">
+            <h1 id="scene-text">Mission Statement</h1>
         </div>
 
-        <div class="scroll-hint">
-            <span class="scroll-text">scroll</span>
-            <span class="scroll-icon">v<br>v</span>
-        </div>
-    </div>
-    <div class="landing-img landing-img1"></div>
-    <div class="landing-img landing-img2"></div>
+        <!-- Mission Statement text -->
+        <Section class="home-intro-block">
+            <section class="home-intro-text">
+                <p id="home-intro-paragraph" class="animated-text">Die Durchführung eines erfolgreichen Projekts ist
+                    komplex
+                    und mit vielen Risiken verbunden. Häufig werden
+                    Grundstücke oder bestehende Objekte unter der Prämisse angekauft, dass daraus ein profitables
+                    Projekt
+                    entwickelt werden soll – so weit, so gut.<br>
+                    Was aber ist das „Projekt“? Wie ist es definiert? Welche Vision und Zielvorgaben dienen als Briefing
+                    für
+                    die
+                    Projektbeteiligten?<br>
+                    Mehr als die Nutzungsklasse, prognostizierte Erträge, ein Baubudget mit vagen Qualitätsangaben und
+                    phantasievolle Renderings sind zur Beantwortung dieser Frage in der Regel nicht vorhanden. Jedes
+                    Projekt
+                    ist
+                    ein Unikat, jedes Team individuell – ein Standardschema gibt es nicht.<br>
+                    (code)Iuvare unterstützt Sie bei der Plausibilisierung der Ankaufsannahmen, der Erstellung der
+                    Bedarfsanalyse, definiert die technischen Anforderungen, Projektstruktur und kreiert gemeinsam mit
+                    Ihnen
+                    die
+                    DNA des Projekts.</p>
+            </section>
+        </Section>
 
-    <div class="scene two">
-        <h1 id="scene-text">Mission Statement</h1>
-    </div>
+        <section class="values">
+            <div class="marquee-row left-to-right">
+                <ul class="marquee-content">
+                    <li>kommunikativ</li>
+                    <li>empathisch</li>
+                    <li>effizient</li>
+                    <li>flexibel</li>
+                    <li>organisiert</li>
+                    <li>fokussiert</li>
+                    <li>vorausschauend</li>
+                    <li>custom-made</li>
+                    <li>individuell</li>
+                    <li>kreativ</li>
+                    <li>strukturiert</li>
+                </ul>
+            </div>
 
-    <!-- Mission Statement text -->
-    <Section class="intro-block">
-        <section class="intro-text">
-            <p id="intro-paragraph" class="animated-text">Die Durchführung eines erfolgreichen Projekts ist komplex und mit vielen Risiken verbunden. Häufig werden
-                Grundstücke oder bestehende Objekte unter der Prämisse angekauft, dass daraus ein profitables Projekt
-                entwickelt werden soll – so weit, so gut.<br>
-                Was aber ist das „Projekt“? Wie ist es definiert? Welche Vision und Zielvorgaben dienen als Briefing für
-                die
-                Projektbeteiligten?<br>
-                Mehr als die Nutzungsklasse, prognostizierte Erträge, ein Baubudget mit vagen Qualitätsangaben und
-                phantasievolle Renderings sind zur Beantwortung dieser Frage in der Regel nicht vorhanden. Jedes Projekt
-                ist
-                ein Unikat, jedes Team individuell – ein Standardschema gibt es nicht.<br>
-                (code)Iuvare unterstützt Sie bei der Plausibilisierung der Ankaufsannahmen, der Erstellung der
-                Bedarfsanalyse, definiert die technischen Anforderungen, Projektstruktur und kreiert gemeinsam mit Ihnen
-                die
-                DNA des Projekts.</p>
+            <div class="marquee-row right-to-left">
+                <ul class="marquee-content">
+                    <li>kommunikativ</li>
+                    <li>empathisch</li>
+                    <li>effizient</li>
+                    <li>flexibel</li>
+                    <li>organisiert</li>
+                    <li>fokussiert</li>
+                    <li>vorausschauend</li>
+                    <li>custom-made</li>
+                    <li>individuell</li>
+                    <li>kreativ</li>
+                    <li>strukturiert</li>
+                </ul>
+            </div>
+
+            <div class="center-button-wrapper">
+                <a href="#footer" class="btn btn-black">Contact us</a>
+            </div>
+
         </section>
-    </Section>
 
-    <!-- Guide to Good Practice -->
-    <section class="values">
-        <div class="marquee-row left-to-right">
-            <ul class="marquee-content">
-                <li>kommunikativ</li>
-                <li>empathisch</li>
-                <li>effizient</li>
-                <li>flexibel</li>
-                <li>organisiert</li>
-                <li>fokussiert</li>
-                <li>vorausschauend</li>
-                <li>custom-made</li>
-                <li>individuell</li>
-                <li>kreativ</li>
-                <li>strukturiert</li>
-            </ul>
-        </div>
+        <div class="landing-img landing-img2"></div>
 
-        <div class="marquee-row right-to-left">
-            <ul class="marquee-content">
-                <li>kommunikativ</li>
-                <li>empathisch</li>
-                <li>effizient</li>
-                <li>flexibel</li>
-                <li>organisiert</li>
-                <li>fokussiert</li>
-                <li>vorausschauend</li>
-                <li>custom-made</li>
-                <li>individuell</li>
-                <li>kreativ</li>
-                <li>strukturiert</li>
-            </ul>
+
+    </section>
+
+    <!-- SERVICES SECTION-->
+
+    <section class="services" id ="services">
+        <div class="service-main-text">Our Services</div>
+
+        <div class="service-block-wrapper">
+            <section class="service-block">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>I. Foundation</h2>
+                    <img src="assets/images/blueprint.png" class="toggle-icon">
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Eine gründliche Analyse und Plausibilisierung Ihrer Annahmen ist die Grundvoraussetzung für eine
+                        erfolgreiche Projektarbeit.
+                        Wir stellen sicher, dass die Vorgaben aus Ihrem Business Case zu Budget und Timeline plausibel
+                        und
+                        realistisch sind.
+                        Stakeholder werden identifiziert, Meilensteine und Projektbeteiligte definiert.
+                        <br><br>
+                        Mit der Foundation konzipieren wir für Sie das ideale Projektsetup. Am Ende dieser Phase sind
+                        Sie in der
+                        Lage,
+                        das Projekt individuell und fundiert aufzubauen.
+                    </p>
+                </div>
+            </section>
+
+            <section class="service-block">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>II. Blueprint</h2>
+                    <img src="assets/images/foundation.png" class="toggle-icon" onclick="rotateImage()">
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Aufbauend auf der Foundation entwickeln wir gemeinsam den Blueprint Ihres Projekts.
+                        Anforderungen,
+                        Vision, Look&Feel und Zielgruppen werden präzisiert.
+                        Das Ergebnis: ein validiertes Konzept und KPIs, mit denen Sie alle Beteiligten klar briefen
+                        können.
+                    </p>
+                </div>
+            </section>
+
+            <section class="service-block">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>III. Action</h2>
+                    <img src="assets/images/action.png" class="toggle-icon">
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        Zeit für die Umsetzung! Die Action-Phase bringt den Blueprint ins Leben.
+                        Wir stellen sicher, dass alle Leistungen effizient platziert werden und begleiten Sie auf Wunsch
+                        bei
+                        Reportings, Verträgen und Planungsabstimmungen –
+                        damit die Qualität Ihres Produkts jederzeit gesichert bleibt.
+                    </p>
+                </div>
+            </section>
         </div>
     </section>
-    <div class="center-button-wrapper">
-        <a href="services.html" class="btn btn-black">OUR SERVICES</a>
-    </div>
+
+    <!-- ABOUT SECTION-->
+    <section class="about" id ="about">
+        <div class="main-text">About</div>
+
+        <Section class="about-intro-block">
+            <section class="about-intro-text">
+                <p id="about-intro-paragraph">(code)Iuvare ist eine inhabergeführte, Frankfurt-basierte Beratungsagentur
+                    für
+                    Projektentwicklungen und Projektmanagement der Assetklassen Office und
+                    Residential.<br>
+                    Die Gründerin Sarah ist seit 2022 als Director für Asset Development bei einem
+                    amerikanischen Immobilieninvestor tätig. Dort leitet sie in erster Linie hochkarätige
+                    (Re)developmentprojekte und berät das deutsche Team in Fragen der Planung, des
+                    Baus und des Projektmanagements.<br>
+                    Vor Ihrer aktuellen Tätigkeit als Director arbeitete Sarah für diverse Projektentwickler
+                    (DIC Deutsche Immobilien Chancen, GEG German Estate Group, ABG Real Estate)
+                    an mehreren Hochhausentwicklungsprojekten in verschiedenen Phasen im
+                    Bankenviertel von Frankfurt am Main. Darüber hinaus war sie zuvor mehrere Jahre in
+                    Architekturbüros und bei einem Generalunternehmer tätig, was es ihr ermöglicht,
+                    alle Stakeholder und Projektbeteiligten – von der Planung bis zur Ausführung –
+                    empathisch und effizient zu anzuleiten.<br>
+                    Sarah ist Diplom Ingenieurin (FH) für Innenarchitektur und Immobilienökonomin
+                    (ebs).</p>
+            </section>
+        </section>
+
+        <section class="head-shot-wrapper">
+            <div class="head-shot"></div>
+            <div class="container-wrapper">
+                <div class="container">
+                    <h4>BGP developed</h4>
+                    <strong class="counter" data-target="218.000" data-unit=" qm"></strong>
+                </div>
+
+                <div class="container">
+                    <h4>GIK managed</h4>
+                    <strong class="counter" data-target="1.3" data-unit=" Mio. €"></strong>
+                </div>
+
+                <div class="container">
+                    <h4>Yrs of Experience</h4>
+                    <strong class="counter" data-target="17" data-unit=" Years"></strong>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+    <div class="landing-img landing-img2"></div>
+
 </main>
 
+
 <!-- Footer -->
-<footer class="footer" id = "footer">
+<footer class="footer" id="footer">
     <div class="footer-content">
         <div class="footer-left">
-            <h2>LET’S CONNECT!</h2>
-            <p>wir freuen uns von Ihnen zu hören!</p>
-            <a href="mailto:example@example.com" class="btn btn-black">Leave a message</a> <!-- Todo modifying mail -->
+            <h2>Sie möchten sich<br> zu Ihrem Projekt<br> mit uns <br>austauschen?</h2>
+            <p>Wir freuen uns, <br>von Ihnen zu <br>hören!</p>
+            <a href="mailto:example@example.com" class="btn btn-black">Contact us</a> <!-- Todo modifying mail -->
         </div>
 
     </div>
 
     <div class="logo-text">(code)luvāre</div>
+
     <div class="footer-bottom">
         <div class="impressum">
             <a href="impressum.html">Impressum</a>
@@ -128,9 +264,10 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
+
 </footer>
 
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 
 </body>
 </html>
