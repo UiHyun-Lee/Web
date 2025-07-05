@@ -1,7 +1,8 @@
 export function initAbout() {
 
-    const paragraph = document.getElementById("about-intro-paragraph");
 // Typing effect for the intro paragraph
+    const paragraph = document.getElementById("about-intro-paragraph");
+
     document.addEventListener("DOMContentLoaded", () => {
         const childNodes = Array.from(paragraph.childNodes);
         paragraph.innerHTML = '';
@@ -15,47 +16,34 @@ export function initAbout() {
                     paragraph.appendChild(span);
                 });
             } else {
-                paragraph.appendChild(node); // <br>
+                paragraph.appendChild(node);
             }
         });
 
         const spans = paragraph.querySelectorAll("span");
 
-        window.addEventListener("scroll", () => {
+        function updateTypingEffect() {
             const rect = paragraph.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            const start = windowHeight * 0.2;
-            const end = windowHeight * 0.8;
-            const progress = (rect.top - start) / (end - start);
-            const ratio = Math.max(0, Math.min(1, 1 - progress));
+            const appear = windowHeight * 0.95;
+            const disappear = -rect.height * 0.6;
 
-            const speedFactor = 0.5; // Adjust this value to change the speed of the color transition
+            let ratio = (appear - rect.top) / (appear - disappear);
+            ratio = Math.max(0, Math.min(1, ratio));
+
             const total = spans.length;
             const visibleChars = Math.floor(total * ratio);
 
             spans.forEach((span, i) => {
                 span.style.color = i < visibleChars ? "black" : "gray";
             });
-        });
-    });
-
-    const text = document.querySelector(".main-text");
-// mission statement text
-    window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        const max = window.innerHeight * 7.5; // Todo
-        const ratio = Math.min(scrollY / max, 1);
-
-        // text parallax + scale
-        if (text) {
-            const topOffset = 10 + ratio * 90;
-            const scale = 1 + ratio * 1.5;
-            text.style.top = `${topOffset}vh`;
-            text.style.transform = `translateX(-150%) scale(${scale})`;
         }
-    });
 
+        window.addEventListener("scroll", updateTypingEffect);
+        window.addEventListener("resize", updateTypingEffect);
+        updateTypingEffect();
+    });
 
 // counter
     const counters = document.querySelectorAll(".counter");

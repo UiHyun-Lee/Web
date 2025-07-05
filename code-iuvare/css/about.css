@@ -2,18 +2,15 @@
     background-color: #707B6D;
     height: 300vh;
 }
-.main-text {
-    position: absolute;
-    height: 300px;
-    top: 10vh;
-    left: 50%;
-    transform: translateX(-150%) scale(1);
-    transition: transform 0.1s ease-out;
-    z-index: 2;
-    font-size: 3rem;
-    color: black;
-    color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(2px);
+.scene.three {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    padding-top: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .about-intro-block {

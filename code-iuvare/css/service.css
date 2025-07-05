@@ -1,19 +1,8 @@
 .services{
     height: 200vh;
 }
-.service-main-text {
-    font-size: 5rem;
-    font-weight: 900;
-    text-align: center;
-    margin-top: 40%;
-    margin-bottom: 150px;
 
-    position: relative;
-    top: 0;
-    transition: transform 0.8s ease-in-out;
-    will-change: transform;
 
-}
 
 .service-block-wrapper {
     max-width: 800px;

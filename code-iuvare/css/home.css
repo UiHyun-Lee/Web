@@ -1,130 +1,7 @@
-/*.navbar-wrapper {*/
-/*    opacity: 0;*/
-/*    pointer-events: none;*/
-/*    transform: translateY(-100%);*/
-/*    transition: opacity 0.4s, transform 0.4s;*/
-/*    position: fixed;*/
-/*    top: 1rem;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    z-index: 1000;*/
-/*    !* 기타 기존 스타일 *!*/
-/*}*/
-
-/*.navbar-wrapper.visible {*/
-/*    opacity: 1;*/
-/*    pointer-events: auto;*/
-/*    transform: translateY(0);*/
-/*    top: 1rem;*/
-/*    bottom: auto;*/
-/*}*/
-
-/*.navbar-wrapper.visible-bottom {*/
-/*    opacity: 1;*/
-/*    pointer-events: auto;*/
-/*    transform: none;*/
-/*    top: auto;*/
-/*    bottom: 2rem;   !* 하단 여백 *!*/
-/*}*/
-
-
-/*.navbar-wrapper {*/
-/*    position: fixed;*/
-/*    top: 1rem;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    z-index: 1000;*/
-/*    opacity: 0;*/
-/*    pointer-events: none;*/
-/*    transform: translateY(-100%);*/
-/*    transition: opacity 0.4s, transform 0.4s;*/
-/*}*/
-
-/*!* 평소 위에 고정되어 나타나는 네비 *!*/
-/*.navbar-wrapper.visible {*/
-/*    opacity: 1;*/
-/*    pointer-events: auto;*/
-/*    transform: translateY(0);*/
-/*}*/
-
-/*!* landing-img2 진입시 바닥에서 나타나게(예시, 원하면 아래쪽 위치/효과 수정!) *!*/
-/*.navbar-wrapper.visible-bottom {*/
-/*    opacity: 1;*/
-/*    pointer-events: auto;*/
-/*    transform: translateY(80vh);  !* 아래쪽에서 슬라이드 인. 원하는 위치/transition 수정 가능 *!*/
-/*}*/
-
-
-/*.navbar-wrapper {*/
-/*    top: 1rem;*/
-/*    position: fixed;*/
-/*    width: 100%;*/
-/*    z-index: 100;*/
-/*    opacity: 0;*/
-/*    pointer-events: none;*/
-/*    transform: translateY(-100%);*/
-/*    transition: opacity 0.4s ease, transform 0.4s ease;*/
-/*}*/
-
-/*.navbar-wrapper.visible {*/
-/*    opacity: 1;*/
-/*    pointer-events: auto;*/
-/*    transform: translateY(0);*/
-/*}*/
-
-.center-button-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0;
-}
-
-.home-intro-block {
-    position: relative;
-    margin: -8rem 5% 20% auto;
-    padding: 0;
-    overflow: hidden;
-    width: 50%;
-
-}
-
-.home-intro-text {
-    color: var(--dark-sage);
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    z-index: 3;
-    position: relative;
-    padding: 1.5rem 1rem 0.5rem 1rem;
-    margin: 0
-}
-
-
-.scene {
-    height: 100vh;
-    overflow: hidden;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: transparent;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 200;
-    position: relative;
-}
-
-.scene.one {
-    position: relative; /* 자식인 .arrow-down의 absolute 기준 */
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: var(--powdery-pink);
-    text-align: center;
-}
-
 .scroll-hint {
     position: absolute;
     left: 50%;
-    bottom: 20px; /* 기존 40px → 더 위로 */
+    bottom: 20px;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
@@ -134,11 +11,11 @@
     color: #333;
     animation: bounce-down 1.4s infinite ease-in-out;
     line-height: 1.2;
-    gap: 0.1rem; /* 간격 좁힘 */
+    gap: 0.1rem;
 }
 
 .scroll-text {
-    margin-bottom: 0.1rem; /* 글자와 화살표 사이 좁게 */
+    margin-bottom: 0.1rem;
     font-weight: bold;
 }
 
@@ -152,6 +29,27 @@
 @keyframes bounce-down {
     0%, 100% { transform: translate(-50%, 0); }
     50% { transform: translate(-50%, 10px); }
+}
+
+.scene {
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    position: relative;
+}
+
+.scene.one {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--powdery-pink);
+    text-align: center;
 }
 
 .landing-img {
@@ -171,25 +69,73 @@
 }
 
 .scene.two {
-    height: 100vh;
+    height: 150vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    padding-top: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-#scene-text {
-    position: absolute;
-    /*height: 300px;*/
-    top: 0vh;
-    left: 50%;
-    transform: translateX(-150%) scale(0.6);
-    transition: transform 0.1s ease-out;
+.headlines-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60vh;
+    min-width: 510px;
     z-index: 2;
+    pointer-events: none;
+    justify-content:center;
+    margin-top: 3vh;
+}
+
+.scene-text.top, .scene-text.bottom {
+    position: relative;
+    z-index: 3;
+    overflow: visible;
+    will-change: transform, opacity;
+    transition: none;
+}
+
+#why-headline,
+#misson-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.1rem;
+    font-style: italic;
+    color: #bfc1c4;
+    font-weight: 400;
+    line-height: 1.08;
+    margin: 0;
+    opacity: 0.83;
+    letter-spacing: 0.01em;
+    pointer-events: none;
+    transition: none;
+}
+
+#why-headline{
+    margin-left: 7vw;
+}
+
+.home-intro-block {
+    position: relative;
+    margin: 0 8% 0 0;
+    padding: 0;
+    overflow: hidden;
+    width: 50%;
+    line-height: 2;
+}
+
+.home-intro-text {
+    color: var(--dark-sage);
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
     font-size: 1.5rem;
-    color: black;
-    color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(2px);
+    z-index: 3;
+    position: relative;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    margin: 0
 }
 
 .values {
@@ -208,6 +154,7 @@
     white-space: nowrap;
     width: 100%;
     align-items: center;
+    /*margin-bottom: 5%; <!-- Todo -->*/
 }
 
 .marquee-content {
@@ -254,75 +201,10 @@
     }
 }
 
+.center-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
 
-/*.text-card-container {*/
-/*    position: relative;*/
-/*    display: inline-block;*/
-/*    padding: 3rem;*/
-/*    transform-style: preserve-3d;*/
-/*    perspective: 600px;*/
-/*    transition: transform 0.2s ease;*/
-/*    margin-top: 5%;*/
-/*}*/
-
-/*.shiny-text {*/
-/*    font-family: 'Orbitron', sans-serif;*/
-/*    font-size: 14rem;*/
-/*    font-weight: bold;*/
-/*    color: black;*/
-/*    background: none;*/
-/*    background-size: 200% 200%;*/
-/*    !*-webkit-background-clip: text;*!*/
-/*    !*-webkit-text-fill-color: transparent;*!*/
-/*    mix-blend-mode: screen;*/
-/*    transition: background-position 0.2s, text-shadow 0.2s;*/
-/*    position: relative;*/
-/*    z-index: 1;*/
-/*    line-height: 1;*/
-/*}*/
-
-/*.shiny-text::before {*/
-/*    content: attr(data-text);*/
-/*    position: absolute;*/
-/*    inset: 0;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background: conic-gradient(*/
-/*            from 0deg,*/
-/*            #ff33cc, #33ccff, #ccff33, #ffcc33, #ff33cc*/
-/*    );*/
-/*    background-size: 300% 300%;*/
-/*    -webkit-background-clip: text;*/
-/*    -webkit-text-fill-color: transparent;*/
-/*    animation: holo-shift 4s linear infinite;*/
-/*    mix-blend-mode: screen;*/
-/*    z-index: -1;*/
-/*}*/
-
-/*.overlay {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    pointer-events: none;*/
-/*    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent 70%);*/
-/*    mix-blend-mode: multiply;*/
-/*    opacity: 0;*/
-/*    transition: background 0.1s ease;*/
-/*    border-radius: 25% 10%;*/
-/*}*/
-
-/*@keyframes holo-shift {*/
-/*    0% {*/
-/*        background-position: 0 50%;*/
-/*    }*/
-/*    50% {*/
-/*        background-position: 100% 50%;*/
-/*    }*/
-/*    100% {*/
-/*        background-position: 0 50%;*/
-/*    }*/
-/*}*/
