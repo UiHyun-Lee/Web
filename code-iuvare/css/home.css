@@ -53,18 +53,18 @@
 }
 
 .landing-img {
-    height: 300vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
     /*height: 300vh;*/
-    /*background-image: url('../assets/images/b1.jpeg');*/
-    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
     /*background-position: center;*/
-    /*background-repeat: no-repeat;      */
+    /*background-attachment: fixed;*/
+    /*position: relative;*/
+    height: 300vh;
+    background-image: url('../assets/images/b1.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    /*background-size: contain;*/
+    background-size: contain;
 }
 
 .landing-img1 {

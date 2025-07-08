@@ -3,9 +3,9 @@
 ────────────────────────────────────── */
 
 /* 공통: 네비 아래 공간 확보 */
-main {
-    padding-top: 6rem; /* navbar-wrapper 높이 + 간격 */
-}
+/*main {*/
+/*    padding-top: 6rem; !* navbar-wrapper 높이 + 간격 *!*/
+/*}*/
 
 /* 햄버거 버튼 기본 숨김 */
 .nav-toggle {
