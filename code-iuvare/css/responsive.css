@@ -16,14 +16,33 @@ main {
    대형 데스크탑(≥1200px)
 ──────────────── */
 @media (min-width: 1200px) {
-    /* 본문 최대 너비 제한 & 중앙 정렬 */
+    /* 모든 주요 섹션(텍스트·컨텐츠 블록) */
+    .scene.one,
+    .scene.two,
+    .scene.three,
+    .services,
+    .about,
+    .values,
+    footer {
+        /* 고정 height (100vh, 300vh 등) 전부 해제 */
+        height: auto !important;
+        min-height: 100vh;       /* 적어도 한 화면 높이는 확보 */
+        padding: 4rem 2rem;      /* 위아래 충분한 여백 */
+    }
+
+    /* parallax 이미지만 그대로 유지 */
+    .landing-img {
+        height: 300vh !important;            /* 원래 주셨던 값 */
+        background-attachment: fixed;        /* 패럴랙스 효과 유지 */
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 필요시 제목·본문 폭 제한(선택) */
     main {
         max-width: 1200px;
         margin: 0 auto;
     }
-    /* 제목 폰트 유연 조정 */
-    h1 { font-size: clamp(2rem, 4vw, 3rem); }
-    h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
 }
 
 /* ────────────────
