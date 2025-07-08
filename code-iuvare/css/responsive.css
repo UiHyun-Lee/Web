@@ -16,7 +16,7 @@ main {
    대형 데스크탑(≥1200px)
 ──────────────── */
 @media (min-width: 1200px) {
-    /* 모든 주요 섹션(텍스트·컨텐츠 블록) */
+    /* 1) 섹션 높이 모두 auto로 전환 */
     .scene.one,
     .scene.two,
     .scene.three,
@@ -24,27 +24,27 @@ main {
     .about,
     .values,
     footer {
-        /* 고정 height (100vh, 300vh 등) 전부 해제 */
-        height: auto !important;
-        min-height: 100vh;       /* 적어도 한 화면 높이는 확보 */
-        padding: 4rem 2rem;      /* 위아래 충분한 여백 */
+        height: auto !important;        /* fixed height 전부 제거 */
+        min-height: auto !important;    /* min-height 도 제거 */
+        padding: 4rem 2rem;             /* 적당한 여백만 남김 */
+        overflow: visible;              /* 혹시 잘림 방지 */
     }
 
-    /* parallax 이미지만 그대로 유지 */
+    /* 2) parallax 이미지는 그대로 */
     .landing-img {
-        height: 300vh !important;            /* 원래 주셨던 값 */
-        background-attachment: fixed;        /* 패럴랙스 효과 유지 */
+        /* 원래 쓰시던 값 유지 */
+        height: 300vh !important;
+        background-attachment: fixed;
         background-size: cover;
         background-position: center;
     }
 
-    /* 필요시 제목·본문 폭 제한(선택) */
+    /* 3) main 폭 제한(선택) */
     main {
         max-width: 1200px;
         margin: 0 auto;
     }
 }
-
 /* ────────────────
    태블릿 가로 이하(≤1024px)
 ──────────────── */
