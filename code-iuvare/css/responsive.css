@@ -1,11 +1,13 @@
 /* ──────────────────────────────────────
-   기본: 네비 뒤로 가려짐 방지
+   responsive.css 전체
 ────────────────────────────────────── */
+
+/* 1) 공통: 네비 가려짐 방지 */
 main {
     padding-top: 6rem; /* navbar-wrapper 높이(약5rem) + margin-top(1rem) 합산 */
 }
 
-/* 모바일 햄버거 토글 기본 숨김 */
+/* 2) 햄버거 버튼 기본 숨김 */
 .nav-toggle {
     display: none;
 }
@@ -14,27 +16,18 @@ main {
    대형 데스크탑(≥1200px)
 ────────────────────────────────────── */
 @media (min-width: 1200px) {
-    /* 본문 폭 제한 & 중앙 정렬 */
     main {
         max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
     }
-
-    /* 제목 폰트 크기 유연하게 조정 */
-    h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
-    }
-    h2 {
-        font-size: clamp(1.5rem, 3vw, 2.25rem);
-    }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
 }
 
 /* ──────────────────────────────────────
    태블릿 가로 이하(≤1024px)
 ────────────────────────────────────── */
 @media (max-width: 1024px) {
-    /* NAVBAR 조정 */
     .navbar-wrapper {
         width: 90%;
         top: 0.75rem;
@@ -44,10 +37,8 @@ main {
     .menu { gap: 1.5rem; }
     .menu a { font-size: .95rem; }
 
-    /* main 마진/패딩 축소 */
     main { margin: 30px auto; padding: 0 15px; }
 
-    /* HOME parallax 해제 & 높이 auto */
     .scene.one,
     .landing-img,
     .scene.two {
@@ -56,11 +47,8 @@ main {
         padding: 2rem 1rem;
         background-attachment: scroll;
     }
-    .landing-img {
-        min-height: 50vh;
-    }
+    .landing-img { min-height: 50vh; }
 
-    /* headlines 세로 스택 */
     .headlines-wrapper {
         display: flex;
         flex-direction: column;
@@ -69,7 +57,6 @@ main {
         margin-top: 5vh;
     }
 
-    /* ABOUT */
     .scene.three {
         display: flex;
         flex-direction: row;
@@ -82,7 +69,6 @@ main {
     }
     .about-intro-block { width: 55%; margin-right: 10vw; }
 
-    /* HEADSHOT */
     .head-shot-wrapper {
         margin-top: 20vh;
         display: flex;
@@ -94,7 +80,6 @@ main {
     .head-shot { width: 50vw; max-width: 400px; }
     .container-wrapper { width: 60vw; max-width: 500px; }
 
-    /* SERVICES */
     .services { padding: 4rem 1rem; height: auto; }
     .service-main-text {
         font-size: 2.5rem;
@@ -104,7 +89,6 @@ main {
     .accordion-header h2 { font-size: 2.5rem; }
     .toggle-icon { width: 40px; height: 40px; }
 
-    /* IMPRESSUM / DATENSCHUTZ */
     main { max-width: 90%; margin-top: 80px; }
     h1 { font-size: 1.75rem; }
     h2 { font-size: 1.35rem; }
@@ -115,12 +99,14 @@ main {
    태블릿 세로 / 큰 폰(≤768px)
 ────────────────────────────────────── */
 @media (max-width: 768px) {
-    /* NAVBAR & 햄버거 토글 */
+    /* 모바일에서 네비바 항상 보이게 강제 */
     .navbar-wrapper {
-        width: 100%;
-        border-radius: 0;
-        padding: .5rem 1rem;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
     }
+
+    /* 햄버거 토글 보이기 */
     .nav-toggle {
         display: flex;
         flex-direction: column;
@@ -140,6 +126,8 @@ main {
         border-radius: 2px;
         display: block;
     }
+
+    /* 메뉴 숨김/토글 */
     .menu {
         position: absolute;
         top: 100%;
@@ -162,7 +150,6 @@ main {
     }
     .menu a { font-size: .9rem; }
 
-    /* HOME */
     .scene.one,
     .landing-img,
     .scene.two {
@@ -177,7 +164,6 @@ main {
         padding: 0 1rem;
     }
 
-    /* ABOUT */
     .scene.three {
         flex-direction: column;
         align-items: center;
@@ -193,7 +179,6 @@ main {
     .head-shot { width: 70vw; max-width: 300px; }
     .container-wrapper { width: 80vw; }
 
-    /* SERVICES */
     .service-main-text { font-size: 2rem; margin-bottom: 3rem; }
     .accordion-header h2 { font-size: 2rem; }
     .toggle-icon { width: 35px; height: 35px; }
@@ -203,20 +188,16 @@ main {
    스마트폰 작은 화면(≤480px)
 ────────────────────────────────────── */
 @media (max-width: 480px) {
-    /* 본문 여백·폰트 축소 */
     body { line-height: 1.4; }
     main { margin: 20px auto; padding: 0 10px; }
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.1rem; }
 
-    /* NAVBAR */
     .navbar-wrapper { padding: .5rem 1rem; }
     .menu a { font-size: .85rem; padding: .25rem .5rem; }
 
-    /* BUTTON full-width */
     .btn { display: block; width: 100%; text-align: center; }
 
-    /* HOME */
     .scene.one,
     .landing-img,
     .scene.two {
@@ -225,18 +206,15 @@ main {
     }
     .headlines-wrapper { gap: 2.5rem; }
 
-    /* ABOUT */
     .about-main-text { font-size: 3em; margin: 6vh 0; }
     .about-intro-text { font-size: 1.1rem; }
     .head-shot { width: 85vw; }
     .container-wrapper { width: 90vw; }
 
-    /* SERVICES */
     .service-main-text { font-size: 1.75rem; margin-bottom: 2rem; }
     .accordion-header h2 { font-size: 1.75rem; }
     .toggle-icon { width: 30px; height: 30px; }
 
-    /* FOOTER */
     .footer-left h2 { font-size: 1.25rem; }
     .footer-left p { font-size: .9rem; }
     .btn-black { display: block; width: 100%; }
