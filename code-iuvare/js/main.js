@@ -138,9 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Parallax effect for the intro section
 const whyHeadline = document.getElementById('why-headline');
-const missionHeadline = document.getElementById('misson-headline');
 const whyWrapper = whyHeadline.parentElement;
-const missionWrapper = missionHeadline.parentElement;
 
 // parallax effect for the headlines
 function parallaxHeadline(headline, wrapper, xStart = -25, xEnd = 0, threshold = 0.2, opacityStart = 0.2, opacityEnd = 1) {
@@ -171,12 +169,10 @@ function parallaxHeadline(headline, wrapper, xStart = -25, xEnd = 0, threshold =
 
 window.addEventListener('scroll', () => {
     parallaxHeadline(whyHeadline, whyWrapper, -25, 18, 0.2, 0.2, 1);
-    parallaxHeadline(missionHeadline, missionWrapper, -25, 12, 0.2, 0.2, 1);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
     parallaxHeadline(whyHeadline, whyWrapper, -25, 18, 0.2, 0.2, 1);
-    parallaxHeadline(missionHeadline, missionWrapper, -25, 12, 0.2, 0.2, 1);
 });
 
 const navToggle = document.querySelector('.nav-toggle');
