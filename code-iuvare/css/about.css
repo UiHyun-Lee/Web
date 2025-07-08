@@ -1,27 +1,48 @@
-.about{
-    background-color: #707B6D;
-    height: 300vh;
+.about {
+    /*background-color: #707B6D;*/
+    height: 400vh;
+
+    background: linear-gradient(
+            180deg,
+            rgba(112, 123, 109, 0.5) 0%,
+            var(--dark-sage) 100%
+    );
 }
 .scene.three {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
-    padding-top: 40vw;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    padding-top: 30vw; /* mission section과 동일하게 */
+    min-height: 100vh;
+}
+
+.about-main-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 8em;
+    font-style: italic;
+    color: #bfc1c4;
+    font-weight: 400;
+    line-height: 1.08;
+    margin: 30vh 0 0 5vw;
+    opacity: 0.83;
+    letter-spacing: 0.01em;
+    pointer-events: none;
+    flex: 0 0 32%;
+    align-self: flex-start;
 }
 
 .about-intro-block {
-    position: relative;
-    margin: -8rem 5% 20% auto;
+    width: 70%;
+    margin: 0 15vw 0 0;
     padding: 0;
     overflow: hidden;
-    width: 50%;
-
+    line-height: 2;
 }
-
 .about-intro-text {
     color: white;
     font-family: 'Lato', sans-serif;
@@ -30,69 +51,117 @@
     z-index: 3;
     position: relative;
     padding: 1.5rem 1rem 0.5rem 1rem;
-    margin: 0
+    margin: 0;
 }
 
 .head-shot-wrapper {
+    position: relative;
+    min-height: 130vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 4rem;
-    padding: 4rem 2rem;
-    max-width: 1200px;
+    align-items: center;
+    padding: 0;
+    margin-top: 40vh;
+}
+
+.sticky-area {
+    position: sticky;
+    top: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90vw;
+    max-width: 1800px;
     margin: 0 auto;
-    flex-wrap: wrap;
-    height: 800px
+    z-index: 2;
+    gap: 10vw;
 }
 
 .head-shot {
-    width: 100%;
-    max-width: 400px;
-    height: 500px;
-    background-image: url('../assets/images/background1.jpg');
+    width: 34vw;
+    min-width: 380px;
+    max-width: 550px;
+    aspect-ratio: 1/1.08;
+    height: auto;
+    background-image: url('../assets/images/b2.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 1rem;
     flex-shrink: 0;
-    margin-right: 150px;
-    margin-top: 50px;
-    animation : fadeInFromLeft 1s ease-out forwards;
+    margin: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateX(-60vw);
+    will-change: transform, opacity;
+    transition: none;
 }
 
+/* 2. 오른쪽 텍스트 (중앙 배치, 왼쪽정렬, 크고 이탤릭) */
 .container-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
-    gap: 4rem;
-    text-align: right;
-    animation : fadeInFromRight 2s ease-out forwards;
+    align-items: flex-start;
+    width: 32vw;
+    min-width: 380px;
+    max-width: 670px;
+    gap: 5vh;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(50vw);
+    will-change: transform, opacity;
+    align-self: center;
+    padding-left: 2vw;
+    /*transition: transform 0.7s cubic-bezier(.7,0,.3,1), opacity 0.5s;*/
+    /*    animation: fadeInFromRight 2s ease-out forwards;*/
+
 
 }
 
 .container h4 {
-    color: var(--dark-blue);
-    font-size: 2rem;
-    margin-left: 100px;
-
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    line-height: 1.05;
+    padding-left: 0;
 }
 
 .container strong {
-    color: white;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-size: 2rem;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    color: lightgrey;
+    font-size: 2.1rem;
+    font-weight: 100;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.20);
+    margin: 0 0 0.3rem 0;
+    padding-left: 0.4rem;
+    letter-spacing: 0.01em;
+    line-height: 1.02;
+    text-align: right;
 }
 
 .counter {
     display: inline-block;
-    min-width: 200px;
-    text-align: right;
-    font-weight: 700;
-    font-size: 2rem;
-    color: white;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    margin-left: 100px;
-    text-align: right;
+    min-width: 120px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 2.1rem;
+    color: #d9dbde;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+    margin-left: 0;
+    padding-left: 0.4rem;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
+
+.counter.visible {
+    opacity: 1;
+}
+
 
 

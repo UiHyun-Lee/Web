@@ -1,9 +1,22 @@
 .services{
-    height: 200vh;
+    height: 150vh;
+    padding-top: 40vw;
+
 }
 
-
-
+.service-main-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: 900;
+    color: gray;
+    text-align: center;
+    margin-bottom: 150px;
+    position: relative;
+    top: 0;
+    transition: transform 0.8s ease-in-out;
+    will-change: transform;
+}
 .service-block-wrapper {
     max-width: 800px;
     margin: 0 auto;

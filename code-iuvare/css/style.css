@@ -23,10 +23,7 @@ body {
 header {
     background: transparent;
     color: black;
-    /*padding: 1rem;*/
     text-align: left;
-    /*height: 0px;*/
-
 }
 
 /* =========================
@@ -35,9 +32,11 @@ header {
 
 .navbar-wrapper {
     position: fixed;
-    top: 1rem; /* 평소 위에서 보여줄 때 위치 */
+    top: 1rem;
     left: 0;
-    width: 100%;
+    right: 0;
+    width: 95%;
+    margin: 0 auto;
     z-index: 1000;
     background-color: rgba(238, 226, 223, 0.8);
     border-radius: 10px;
@@ -46,7 +45,7 @@ header {
 
     opacity: 0;
     pointer-events: none;
-    transform: translateY(50px); /* 아래에 숨어있게! */
+    transform: translateY(50px);
     transition: opacity 0.4s cubic-bezier(0.5, 1.2, 0.5, 1),
     transform 0.4s cubic-bezier(0.5, 1.2, 0.5, 1);
 }
@@ -68,7 +67,6 @@ header {
     bottom: 2rem;
 }
 
-/* 실제 네비 내부 구조는 기존대로 유지 */
 .navbar {
     display: flex;
     align-items: center;
@@ -80,7 +78,6 @@ header {
     min-width: 0;
 }
 
-/* 왼쪽 로고 */
 .logo {
     white-space: nowrap;
     overflow: hidden;
@@ -111,6 +108,8 @@ header {
     color: black;
     text-decoration: none;
     font-size: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
 }
 
 .menu a:hover {
@@ -127,22 +126,12 @@ header {
     transition: all 0.3s ease;
 }
 
-/*.btn-white {*/
-/*    color: black;*/
-/*    border: 8px solid white;*/
-/*}*/
-
 .btn-black {
     border: 2px solid black;
     margin-top: 5%;
     color: black;
     font-size: 1rem;
 }
-
-/*.btn-white:hover {*/
-/*    background-color: white;*/
-/*    color: var(--dark-sage);*/
-/*}*/
 
 .btn-black:hover {
     background-color: black;
