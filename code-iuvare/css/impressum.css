@@ -28,74 +28,17 @@ a {
     text-decoration: underline;
 }
 
-
-
 .navbar-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 95%;
-    margin: 0 auto;
-    z-index: 1000;
-    background-color: rgba(238, 226, 223, 0.8);
-    border-radius: 10px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    opacity: 1;
-    pointer-events: none;
-    transform: translateY(50px);
-    transition: opacity 0.4s cubic-bezier(0.5, 1.2, 0.5, 1),
-    transform 0.4s cubic-bezier(0.5, 1.2, 0.5, 1);
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+}
+.navbar-wrapper.visible,
+.navbar-wrapper.visible-bottom {
+    transform: translateY(0) !important;
 }
 
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    width: 100%;
-    box-sizing: border-box;
-    gap: 2rem;
-    min-width: 0;
-}
-
-.logo {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex-shrink: 1;
-}
-
-.logo a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-}
-
-/* 메뉴 */
-.menu {
-    display: flex;
-    gap: 2rem;
-    justify-content: flex-end;
-    white-space: nowrap;
-    flex-shrink: 1;
-    flex-grow: 1;
-    flex-basis: 0;
-    min-width: 0;
-    overflow: visible;
-}
-
-.menu a {
-    color: black;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-}
-
-.menu a:hover {
-    color: var(--dark-sage);
+.footer{
+    height:75vh;
 }
