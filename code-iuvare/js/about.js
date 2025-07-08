@@ -63,7 +63,7 @@ export function initAbout() {
             const visibleChars = Math.floor(total * ratio);
 
             spans.forEach((span, i) => {
-                span.style.color = i < visibleChars ? "white" : "gray";
+                span.style.color = i < visibleChars ? "gray" : "white";
             });
         }
 

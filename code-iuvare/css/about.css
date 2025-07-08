@@ -4,7 +4,7 @@
 
     background: linear-gradient(
             180deg,
-            rgba(112, 123, 109, 0.5) 0%,
+            var(--light-wheat) 0%,
             var(--dark-sage) 100%
     );
 }
