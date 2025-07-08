@@ -179,7 +179,11 @@ window.addEventListener('DOMContentLoaded', () => {
     parallaxHeadline(missionHeadline, missionWrapper, -25, 12, 0.2, 0.2, 1);
 });
 
-
+const navToggle = document.querySelector('.nav-toggle');
+const menu     = document.querySelector('.menu');
+navToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
 
 
 

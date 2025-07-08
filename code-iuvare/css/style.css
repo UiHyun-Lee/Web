@@ -6,7 +6,9 @@
     --powdery-pink: #EEE2DF;
     --dark-blue: #2c3e50;
 }
-
+.nav-toggle {
+    display: none;
+}
 html {
     scroll-behavior: smooth;
 }
