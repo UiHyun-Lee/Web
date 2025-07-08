@@ -1,112 +1,96 @@
 /* ──────────────────────────────────────
-   responsive.css 전체
+   responsive.css 전체 덮어쓰기
 ────────────────────────────────────── */
 
-/* 1) 공통: 네비 가려짐 방지 */
+/* 공통: 네비 아래 공간 확보 */
 main {
-    padding-top: 6rem; /* navbar-wrapper 높이(약5rem) + margin-top(1rem) 합산 */
+    padding-top: 6rem; /* navbar-wrapper 높이 + 간격 */
 }
 
-/* 2) 햄버거 버튼 기본 숨김 */
+/* 햄버거 버튼 기본 숨김 */
 .nav-toggle {
     display: none;
 }
 
-/* ──────────────────────────────────────
+/* ────────────────
    대형 데스크탑(≥1200px)
-────────────────────────────────────── */
+──────────────── */
 @media (min-width: 1200px) {
+    /* 본문 최대 너비 제한 & 중앙 정렬 */
     main {
         max-width: 1200px;
         margin: 0 auto;
     }
+    /* 제목 폰트 유연 조정 */
     h1 { font-size: clamp(2rem, 4vw, 3rem); }
     h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
 }
 
-/* ──────────────────────────────────────
+/* ────────────────
    태블릿 가로 이하(≤1024px)
-────────────────────────────────────── */
+──────────────── */
 @media (max-width: 1024px) {
+    /* NAVBAR 축소 */
     .navbar-wrapper {
         width: 90%;
         top: 0.75rem;
         padding: 0;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
     }
     .navbar { padding: .75rem 1.5rem; }
     .menu { gap: 1.5rem; }
     .menu a { font-size: .95rem; }
 
-    main { margin: 30px auto; padding: 0 15px; }
-
+    /* 섹션 고정 높이 해제 & 최소 높이 보장 */
     .scene.one,
     .landing-img,
-    .scene.two {
+    .scene.two,
+    .scene.three,
+    .services,
+    .about,
+    .values,
+    footer {
+        height: auto !important;
         min-height: 80vh;
-        height: auto;
         padding: 2rem 1rem;
-        background-attachment: scroll;
-    }
-    .landing-img { min-height: 50vh; }
-
-    .headlines-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        margin-top: 5vh;
     }
 
-    .scene.three {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 4rem 1rem;
+    /* 패럴랙스 이미지 높이 조정 & 해제 */
+    .landing-img {
+        height: 200vh !important;
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center !important;
     }
-    .about-main-text {
-        font-size: 5em;
-        margin: 10vh 0 0 5vw;
-    }
-    .about-intro-block { width: 55%; margin-right: 10vw; }
 
-    .head-shot-wrapper {
-        margin-top: 20vh;
-        display: flex;
-        flex-direction: column;
-        gap: 5vh;
-        position: static;
-        top: auto;
+    /* 텍스트 블록 full-width */
+    .home-intro-block,
+    .about-intro-block {
+        width: 100% !important;
+        margin: 1rem 0 !important;
+        padding: 0 1rem !important;
     }
-    .head-shot { width: 50vw; max-width: 400px; }
-    .container-wrapper { width: 60vw; max-width: 500px; }
 
-    .services { padding: 4rem 1rem; height: auto; }
-    .service-main-text {
-        font-size: 2.5rem;
-        margin-bottom: 4rem;
-        text-align: center;
-    }
-    .accordion-header h2 { font-size: 2.5rem; }
-    .toggle-icon { width: 40px; height: 40px; }
+    /* Values(마퀴) 높이 자동화 */
+    .values { height: auto !important; padding: 2rem 1rem; }
+    .marquee-content li { font-size: 3rem; }
 
-    main { max-width: 90%; margin-top: 80px; }
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.35rem; }
-    footer { height: auto; padding: 2rem 1rem; }
+    /* Footer 높이 자동화 */
+    footer { height: auto !important; padding: 2rem 1rem !important; }
 }
 
-/* ──────────────────────────────────────
-   태블릿 세로 / 큰 폰(≤768px)
-────────────────────────────────────── */
+/* ────────────────
+   태블릿 세로·큰 폰(≤768px)
+──────────────── */
 @media (max-width: 768px) {
-    /* 모바일에서 네비바 항상 보이게 강제 */
+    /* NAVBAR 항상 보이기 + 햄버거 토글 */
     .navbar-wrapper {
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        transform: translateY(0) !important;
+        width: 100% !important;
+        border-radius: 0;
+        padding: .5rem 1rem;
     }
-
-    /* 햄버거 토글 보이기 */
     .nav-toggle {
         display: flex;
         flex-direction: column;
@@ -126,21 +110,14 @@ main {
         border-radius: 2px;
         display: block;
     }
-
-    /* 메뉴 숨김/토글 */
     .menu {
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        top: 100%; left: 0; right: 0;
         background: rgba(255,255,255,0.95);
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
+        flex-direction: column; align-items: center;
+        gap: 1rem; padding: 1rem 0;
         transform: translateY(-20px);
-        opacity: 0;
-        pointer-events: none;
+        opacity: 0; pointer-events: none;
         transition: all .3s ease;
     }
     .menu.open {
@@ -150,81 +127,71 @@ main {
     }
     .menu a { font-size: .9rem; }
 
+    /* 섹션 높이 & 패딩 */
     .scene.one,
     .landing-img,
-    .scene.two {
+    .scene.two,
+    .scene.three,
+    .services,
+    .about,
+    .values,
+    footer {
+        height: auto !important;
         min-height: 60vh;
-        height: auto;
-        padding: 3rem 1rem;
+        padding: 1.5rem 1rem;
     }
-    .headlines-wrapper { gap: 3rem; }
-    .home-intro-block {
-        width: 100%;
-        margin: 1rem 0;
-        padding: 0 1rem;
-    }
+    .landing-img { height: 150vh !important; }
 
-    .scene.three {
-        flex-direction: column;
-        align-items: center;
-        padding: 3rem 1rem;
-    }
-    .about-main-text {
-        font-size: 4em;
-        margin: 8vh 0 1rem;
-        text-align: center;
-    }
-    .about-intro-block { width: 90%; margin-bottom: 2rem; }
-    .head-shot-wrapper { gap: 4vh; }
-    .head-shot { width: 70vw; max-width: 300px; }
-    .container-wrapper { width: 80vw; }
-
-    .service-main-text { font-size: 2rem; margin-bottom: 3rem; }
-    .accordion-header h2 { font-size: 2rem; }
-    .toggle-icon { width: 35px; height: 35px; }
+    /* 마퀴 글씨 크기 */
+    .marquee-content li { font-size: 2.5rem; }
 }
 
-/* ──────────────────────────────────────
+/* ────────────────
    스마트폰 작은 화면(≤480px)
-────────────────────────────────────── */
+──────────────── */
 @media (max-width: 480px) {
     body { line-height: 1.4; }
     main { margin: 20px auto; padding: 0 10px; }
+
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.1rem; }
 
     .navbar-wrapper { padding: .5rem 1rem; }
     .menu a { font-size: .85rem; padding: .25rem .5rem; }
 
-    .btn { display: block; width: 100%; text-align: center; }
-
+    /* 섹션 높이 & 패딩 최소화 */
     .scene.one,
     .landing-img,
-    .scene.two {
+    .scene.two,
+    .scene.three,
+    .services,
+    .about,
+    .values,
+    footer {
+        height: auto !important;
         min-height: 50vh;
-        padding: 2rem .5rem;
+        padding: 1rem .5rem;
     }
-    .headlines-wrapper { gap: 2.5rem; }
+    .landing-img { height: 100vh !important; }
 
-    .about-main-text { font-size: 3em; margin: 6vh 0; }
-    .about-intro-text { font-size: 1.1rem; }
-    .head-shot { width: 85vw; }
-    .container-wrapper { width: 90vw; }
+    /* 텍스트·버튼·마퀴 조정 */
+    .home-intro-text,
+    .about-intro-text,
+    .container-wrapper,
+    .head-shot {
+        width: 90vw !important;
+        padding: 0 .5rem !important;
+    }
+    .btn,
+    .btn-black { display: block; width: 100%; }
 
+    .marquee-content li { font-size: 2rem; }
     .service-main-text { font-size: 1.75rem; margin-bottom: 2rem; }
     .accordion-header h2 { font-size: 1.75rem; }
     .toggle-icon { width: 30px; height: 30px; }
 
     .footer-left h2 { font-size: 1.25rem; }
     .footer-left p { font-size: .9rem; }
-    .btn-black { display: block; width: 100%; }
-    .logo-text {
-        font-size: 16vw;
-        transform: scaleX(1);
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
+    .logo-text { font-size: 16vw; transform: scaleX(1); }
+    .footer-bottom { flex-direction: column; gap: 1rem; align-items: center; }
 }
