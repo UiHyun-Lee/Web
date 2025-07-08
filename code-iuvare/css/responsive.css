@@ -1,0 +1,125 @@
+/* ──────────────────────────────────────
+   반응형 공통 브레이크포인트
+   ────────────────────────────────────── */
+@media (max-width: 1024px) {   /* 태블릿 가로 */
+    /* NAVBAR */
+    .navbar-wrapper {
+        width: 90%;
+        top: 0.75rem;
+    }
+    .navbar { padding: .75rem 1.5rem; }
+    .menu { gap: 1.5rem; }
+    .menu a { font-size: .95rem; }
+
+    /* MAIN 공통 마진/패딩 축소 */
+    main { margin: 30px auto; padding: 0 15px; }
+
+    /* FOOTER */
+    .footer-content { flex-direction: column; gap: 2rem; padding: 1.5rem; }
+    .footer-bottom { justify-content: center; gap: 2rem; }
+    .logo-text { font-size: 12vw; }
+
+    /* HOME */
+    .scene.one { height: 80vh; }
+    .landing-img { height: 200vh; }
+    .scene.two { height: 120vh; padding-top: 30vw; }
+    .headlines-wrapper { min-width: auto; margin-top: 5vh; }
+    .home-intro-block { width: 80%; margin: 0 10% 0 0; }
+
+    /* ABOUT */
+    .about { height: auto; }
+    .scene.three { flex-direction: row; padding-top: 20vw; }
+    .about-main-text { font-size: 6em; margin: 20vh 0 0 5vw; flex: 0 0 40%; }
+    .about-intro-block { width: 55%; margin-right: 10vw; }
+
+    /* HEADSHOT SECTION */
+    .head-shot-wrapper { flex-direction: column; margin-top: 30vh; }
+    .sticky-area { position: static; flex-direction: column; gap: 5vh; top: auto; }
+    .head-shot { width: 50vw; min-width: auto; max-width: 400px; }
+    .container-wrapper { width: 60vw; min-width: auto; max-width: 500px; }
+
+    /* SERVICES */
+    .services { height: auto; padding-top: 20vw; }
+    .service-main-text { font-size: 2.5rem; margin-bottom: 100px; }
+    .service-block-wrapper { padding: 1rem; }
+    .accordion-header h2 { font-size: 2.5rem; }
+    .toggle-icon { width: 40px; height: 40px; }
+
+    /* IMPRESSUM / DATENSCHUTZ */
+    main { max-width: 90%; margin-top: 80px; }
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.35rem; }
+    footer { height: auto; padding-bottom: 2rem; }
+}
+
+@media (max-width: 768px) {  /* 태블릿 세로 / 큰 폰 */
+    /* NAVBAR full-width, 메뉴 wrap */
+    .navbar-wrapper { width: 100%; border-radius: 0; padding: 0 1rem; }
+    .navbar { flex-direction: column; align-items: flex-start; gap: .75rem; }
+    .menu { flex-wrap: wrap; justify-content: center; gap: 1rem; width: 100%; }
+    .menu a { font-size: .9rem; }
+
+    /* HOME */
+    .scene.one { height: 60vh; }
+    .landing-img { height: 150vh; }
+    .scene.two { height: 100vh; padding-top: 25vw; }
+    .headlines-wrapper { gap: 40vh; }
+    .home-intro-block { width: 100%; margin: 0; }
+
+    /* ABOUT */
+    .scene.three { flex-direction: column; align-items: center; padding-top: 15vw; }
+    .about-main-text { font-size: 5em; margin: 15vh 0 0; text-align: center; }
+    .about-intro-block { width: 90%; margin: 2rem 0; }
+    .head-shot-wrapper { margin-top: 20vh; }
+    .sticky-area { gap: 8vh; }
+    .head-shot { width: 70vw; }
+    .container-wrapper { width: 80vw; padding-left: 0; }
+
+    /* SERVICES */
+    .service-main-text { font-size: 2rem; margin-bottom: 80px; }
+    .service-block-wrapper { padding: .5rem; }
+    .accordion-header h2 { font-size: 2rem; }
+
+    /* IMPRESSUM / DATENSCHUTZ */
+    main { margin-top: 60px; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+}
+
+@media (max-width: 480px) {  /* 스마트폰 */
+    /* 본문 line-height · 여백 축소 */
+    body { line-height: 1.4; }
+    main { margin: 20px auto; padding: 0 10px; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.1rem; }
+
+    /* NAVBAR 터치 영역 확보 */
+    .navbar { padding: .5rem 1rem; }
+    .menu a { font-size: .85rem; padding: .25rem .5rem; }
+
+    /* BUTTON full-width */
+    .btn { display: block; width: 100%; text-align: center; }
+
+    /* HOME */
+    .scene.one { height: 50vh; }
+    .landing-img { height: 100vh; }
+    .scene.two { height: 80vh; padding-top: 20vw; }
+    .headlines-wrapper { gap: 30vh; }
+
+    /* ABOUT */
+    .about-main-text { font-size: 3.5em; margin: 10vh 0 0; }
+    .about-intro-text { font-size: 1.2rem; }
+    .head-shot { width: 85vw; }
+    .container-wrapper { width: 90vw; }
+
+    /* SERVICES */
+    .service-main-text { font-size: 1.75rem; margin-bottom: 50px; }
+    .accordion-header h2 { font-size: 1.75rem; }
+    .toggle-icon { width: 30px; height: 30px; }
+
+    /* FOOTER */
+    .footer-left h2 { font-size: 1.25rem; }
+    .footer-left p { font-size: .9rem; }
+    .logo-text { font-size: 18vw; }
+    .footer-bottom { flex-direction: column; gap: 1rem; }
+}
