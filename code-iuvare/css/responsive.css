@@ -17,7 +17,9 @@
 ──────────────── */
 @media (min-width: 1200px) {
     /* 1) 섹션 높이 모두 auto로 전환 */
-    .scene.one,
+    .scene.one{
+        height: 100vh !important;
+    }
     .scene.two,
     .scene.three,
     .services,
@@ -26,7 +28,7 @@
     footer {
         height: auto !important;        /* fixed height 전부 제거 */
         min-height: auto !important;    /* min-height 도 제거 */
-        padding: 4rem 2rem;             /* 적당한 여백만 남김 */
+        /*padding: 4rem 2rem;             !* 적당한 여백만 남김 *!*/
         overflow: visible;              /* 혹시 잘림 방지 */
     }
 
@@ -37,12 +39,6 @@
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
-    }
-
-    /* 3) main 폭 제한(선택) */
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
     }
 }
 /* ────────────────
@@ -63,16 +59,17 @@
     .menu a { font-size: .95rem; }
 
     /* 섹션 고정 높이 해제 & 최소 높이 보장 */
-    .scene.one,
+    .scene.one{
+        height: 100vh !important;
+    }
     .landing-img,
     .scene.two,
     .scene.three,
     .services,
     .about,
-    .values,
-    footer {
+    .values{
         height: auto !important;
-        min-height: 80vh;
+        min-height: 150vh;
         padding: 2rem 1rem;
     }
 
@@ -97,7 +94,9 @@
     .marquee-content li { font-size: 3rem; }
 
     /* Footer 높이 자동화 */
-    footer { height: auto !important; padding: 2rem 1rem !important; }
+    footer {
+        height: auto !important;
+        padding: 2rem 1rem !important; }
 }
 
 /* ────────────────
@@ -147,7 +146,9 @@
     .menu a { font-size: .9rem; }
 
     /* 섹션 높이 & 패딩 */
-    .scene.one,
+    .scene.one{
+        height: 100vh !important;
+    }
     .landing-img,
     .scene.two,
     .scene.three,
@@ -156,7 +157,7 @@
     .values,
     footer {
         height: auto !important;
-        min-height: 60vh;
+        min-height: 70vh;
         padding: 1.5rem 1rem;
     }
     .landing-img { height: 150vh !important; }
@@ -214,3 +215,59 @@
     .logo-text { font-size: 16vw; transform: scaleX(1); }
     .footer-bottom { flex-direction: column; gap: 1rem; align-items: center; }
 }
+
+
+
+
+
+/*!* responsive.css 맨 아래에 붙이세요 *!*/
+/*@media (max-width: 768px) {*/
+/*    !* 1) scene.three 내부 세로 정렬로 변경 *!*/
+/*    .scene.three {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        align-items: flex-start; !* 왼쪽 정렬 *!*/
+/*        padding: 2rem 1rem;      !* 좌우 여백 확보 *!*/
+/*    }*/
+
+/*    !* 2) About 제목(“About”)과 텍스트 블록 간격 조정 *!*/
+/*    .about-main-text {*/
+/*        margin-bottom: 2rem;*/
+/*        font-size: clamp(2.5rem, 8vw, 4rem); !* 화면 크기에 따라 유동 폰트 *!*/
+/*    }*/
+
+/*    !* 3) intro 텍스트 블록을 화면 폭 100% 안에서 중앙 / 좌우 여백 유지 *!*/
+/*    .about-intro-block {*/
+/*        width: 100%;*/
+/*        max-width: 100%;*/
+/*        margin: 0 auto 2rem;*/
+/*        padding: 0 1rem;*/
+/*    }*/
+
+/*    !* 4) intro 텍스트 폰트 · 줄간격 조정 *!*/
+/*    .about-intro-text p {*/
+/*        font-size: clamp(1rem, 2.5vw, 1.125rem);*/
+/*        line-height: 1.6;*/
+/*    }*/
+
+
+/*}*/
+
+/*!* 태블릿 가로 모드(768px~1024px)에도 약간 더 여유를 주고 싶다면 *!*/
+/*@media (min-width: 769px) and (max-width: 1024px) {*/
+/*    .scene.three {*/
+/*        padding: 3rem 2rem;*/
+/*    }*/
+/*    .about-main-text {*/
+/*        font-size: clamp(3rem, 6vw, 5rem);*/
+/*    }*/
+/*    .about-intro-block {*/
+/*        padding: 0 2rem;*/
+/*    }*/
+/*    .about-intro-text p {*/
+/*        font-size: clamp(1.125rem, 2vw, 1.25rem);*/
+/*    }*/
+/*    .about-intro-text p {*/
+/*        color: red !important;*/
+/*    }*/
+/*}*/
