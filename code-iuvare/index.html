@@ -310,35 +310,34 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- ① Bootstrap CSS 먼저 로드 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
-    <!-- ② 기존 커스텀 CSS 순서 그대로 -->
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/home.css"/>
     <link rel="stylesheet" href="css/about.css"/>
     <link rel="stylesheet" href="css/service.css"/>
-        <link rel="stylesheet" href="css/responsive.css"/>
+    <link rel="stylesheet" href="css/responsive.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js"></script>
     <title>(code)Iuvāre</title>
 </head>
 
 <body>
-<!-- NAVBAR -->
 <header>
+<!-- NAVBAR -->
     <div class="navbar-wrapper">
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html" class="active">(code)Iuvāre</a>
             </div>
-            <!-- 토글 버튼 -->
+            <!-- toggle btn -->
             <button class="nav-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <!-- 메뉴 -->
+            <!-- menu -->
             <div class="menu">
                 <a href="#scene-two">Mission</a>
                 <a href="#services">Services</a>
@@ -349,7 +348,6 @@
     </div>
 </header>
 
-<!-- MAIN -->
 <main>
     <!-- HOME SECTION -->
     <section id="home">
@@ -363,31 +361,28 @@
 
         <!-- Mission Statement: 컨테이너+그리드만 추가 -->
         <section class="scene two" id="scene-two">
-            <div class="headlines-wrapper text-center" id="headlines-wrapper">
-                <div class="scene-text top">
-                    <h1 class="why-headline" id="why-headline">Why would you<br> need us?</h1>
-                </div>
-            </div>
-
             <div class="container-fluid py-5 px-4 px-md-5">
-                <div class="row justify-content-center mt-4">
-                    <div class="col-12 col-md-8">
+                <div class="row justify-content-center">
+                    <div class="col-12 position-relative">
+                        <h1 class="why-headline" id="why-headline">
+                            Why would you<br>need us?
+                        </h1>
                         <section class="home-intro-block">
                             <section class="home-intro-text">
                                 <p id="home-intro-paragraph" class="animated-text">
                                     Die Durchführung eines erfolgreichen Projekts ist komplex und mit vielen Risiken
                                     verbunden. Häufig werden Grundstücke oder bestehende Objekte unter der Prämisse
                                     angekauft, dass daraus ein profitables „Projekt“ entwickelt werden soll – so weit,
-                                    so gut. Was aber ist das „Projekt“? Wie ist es definiert? Welche Vision und
+                                    so gut. <br>Was aber ist das „Projekt“? Wie ist es definiert? Welche Vision und
                                     Zielvorgaben dienen als Briefing für die Projektbeteiligten? Welche Fachleute sind
                                     notwendig? Mehr als die Nutzungsklasse, prognostizierte Erträge, ein Baubudget mit
                                     vagen Qualitätsangaben und phantasievolle Renderings sind zur Beantwortung dieser
-                                    Frage in der Regel nicht vorhanden. Jedes Projekt ist ein Unikat, jedes Team
+                                    Frage in der Regel nicht vorhanden.<br> Jedes Projekt ist ein Unikat, jedes Team
                                     individuell, ein Standardschema gibt es nicht. Es ist daher von essentieller
                                     Bedeutung, der Projektarbeit vor der eigentlichen Projektarbeit, der Leistungsphase
                                     0, ausreichend Zeit und Ressourcen zur gründlichen Erarbeitung zu widmen, um das
                                     Risiko späterer Ineffizienzen und Termin- und Kostenüberschreitungen für den
-                                    Bauherrn zu minimieren. (code)Iuvare unterstützt Sie bei der Plausibilisierung der
+                                    Bauherrn zu minimieren.<br> (code)Iuvare unterstützt Sie bei der Plausibilisierung der
                                     Ankaufsannahmen, der Erstellung der Bedarfsanalyse, definiert die technischen
                                     Anforderungen und notwendige Projektstruktur und kreiert gemeinsam mit Ihnen die DNA
                                     des „Projekts“, um das richtige Team zur rechten Zeit zusammenzustellen, und eine
@@ -399,6 +394,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- VALUES & MARQUEE -->
         <section class="values">
@@ -510,31 +506,41 @@
 
     <!-- ABOUT SECTION -->
     <section class="about" id="about">
-        <div class="scene three">
-            <div class="about-main-text" id="about-headline">About</div>
-            <section class="about-intro-block">
-                <section class="about-intro-text">
-                    <p id="about-intro-paragraph">(code)Iuvare ist eine inhabergeführte, Frankfurt-basierte
-                        Beratungsagentur
-                        für
-                        Projektentwicklungen und Projektmanagement der Assetklassen Office und
-                        Residential.<br>
-                        Die Gründerin Sarah ist seit 2022 als Director für Asset Development bei einem
-                        amerikanischen Immobilieninvestor tätig. Dort leitet sie in erster Linie hochkarätige
-                        (Re)developmentprojekte und berät das deutsche Team in Fragen der Planung, des
-                        Baus und des Projektmanagements.<br>
-                        Vor Ihrer aktuellen Tätigkeit als Director arbeitete Sarah für diverse Projektentwickler
-                        (DIC Deutsche Immobilien Chancen, GEG German Estate Group, ABG Real Estate)
-                        an mehreren Hochhausentwicklungsprojekten in verschiedenen Phasen im
-                        Bankenviertel von Frankfurt am Main. Darüber hinaus war sie zuvor mehrere Jahre in
-                        Architekturbüros und bei einem Generalunternehmer tätig, was es ihr ermöglicht,
-                        alle Stakeholder und Projektbeteiligten – von der Planung bis zur Ausführung –
-                        empathisch und effizient zu anzuleiten.<br>
-                        Sarah ist Diplom Ingenieurin (FH) für Innenarchitektur und Immobilienökonomin
-                        (ebs).</p>
-                </section>
-            </section>
-        </div>
+
+        <section class="scene three" id="scene three">
+            <div class="container-fluid py-5 px-4 px-md-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 position-relative">
+                        <h1 class="about-main-text" id="about-headline">About
+                        </h1>
+                        <section class="about-intro-block">
+                            <section class="about-intro-text">
+                                <p id="about-intro-paragraph" class="animated-text">
+                                    (code)Iuvare ist eine inhabergeführte, Frankfurt-basierte
+                                    Beratungsagentur
+                                    für
+                                    Projektentwicklungen und Projektmanagement der Assetklassen Office und
+                                    Residential.<br>
+                                    Die Gründerin Sarah ist seit 2022 als Director für Asset Development bei einem
+                                    amerikanischen Immobilieninvestor tätig. Dort leitet sie in erster Linie hochkarätige
+                                    (Re)developmentprojekte und berät das deutsche Team in Fragen der Planung, des
+                                    Baus und des Projektmanagements.<br>
+                                    Vor Ihrer aktuellen Tätigkeit als Director arbeitete Sarah für diverse Projektentwickler
+                                    (DIC Deutsche Immobilien Chancen, GEG German Estate Group, ABG Real Estate)
+                                    an mehreren Hochhausentwicklungsprojekten in verschiedenen Phasen im
+                                    Bankenviertel von Frankfurt am Main. Darüber hinaus war sie zuvor mehrere Jahre in
+                                    Architekturbüros und bei einem Generalunternehmer tätig, was es ihr ermöglicht,
+                                    alle Stakeholder und Projektbeteiligten – von der Planung bis zur Ausführung –
+                                    empathisch und effizient zu anzuleiten.<br>
+                                    Sarah ist Diplom Ingenieurin (FH) für Innenarchitektur und Immobilienökonomin
+                                    (ebs).
+                                </p>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="head-shot-wrapper" id="head-shot-wrapper">
             <div class="sticky-area">
@@ -576,9 +582,9 @@
     </div>
 </footer>
 
-<!-- ③ Bootstrap JS 번들 (Collapse 등) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-<!-- ④ 기존 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>

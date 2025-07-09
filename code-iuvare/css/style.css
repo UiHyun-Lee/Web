@@ -16,7 +16,7 @@ html {
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
-    background-color: var(--light-wheat);
+    background-color: white;
     color: var(--soft-black);
     line-height: 1.6;
     overflow-x: hidden;

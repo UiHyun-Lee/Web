@@ -1,7 +1,5 @@
 .about {
-    /*background-color: #707B6D;*/
     height: 400vh;
-
     background: linear-gradient(
             180deg,
             var(--light-wheat) 0%,
@@ -17,7 +15,7 @@
     background-position: center;
     background-attachment: fixed;
     position: relative;
-    padding-top: 30vw; /* mission section과 동일하게 */
+    padding-top: 30vw;
     min-height: 100vh;
 }
 
@@ -47,11 +45,12 @@
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: 900;
-    font-size: 1.5rem;
     z-index: 3;
     position: relative;
     padding: 1.5rem 1rem 0.5rem 1rem;
     margin: 0;
+    max-width: 45vw;
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
 }
 
 .head-shot-wrapper {
@@ -77,6 +76,8 @@
     gap: 10vw;
 }
 
+
+
 .head-shot {
     width: 34vw;
     min-width: 380px;
@@ -96,7 +97,6 @@
     transition: none;
 }
 
-/* 2. 오른쪽 텍스트 (중앙 배치, 왼쪽정렬, 크고 이탤릭) */
 .container-wrapper {
     display: flex;
     flex-direction: column;
@@ -112,10 +112,6 @@
     will-change: transform, opacity;
     align-self: center;
     padding-left: 2vw;
-    /*transition: transform 0.7s cubic-bezier(.7,0,.3,1), opacity 0.5s;*/
-    /*    animation: fadeInFromRight 2s ease-out forwards;*/
-
-
 }
 
 .container h4 {
@@ -163,5 +159,37 @@
     opacity: 1;
 }
 
+.scene.three .col-12.position-relative {
+    position: relative;
+    min-height: 340px; /* 헤드라인과 본문 겹치기 위한 최소 높이, 필요시 조절 */
+}
+
+#about-headline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: clamp(230px, 25vw, 500px);   /* 화면에 맞게 자동 가변 */
+    font-size: clamp(3.5rem, 8vw, 10rem);
+    line-height: 1.08;
+    color: #bfc1c4;
+    margin: 0;
+    pointer-events: none;
+    z-index: 2;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    opacity: 0.83;
+    margin-left: 10vw;
+
+}
+
+.about-intro-block{
+    margin-left: 31vw; /* 헤드라인보다 살짝 크게 */
+    width: auto;
+    padding: 0;
+    overflow: hidden;
+    line-height: 2;
+    margin-bottom: 60vh;
+}
 
 

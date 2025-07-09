@@ -150,12 +150,10 @@
         height: 100vh !important;
     }
     .landing-img,
-    .scene.two,
-    .scene.three,
+
     .services,
     .about,
-    .values,
-    footer {
+    .values{
         height: auto !important;
         min-height: 70vh;
         padding: 1.5rem 1rem;
@@ -164,6 +162,63 @@
 
     /* 마퀴 글씨 크기 */
     .marquee-content li { font-size: 2.5rem; }
+
+    .home-intro-text, .about-intro-text {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .container-wrapper {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem;
+    }
+
+    .sticky-area {
+        flex-direction: column !important;   /* 위아래로 쌓임 (사진-숫자박스) */
+        align-items: center !important;
+        gap: 0;
+    }
+    .container-wrapper {
+        align-items: center !important;
+        width: 100%;
+    }
+    .head-shot {
+        margin-bottom: 1.5rem;
+    }
+
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2.5rem 0 1.7rem 0.5rem;
+        gap: 1.2rem;
+        margin-bottom: 0;
+    }
+    .footer-left {
+        font-size: 1.17rem;
+        margin-left: 0.7rem;
+        text-align: left;
+        margin-bottom: 0.7rem;
+    }
+    .logo-text {
+        font-size: 15vw;
+        padding: 0.5rem 0;
+        line-height: 0.95;
+        transform: none;
+        white-space: normal;
+    }
+    .footer-bottom {
+        width: 100%;
+        margin-top: 1.7rem;
+        justify-content: right;
+        gap: 2.1rem;
+        font-size: 1rem;
+    }
+
 }
 
 /* ────────────────
@@ -180,14 +235,10 @@
     .menu a { font-size: .85rem; padding: .25rem .5rem; }
 
     /* 섹션 높이 & 패딩 최소화 */
-    .scene.one,
     .landing-img,
-    .scene.two,
-    .scene.three,
     .services,
     .about,
-    .values,
-    footer {
+    .values{
         height: auto !important;
         min-height: 50vh;
         padding: 1rem .5rem;
@@ -208,66 +259,19 @@
     .marquee-content li { font-size: 2rem; }
     .service-main-text { font-size: 1.75rem; margin-bottom: 2rem; }
     .accordion-header h2 { font-size: 1.75rem; }
-    .toggle-icon { width: 30px; height: 30px; }
 
-    .footer-left h2 { font-size: 1.25rem; }
-    .footer-left p { font-size: .9rem; }
-    .logo-text { font-size: 16vw; transform: scaleX(1); }
-    .footer-bottom { flex-direction: column; gap: 1rem; align-items: center; }
+    .footer-content {
+        padding: 1.1rem 0 1rem 0.2rem;
+    }
+    .footer-left {
+        font-size: 0.97rem;
+        margin-left: 0.1rem;
+    }
+    .logo-text {
+        font-size: 1vw;
+    }
+    .footer-bottom {
+        gap: 1.1rem;
+        font-size: 0.96rem;
+    }
 }
-
-
-
-
-
-/*!* responsive.css 맨 아래에 붙이세요 *!*/
-/*@media (max-width: 768px) {*/
-/*    !* 1) scene.three 내부 세로 정렬로 변경 *!*/
-/*    .scene.three {*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        align-items: flex-start; !* 왼쪽 정렬 *!*/
-/*        padding: 2rem 1rem;      !* 좌우 여백 확보 *!*/
-/*    }*/
-
-/*    !* 2) About 제목(“About”)과 텍스트 블록 간격 조정 *!*/
-/*    .about-main-text {*/
-/*        margin-bottom: 2rem;*/
-/*        font-size: clamp(2.5rem, 8vw, 4rem); !* 화면 크기에 따라 유동 폰트 *!*/
-/*    }*/
-
-/*    !* 3) intro 텍스트 블록을 화면 폭 100% 안에서 중앙 / 좌우 여백 유지 *!*/
-/*    .about-intro-block {*/
-/*        width: 100%;*/
-/*        max-width: 100%;*/
-/*        margin: 0 auto 2rem;*/
-/*        padding: 0 1rem;*/
-/*    }*/
-
-/*    !* 4) intro 텍스트 폰트 · 줄간격 조정 *!*/
-/*    .about-intro-text p {*/
-/*        font-size: clamp(1rem, 2.5vw, 1.125rem);*/
-/*        line-height: 1.6;*/
-/*    }*/
-
-
-/*}*/
-
-/*!* 태블릿 가로 모드(768px~1024px)에도 약간 더 여유를 주고 싶다면 *!*/
-/*@media (min-width: 769px) and (max-width: 1024px) {*/
-/*    .scene.three {*/
-/*        padding: 3rem 2rem;*/
-/*    }*/
-/*    .about-main-text {*/
-/*        font-size: clamp(3rem, 6vw, 5rem);*/
-/*    }*/
-/*    .about-intro-block {*/
-/*        padding: 0 2rem;*/
-/*    }*/
-/*    .about-intro-text p {*/
-/*        font-size: clamp(1.125rem, 2vw, 1.25rem);*/
-/*    }*/
-/*    .about-intro-text p {*/
-/*        color: red !important;*/
-/*    }*/
-/*}*/
