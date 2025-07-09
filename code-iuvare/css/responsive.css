@@ -137,6 +137,11 @@
         left: 0;
         right: 0;
         box-sizing: border-box;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(50px);
+        transition: opacity 0.4s cubic-bezier(0.5, 1.2, 0.5, 1),
+        transform 0.4s cubic-bezier(0.5, 1.2, 0.5, 1);
     }
 
     .nav-toggle {
