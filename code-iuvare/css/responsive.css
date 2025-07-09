@@ -17,19 +17,18 @@
 ──────────────── */
 @media (min-width: 1200px) {
     /* 1) 섹션 높이 모두 auto로 전환 */
-    .scene.one{
+    .scene.one {
         height: 100vh !important;
     }
-    .scene.two,
-    .scene.three,
+
     .services,
     .about,
     .values,
     footer {
-        height: auto !important;        /* fixed height 전부 제거 */
-        min-height: auto !important;    /* min-height 도 제거 */
+        height: auto !important; /* fixed height 전부 제거 */
+        min-height: auto !important; /* min-height 도 제거 */
         /*padding: 4rem 2rem;             !* 적당한 여백만 남김 *!*/
-        overflow: visible;              /* 혹시 잘림 방지 */
+        overflow: visible; /* 혹시 잘림 방지 */
     }
 
     /* 2) parallax 이미지는 그대로 */
@@ -41,6 +40,7 @@
         background-position: center;
     }
 }
+
 /* ────────────────
    태블릿 가로 이하(≤1024px)
 ──────────────── */
@@ -54,25 +54,35 @@
         pointer-events: auto !important;
         transform: translateY(0) !important;
     }
-    .navbar { padding: .75rem 1.5rem; }
-    .menu { gap: 1.5rem; }
-    .menu a { font-size: .95rem; }
+
+    .navbar {
+        padding: .75rem 1.5rem;
+    }
+
+    .menu {
+        gap: 1.5rem;
+    }
+
 
     /* 섹션 고정 높이 해제 & 최소 높이 보장 */
-    .scene.one{
+    .scene.one {
         height: 100vh !important;
     }
+
     .landing-img,
     .scene.two,
     .scene.three,
     .services,
     .about,
-    .values{
+    .values {
         height: auto !important;
-        min-height: 150vh;
+        min-height: 200vh;
         padding: 2rem 1rem;
     }
-
+/*    .services{*/
+/*        min-height: 300vh;*/
+/*##################################################################################################3*/
+/*    }*/
     /* 패럴랙스 이미지 높이 조정 & 해제 */
     .landing-img {
         height: 200vh !important;
@@ -90,13 +100,20 @@
     }
 
     /* Values(마퀴) 높이 자동화 */
-    .values { height: auto !important; padding: 2rem 1rem; }
-    .marquee-content li { font-size: 3rem; }
+    .values {
+        height: auto !important;
+        padding: 2rem 1rem;
+    }
+
+    .marquee-content li {
+        font-size: 3rem;
+    }
 
     /* Footer 높이 자동화 */
     footer {
         height: auto !important;
-        padding: 2rem 1rem !important; }
+        padding: 2rem 1rem !important;
+    }
 }
 
 /* ────────────────
@@ -109,6 +126,7 @@
         border-radius: 0;
         padding: .5rem 1rem;
     }
+
     .nav-toggle {
         display: flex;
         flex-direction: column;
@@ -121,6 +139,7 @@
         margin-left: auto;
         padding: 0;
     }
+
     .nav-toggle span {
         width: 100%;
         height: 2px;
@@ -128,40 +147,55 @@
         border-radius: 2px;
         display: block;
     }
+
     .menu {
         position: absolute;
-        top: 100%; left: 0; right: 0;
-        background: rgba(255,255,255,0.95);
-        flex-direction: column; align-items: center;
-        gap: 1rem; padding: 1rem 0;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
         transform: translateY(-20px);
-        opacity: 0; pointer-events: none;
+        opacity: 0;
+        pointer-events: none;
         transition: all .3s ease;
     }
+
     .menu.open {
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
     }
-    .menu a { font-size: .9rem; }
+
+    .menu a {
+        font-size: .9rem;
+    }
 
     /* 섹션 높이 & 패딩 */
-    .scene.one{
+    .scene.one {
         height: 100vh !important;
     }
-    .landing-img,
 
+    .landing-img,
     .services,
     .about,
-    .values{
+    .values {
         height: auto !important;
         min-height: 70vh;
         padding: 1.5rem 1rem;
     }
-    .landing-img { height: 150vh !important; }
+
+    .landing-img {
+        height: 150vh !important;
+    }
 
     /* 마퀴 글씨 크기 */
-    .marquee-content li { font-size: 2.5rem; }
+    .marquee-content li {
+        font-size: 2.5rem;
+    }
 
     .home-intro-text, .about-intro-text {
         max-width: 100% !important;
@@ -177,14 +211,16 @@
     }
 
     .sticky-area {
-        flex-direction: column !important;   /* 위아래로 쌓임 (사진-숫자박스) */
+        flex-direction: column !important; /* 위아래로 쌓임 (사진-숫자박스) */
         align-items: center !important;
         gap: 0;
     }
+
     .container-wrapper {
         align-items: center !important;
         width: 100%;
     }
+
     .head-shot {
         margin-bottom: 1.5rem;
     }
@@ -198,12 +234,14 @@
         gap: 1.2rem;
         margin-bottom: 0;
     }
+
     .footer-left {
         font-size: 1.17rem;
         margin-left: 0.7rem;
         text-align: left;
         margin-bottom: 0.7rem;
     }
+
     .logo-text {
         font-size: 15vw;
         padding: 0.5rem 0;
@@ -211,6 +249,7 @@
         transform: none;
         white-space: normal;
     }
+
     .footer-bottom {
         width: 100%;
         margin-top: 1.7rem;
@@ -225,25 +264,45 @@
    스마트폰 작은 화면(≤480px)
 ──────────────── */
 @media (max-width: 480px) {
-    body { line-height: 1.4; }
-    main { margin: 20px auto; padding: 0 10px; }
+    body {
+        line-height: 1.4;
+    }
 
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.1rem; }
+    main {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
 
-    .navbar-wrapper { padding: .5rem 1rem; }
-    .menu a { font-size: .85rem; padding: .25rem .5rem; }
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .navbar-wrapper {
+        padding: .5rem 1rem;
+    }
+
+    .menu a {
+        font-size: .85rem;
+        padding: .25rem .5rem;
+    }
 
     /* 섹션 높이 & 패딩 최소화 */
     .landing-img,
     .services,
     .about,
-    .values{
+    .values {
         height: auto !important;
         min-height: 50vh;
         padding: 1rem .5rem;
     }
-    .landing-img { height: 100vh !important; }
+
+    .landing-img {
+        height: 100vh !important;
+    }
 
     /* 텍스트·버튼·마퀴 조정 */
     .home-intro-text,
@@ -253,23 +312,39 @@
         width: 90vw !important;
         padding: 0 .5rem !important;
     }
-    .btn,
-    .btn-black { display: block; width: 100%; }
 
-    .marquee-content li { font-size: 2rem; }
-    .service-main-text { font-size: 1.75rem; margin-bottom: 2rem; }
-    .accordion-header h2 { font-size: 1.75rem; }
+    .btn,
+    .btn-black {
+        display: block;
+        width: 100%;
+    }
+
+    .marquee-content li {
+        font-size: 2rem;
+    }
+
+    .service-main-text {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .accordion-header h2 {
+        font-size: 1.75rem;
+    }
 
     .footer-content {
         padding: 1.1rem 0 1rem 0.2rem;
     }
+
     .footer-left {
         font-size: 0.97rem;
         margin-left: 0.1rem;
     }
+
     .logo-text {
-        font-size: 1vw;
+        font-size: 15vw;
     }
+
     .footer-bottom {
         gap: 1.1rem;
         font-size: 0.96rem;
