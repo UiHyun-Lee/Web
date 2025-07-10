@@ -172,8 +172,8 @@
     .menu {
         position: absolute;
         top: 100%;          /* navbar 바로 아래 */
-        right: 2vw;         /* 오른쪽에서 약간 여백 */
-        width: clamp(240px, 5vw, 360px);
+        right: 0;         /* 오른쪽에서 약간 여백 */
+        width: clamp(120px, 0.5vw, 200px);
         background: #f3e9e5;
         border-radius: 2.2rem;
         box-shadow: 0 4px 24px rgba(180,160,160,0.08);
@@ -330,7 +330,7 @@
     .container-wrapper,
     .head-shot {
         width: 90vw !important;
-        padding: 0 .5rem !important;
+        /*padding: 0 .5rem !important;*/
     }
 
     .btn,
