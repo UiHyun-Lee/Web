@@ -1,7 +1,3 @@
-# (code)Iuvare – Real Estate Project Development & Consulting
-
-Welcome to the official repository of **(code)Iuvare**, a Frankfurt-based boutique consultancy focused on real estate project development, asset planning, and investor communication. This website serves as the digital face of our company.
-
 ## 🏢 About the Project
 
 This site was created to:
