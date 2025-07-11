@@ -23,18 +23,18 @@ This site was created to:
 code-iuvare/
 ├── home.html            → Landing page
 ├── about.html           → About section
-├── services.html         → Service section
+├── services.html        → Service section
 ├── contact.html         → Contact information
 ├── css/
 │   ├── style.css        → Global styles
 │   ├── home.css         → Home-specific styles
 │   ├── about.css        → About-specific styles
-│   ├── services.css      → Service-specific styles
+│   ├── services.css     → Service-specific styles
 ├── js/
 │   ├── main.js          → Global scroll, parallax, interaction logic
 │   ├── home.js          → Home scroll / effects
 │   ├── about.js         → About scroll / effects
-│   ├── services.js       → (Not implemented yet)
+│   ├── services.js      → (Not implemented yet)
 │   ├── contact.js       → (Not implemented yet)
 ├── assets/
 │   └── images/          → Backgrounds, content visuals
