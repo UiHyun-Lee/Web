@@ -12,6 +12,12 @@
     display: none;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+}
 /* ────────────────
    대형 데스크탑(≥1200px)
 ──────────────── */
