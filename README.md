@@ -6,40 +6,9 @@ This site was created to:
 - Highlight the founder’s experience in high-profile real estate projects
 - Provide a contact point for investors, partners, and collaborators
 
-## 🧑🏻‍💻 Tech Stack
-
-- **Languages**: HTML5, CSS3, JavaScript (Vanilla)
-- **Layout**: Flexbox, Responsive Design
-- **Effects**: Scroll-triggered parallax, Typewriter text animation
-- **Fonts**: Source Sans Pro
-
-## 🏠 Project Structure
-
-<pre>
-code-iuvare/
-├── home.html            → Landing page
-├── about.html           → About section
-├── services.html        → Service section
-├── contact.html         → Contact information
-├── css/
-│   ├── style.css        → Global styles
-│   ├── home.css         → Home-specific styles
-│   ├── about.css        → About-specific styles
-│   ├── services.css     → Service-specific styles
-├── js/
-│   ├── main.js          → Global scroll, parallax, interaction logic
-│   ├── home.js          → Home scroll / effects
-│   ├── about.js         → About scroll / effects
-│   ├── services.js      → (Not implemented yet)
-│   ├── contact.js       → (Not implemented yet)
-├── assets/
-│   └── images/          → Backgrounds, content visuals
-└── README.md
-</pre>
-
 
 ## 🧑🏻‍💻 Live Preview
 
 > Coming soon at: [https://code-iuvare.com](https://code-iuvare.com)
 
-The site will be publicly available starting August.
+The site will be publicly available starting November.
