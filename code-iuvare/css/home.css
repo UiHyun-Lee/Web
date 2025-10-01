@@ -34,7 +34,7 @@
 .scene {
     height: 100vh;
     overflow: hidden;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-size: cover;
     background-color: transparent;
     font-family: 'Source Sans Pro', sans-serif;
@@ -47,7 +47,7 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-color: var(--powdery-pink);
     text-align: center;
 }
