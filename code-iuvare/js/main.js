@@ -2,7 +2,6 @@ import { initAbout } from './about.js';
 import { initServices } from './services.js';
 
 //navbar
-
 const navbar = document.querySelector(".navbar-wrapper");
 const sceneTwo = document.querySelector(".scene.two");
 
@@ -22,90 +21,6 @@ window.addEventListener("scroll", checkNavbar);
 window.addEventListener("resize", checkNavbar);
 window.addEventListener("DOMContentLoaded", checkNavbar);
 
-
-// const navbar = document.querySelector('.navbar-wrapper');
-// const triggerNav = document.querySelector('#trigger-nav');
-// const sceneText = document.querySelector('.scene.two');
-// let state = "hidden";
-//
-// function setState(newState) {
-//     if (state === newState) return;
-//     state = newState;
-//     if (state === "fixed") {
-//         navbar.classList.add("visible");
-//         navbar.classList.remove("visible-bottom");
-//     } else if (state === "bottom") {
-//         navbar.classList.add("visible-bottom");
-//         navbar.classList.remove("visible");
-//     } else {
-//         navbar.classList.remove("visible-bottom", "visible");
-//     }
-// }
-//
-// function isSceneFullyVisible() {
-//     const rect = sceneText.getBoundingClientRect();
-//     return (
-//         rect.top >= 0 &&
-//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-//     );
-// }
-//
-// function isTriggerNavBelowViewport() {
-//     const rect = triggerNav.getBoundingClientRect();
-//     return rect.bottom < 0;
-// }
-//
-// const sceneObserver = new IntersectionObserver(
-//     ([entry]) => {
-//         if (entry.intersectionRatio === 1) {
-//             setState("fixed");
-//         }
-//     },
-//     { threshold: 1 }
-// );
-// sceneObserver.observe(sceneText);
-//
-// // observer: trigger-nav
-// const navObserver = new IntersectionObserver(
-//     ([entry]) => {
-//         if (state === "fixed" && isSceneFullyVisible()) return;
-//         if (entry.isIntersecting) {
-//             setState("bottom");
-//         } else if (isTriggerNavBelowViewport()) {
-//             setState("fixed");
-//         } else {
-//             setState("hidden");
-//         }
-//     },
-//     { threshold: 0 }
-// );
-// navObserver.observe(triggerNav);
-//
-// window.addEventListener("scroll", () => {
-//     if (isSceneFullyVisible()) {
-//         setState("fixed");
-//     } else if (isTriggerNavBelowViewport()) {
-//         setState("fixed");
-//     }
-// });
-//
-// window.addEventListener("DOMContentLoaded", () => {
-//     if (isSceneFullyVisible()) {
-//         setState("fixed");
-//         return;
-//     }
-//     const rect = triggerNav.getBoundingClientRect();
-//     const winHeight = window.innerHeight || document.documentElement.clientHeight;
-//     if (rect.top < winHeight && rect.bottom > 0) {
-//         setState("bottom");
-//         return;
-//     }
-//     if (isTriggerNavBelowViewport()) {
-//         setState("fixed");
-//         return;
-//     }
-//     setState("hidden");
-// });
 document.addEventListener("DOMContentLoaded", () => {
     initAbout();
     initServices();
