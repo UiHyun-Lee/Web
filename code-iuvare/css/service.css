@@ -30,6 +30,8 @@
     transform: translateY(500%);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     will-change: opacity, transform;
+    font-family: 'Playfair Display', 'Georgia', serif
+
 }
 
 .service-block.show {

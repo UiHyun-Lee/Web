@@ -44,7 +44,8 @@
 }
 .about-intro-text {
     color: white;
-    font-family: 'Lato', sans-serif;
+    /*font-family: 'Lato', sans-serif;*/
+    font-family: 'Playfair Display', 'Georgia', serif;
     font-weight: 900;
     z-index: 3;
     position: relative;

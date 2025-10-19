@@ -38,7 +38,3 @@ a {
 .navbar-wrapper.visible-bottom {
     transform: translateY(0) !important;
 }
-
-.footer{
-    height:75vh;
-}
