@@ -382,11 +382,11 @@ html, body {
         font-size: 0.96rem;
     }
 
-    .impressum{
+    .impressum-wrapper{
         margin-top: 20vh;
     }
 
-    .datenschutz{
+    .datenschutz-wrapper{
         margin-top: 20vh;
     }
 }
