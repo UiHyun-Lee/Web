@@ -208,4 +208,13 @@ navToggle.addEventListener('click', () => {
 
 
 
+// 모바일 메뉴 자동 닫기
+const menuLinks = document.querySelectorAll('.menu a');
 
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) { // 모바일 화면에서만
+            menu.classList.remove('active'); // 메뉴 닫기
+        }
+    });
+});
