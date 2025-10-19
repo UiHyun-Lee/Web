@@ -1,7 +1,52 @@
-body{
-    background-color: white;
-}
+/*body{*/
+/*    background-color: white;*/
+/*}*/
 
+/*main {*/
+/*    max-width: 800px;*/
+/*    margin: 40px auto;*/
+/*    padding: 0 20px;*/
+/*    margin-top: 100px;*/
+/*}*/
+
+/*h1 {*/
+/*    font-size: 2rem;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*h2 {*/
+/*    font-size: 1.5rem;*/
+/*    margin-top: 2rem;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*p {*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*a {*/
+/*    color: #000000;*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*.navbar-wrapper {*/
+/*    opacity: 1 !important;*/
+/*    pointer-events: auto !important;*/
+/*    transform: translateY(0) !important;*/
+/*    transition: none !important;*/
+/*}*/
+/*.navbar-wrapper.visible,*/
+/*.navbar-wrapper.visible-bottom {*/
+/*    transform: translateY(0) !important;*/
+/*}*/
+
+/*!*.footer{*!*/
+/*!*    !*height:75vh;*!*!*/
+/*!*}*!*/
+
+
+
+/* ✅ body 덮어쓰기 제거 */
 main {
     max-width: 800px;
     margin: 40px auto;
@@ -29,18 +74,18 @@ a {
     text-decoration: underline;
 }
 
+/* ✅ navbar를 항상 보이게 하고 싶으면 그대로 두되, 스크롤 반응 원하면 제거 */
 .navbar-wrapper {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transform: translateY(0) !important;
-    transition: none !important;
-}
-.navbar-wrapper.visible,
-.navbar-wrapper.visible-bottom {
-    transform: translateY(0) !important;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
-.footer{
-    height:75vh;
+/* ✅ 푸터는 고정 높이 대신 최소 높이로 변경 */
+.footer {
+    background: var(--powdery-pink);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 5%;
+    min-height: 630px;
 }
-

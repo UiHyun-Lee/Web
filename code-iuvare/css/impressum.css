@@ -38,3 +38,7 @@ a {
 .navbar-wrapper.visible-bottom {
     transform: translateY(0) !important;
 }
+
+.brand-logo{
+    width: 95vw;
+}

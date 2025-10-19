@@ -344,22 +344,6 @@ html, body {
         /*padding: 0 .5rem !important;*/
     }
 
-
-
-
-
-    /*.services{*/
-    /*    margin-top: 50vh;*/
-    /*}*/
-
-
-
-
-
-
-
-
-    
     .btn,
     .btn-black {
         display: block;
@@ -396,5 +380,9 @@ html, body {
     .footer-bottom {
         gap: 1.1rem;
         font-size: 0.96rem;
+    }
+
+    .impressum{
+        margin-top: 20vh;
     }
 }

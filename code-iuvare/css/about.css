@@ -84,9 +84,9 @@
     width: 34vw;
     min-width: 380px;
     max-width: 550px;
-    aspect-ratio: 1/1.08;
+    aspect-ratio: 3/4;
     height: auto;
-    background-image: url('../assets/images/10.jpg');
+    background-image: url('../assets/images/mainfoto.png');
     background-size: cover;
     background-position: center;
     border-radius: 1rem;
@@ -193,5 +193,7 @@
     line-height: 2;
     margin-bottom: 60vh;
 }
-
+.brand {
+    font-family: 'optima', sans-serif;
+}
 

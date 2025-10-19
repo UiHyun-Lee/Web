@@ -63,14 +63,6 @@ header {
     bottom: auto;
 }
 
-/*.navbar-wrapper.visible-bottom {*/
-/*    opacity: 1;*/
-/*    pointer-events: auto;*/
-/*    transform: translateY(0);*/
-/*    top: auto;*/
-/*    bottom: 2rem;*/
-/*}*/
-
 .navbar {
     display: flex;
     align-items: center;
@@ -96,6 +88,12 @@ header {
 }
 
 /* 메뉴 */
+.nav-logo {
+    height: 1.2rem;
+    width: auto;
+    display: block;
+}
+
 .menu {
     display: flex;
     gap: 2rem;
@@ -237,16 +235,8 @@ footer {
     font-weight: 300;
 
 }
-
-.logo-text {
-    font-size: 14vw;
-    text-align: center;
-    white-space: nowrap;
-    font-weight: 200;
-    line-height: 1;
-    transform: scaleX(1.2); /* 좌우로 늘리기 */
-    font-family: 'optima', sans-serif;
-
+.brand-logo{
+    width: 95vw;
 }
 
 .footer-bottom {
@@ -309,9 +299,4 @@ footer {
         margin: 0.5rem 0;
         font-size: 1rem;
     }
-}
-
-.active {
-    font-family: 'optima';
-
 }
