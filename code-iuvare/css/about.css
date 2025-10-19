@@ -45,8 +45,8 @@
 .about-intro-text {
     color: white;
     /*font-family: 'Lato', sans-serif;*/
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-weight: 900;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
     z-index: 3;
     position: relative;
     padding: 1.5rem 1rem 0.5rem 1rem;
@@ -86,7 +86,7 @@
     max-width: 550px;
     aspect-ratio: 1/1.08;
     height: auto;
-    background-image: url('../assets/images/b2.jpg');
+    background-image: url('../assets/images/10.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 1rem;

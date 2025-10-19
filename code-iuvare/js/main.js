@@ -203,18 +203,13 @@ navToggle.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
-
-
-
-
-
-// 모바일 메뉴 자동 닫기
+// mobile menubar config
 const menuLinks = document.querySelectorAll('.menu a');
 
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) { // 모바일 화면에서만
-            menu.classList.remove('active'); // 메뉴 닫기
+        if (window.innerWidth <= 768) {
+            menu.classList.remove('active');
         }
     });
 });
