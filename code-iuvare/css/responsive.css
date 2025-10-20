@@ -210,18 +210,18 @@ html, body {
         height: 100vh !important;
     }
 
-    /*.landing-img,*/
-    /*.services,*/
-    /*.about,*/
-    /*.values {*/
-    /*    height: auto !important;*/
-    /*    min-height: 70vh;*/
-    /*    padding: 1.5rem 1rem;*/
-    /*}*/
+    .landing-img,
+    .services,
+    .about,
+    .values {
+        height: auto !important;
+        min-height: 70vh;
+        padding: 1.5rem 1rem;
+    }
 
-    /*.landing-img {*/
-    /*    height: 150vh !important;*/
-    /*}*/
+    .landing-img {
+        height: 150vh !important;
+    }
 
     .landing-img,
     .services,
