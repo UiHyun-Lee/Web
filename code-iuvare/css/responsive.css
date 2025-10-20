@@ -225,6 +225,7 @@ html, body {
 
     .landing-img {
         height: 150vh !important;
+        aspect-ratio: 3 / 4 !important;
     }
 
     .marquee-content li {
