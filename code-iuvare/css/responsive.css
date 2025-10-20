@@ -135,7 +135,13 @@ html, body {
         padding: 2rem 1rem !important;
     }
 }
-
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .landing-img {
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important;
+        background-attachment: scroll !important;
+    }
+}
 /* ────────────────
    ≤768px
 ──────────────── */
