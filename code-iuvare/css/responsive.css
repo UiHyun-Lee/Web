@@ -224,7 +224,6 @@ html, body {
         height: 150vh !important;
     }
 
-    /* 마퀴 글씨 크기 */
     .marquee-content li {
         font-size: 2.5rem;
     }
