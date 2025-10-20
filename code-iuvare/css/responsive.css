@@ -65,10 +65,6 @@ html, body {
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1540px) {
-    aspect-ratio: 3 / 4 !important;
-
-}
 
 /* ────────────────
    ≤1024px
@@ -113,7 +109,7 @@ html, body {
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center !important;
-        aspect-ratio: 3 / 4 !important;
+        /*aspect-ratio: 3 / 4 !important;*/
 
     }
 
@@ -393,10 +389,6 @@ html, body {
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-    .landing-img {
-        height: auto !important;
-        aspect-ratio: 16 / 9 !important;
-        background-attachment: scroll !important;
-    }
+@media (min-width: 1025px) and (max-width: 1540px) {
+    aspect-ratio: 3 / 4 !important;
 }
