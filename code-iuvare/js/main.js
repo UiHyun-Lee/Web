@@ -111,6 +111,8 @@ window.addEventListener('DOMContentLoaded', () => {
     parallaxHeadline(whyHeadline, whyWrapper, -25, 18, 0.2, 0.2, 1);
 });
 
+
+// menubar
 const navToggle = document.querySelector('.nav-toggle');
 const menu      = document.querySelector('.menu');
 

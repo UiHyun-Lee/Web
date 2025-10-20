@@ -42,3 +42,25 @@ a {
 .brand-logo{
     width: 95vw;
 }
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-black {
+    border: 2px solid black;
+    margin-top: 5%;
+    color: black;
+    font-size: 1rem;
+}
+
+.btn-black:hover {
+    background-color: black;
+    color: var(--light-grey);
+}
