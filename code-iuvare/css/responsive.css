@@ -385,11 +385,10 @@ html, body {
 
         background-attachment: scroll !important;
 
-        background-size: cover !important;
+        background-size: contain !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
 
-        /* ✅ aspect-ratio 제거 */
         aspect-ratio: auto !important;
     }
 }
