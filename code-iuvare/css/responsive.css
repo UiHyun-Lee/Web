@@ -307,19 +307,19 @@ html, body {
         padding: 1rem .5rem;
     }
 
-    /*.landing-img {*/
-    /*    height: 100vh !important;*/
-    /*}*/
-
     .landing-img {
-        height: auto !important;              /* 강제 높이 제거 */
-        min-height: 70vh;                     /* 최소 높이만 */
-        background-attachment: scroll !important;
-        background-size: contain !important;  /* cover → contain 으로 변경 */
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-        aspect-ratio: auto !important;        /* 불필요한 강제 비율 제거 */
+        height: 100vh !important;
     }
+
+    /*.landing-img {*/
+    /*    height: auto !important;              !* 강제 높이 제거 *!*/
+    /*    min-height: 70vh;                     !* 최소 높이만 *!*/
+    /*    background-attachment: scroll !important;*/
+    /*    background-size: contain !important;  !* cover → contain 으로 변경 *!*/
+    /*    background-repeat: no-repeat !important;*/
+    /*    background-position: center !important;*/
+    /*    aspect-ratio: auto !important;        !* 불필요한 강제 비율 제거 *!*/
+    /*}*/
 
     .home-intro-text,
     .about-intro-text,
