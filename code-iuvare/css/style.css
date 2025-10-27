@@ -3,7 +3,7 @@
     --light-grey: #D9D9D9;
     --light-wheat: #EEECE1;
     --dark-sage: #707B6D;
-    --powdery-pink: #EEE2DF;
+    --powdery-pink: #f0e6e2;
     --dark-blue: #2c3e50;
 }
 
@@ -301,7 +301,12 @@ footer {
     }
 }
 
-.brand-video{
-    width: 100vw;
+.brand-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     height: auto;
+    object-fit: cover;
 }
