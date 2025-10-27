@@ -72,7 +72,7 @@ html, body {
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center !important;
-        aspect-ratio: 3 / 4 !important;
+        /*aspect-ratio: 3 / 4 !important;*/
 
     }
 
