@@ -15,6 +15,7 @@ html, body {
    ≥1200px
 ──────────────── */
 @media (min-width: 1200px) {
+
     .scene.one {
         height: 100vh !important;
     }
@@ -23,10 +24,9 @@ html, body {
     .about,
     .values,
     footer {
-        height: auto !important; /* fixed height 전부 제거 */
-        min-height: auto !important; /* min-height 도 제거 */
-        /*padding: 4rem 2rem;             !* 적당한 여백만 남김 *!*/
-        overflow: visible; /* 혹시 잘림 방지 */
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible;
     }
 
     .landing-img {
