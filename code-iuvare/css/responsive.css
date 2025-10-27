@@ -206,13 +206,13 @@ html, body {
         font-size: 2.5rem;
     }
 
-    /*.home-intro-text, .about-intro-text {*/
-    /*    max-width: 100% !important;*/
-    /*    width: 100% !important;*/
-    /*    padding-left: 0 !important;*/
-    /*    padding-right: 0 !important;*/
-    /*    margin-top: 5vh;*/
-    /*}*/
+    .home-intro-text, .about-intro-text {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-top: 5vh;
+    }
 
     .container-wrapper {
         flex-direction: column !important;
