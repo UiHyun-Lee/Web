@@ -378,17 +378,15 @@ html, body {
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
     .landing-img {
         height: auto !important;
-        min-height: 100vh !important;
-
+        min-height: 100vh;
         background-attachment: scroll !important;
 
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
+        background-size: contain !important; /* cover → contain */
         background-position: center center !important;
-
+        background-repeat: no-repeat !important;
         aspect-ratio: auto !important;
     }
 }
