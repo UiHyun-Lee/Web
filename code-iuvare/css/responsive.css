@@ -306,12 +306,12 @@ html, body {
     .about,
     .values {
         height: auto !important;
-        min-height: 50vh;
+        min-height: 70vh;
         padding: 1rem .5rem;
     }
 
     .landing-img {
-        height: 100vh !important;
+        height: 150vh !important;
     }
 
     .home-intro-text,
@@ -325,7 +325,7 @@ html, body {
     .btn,
     .btn-black {
         display: block;
-        width: 70%;
+        width: 100%;
     }
 
     .marquee-content li {
@@ -369,6 +369,6 @@ html, body {
     }
 }
 
-/*@media (min-width: 1025px) and (max-width: 1540px) {*/
-/*    aspect-ratio: 3 / 4 !important;*/
-/*}*/
+@media (min-width: 1025px) and (max-width: 1540px) {
+    aspect-ratio: 3 / 4 !important;
+}
