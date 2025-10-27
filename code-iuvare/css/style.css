@@ -6,7 +6,7 @@
     --powdery-pink: #f0e6e2;
     --dark-blue: #2c3e50;
 }
-
+/* #ede2de */
 .nav-toggle {
     display: none;
 }
@@ -309,4 +309,6 @@ footer {
     width: 100%;
     height: auto;
     object-fit: cover;
+    /*mix-blend-mode: multiply;*/
+    opacity: 0.98;
 }
