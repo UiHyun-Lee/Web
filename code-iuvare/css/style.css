@@ -311,4 +311,5 @@ footer {
     object-fit: cover;
     /*mix-blend-mode: multiply;*/
     opacity: 0.98;
+    filter: contrast(1.05) brightness(0.98);
 }
