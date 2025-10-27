@@ -300,3 +300,8 @@ footer {
         font-size: 1rem;
     }
 }
+
+.brand-video{
+    width: 100vw;
+    height: auto;
+}
