@@ -380,13 +380,16 @@ html, body {
 
 @media (min-width: 1025px) and (max-width: 1199px) {
     .landing-img {
-        /*height: 200vh !important;*/
-        height: auto;
-        background-attachment: scroll !important;
-        background-size: cover !important;
-        background-position: center !important;
-        aspect-ratio: auto !important;
-        /*aspect-ratio: 3 / 4 !important;*/
+        height: auto !important;
+        min-height: 100vh !important;
 
+        background-attachment: scroll !important;
+
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+
+        /* ✅ aspect-ratio 제거 */
+        aspect-ratio: auto !important;
     }
 }

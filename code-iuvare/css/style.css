@@ -313,3 +313,17 @@ footer {
     opacity: 0.98;
     filter: contrast(1.05) brightness(0.98);
 }
+
+/*.brand-video {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    object-fit: cover;*/
+/*    mix-blend-mode: soft-light;*/
+/*    opacity: 0.98;*/
+/*    filter: brightness(2.02) contrast(0.98);*/
+/*    clip-path: inset(0.3px);*/
+/*}*/
