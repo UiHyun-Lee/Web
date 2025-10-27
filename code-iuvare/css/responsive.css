@@ -71,9 +71,8 @@ html, body {
         /*height: 200vh !important;*/
         height: auto;
         background-attachment: scroll !important;
-        /*background-size: cover !important;*/
+        background-size: cover !important;
         background-position: center !important;
-        background-size: contain !important;
         aspect-ratio: auto !important;
         /*aspect-ratio: 3 / 4 !important;*/
 
