@@ -52,9 +52,23 @@
     text-align: center;
 }
 
-.test{
-    width: 90vw;
+/*.test{*/
+/*    width: 90vw;*/
+/*}*/
+
+#myVideo.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw !important;
+    height: 50vh !important;
+    object-fit: cover;
+    object-position: center;
+    z-index: 999;
+    display: block;
+    transform: translateZ(0);
 }
+
 
 .landing-img {
     height: 300vh;

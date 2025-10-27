@@ -369,6 +369,6 @@ html, body {
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1540px) {
-    aspect-ratio: 3 / 4 !important;
-}
+/*@media (min-width: 1025px) and (max-width: 1540px) {*/
+/*    aspect-ratio: 3 / 4 !important;*/
+/*}*/
