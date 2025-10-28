@@ -6,10 +6,7 @@
     --powdery-pink: #f0e6e2;
     --dark-blue: #2c3e50;
 }
-/* #ede2de */
-.nav-toggle {
-    display: none;
-}
+ /*#ede2de */
 
 html {
     scroll-behavior: smooth;
@@ -72,6 +69,10 @@ header {
     box-sizing: border-box;
     gap: 2rem;
     min-width: 0;
+}
+
+.nav-toggle {
+    display: none;
 }
 
 .logo {

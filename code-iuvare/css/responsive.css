@@ -84,6 +84,7 @@ html, body {
         margin: 1rem 0 !important;
         padding: 0 1rem !important;
     }
+
     /*ipad */
     .home-intro-text, .about-intro-text {
         max-width: 100% !important;
@@ -92,6 +93,7 @@ html, body {
         padding-right: 0 !important;
         margin-top: 5vh;
     }
+
     .values {
         height: auto !important;
         padding: 2rem 1rem;
@@ -99,6 +101,10 @@ html, body {
 
     .marquee-content li {
         font-size: 3rem;
+    }
+
+    .scene.one {
+        background-color: #ede2de;
     }
 
     footer {
