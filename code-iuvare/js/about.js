@@ -119,7 +119,7 @@ export function initAbout() {
             counterStarted = true;
             counterTimeout = setTimeout(() => {
                 startCounters();
-            }, 400); // 0.8초 있다가 등장
+            }, 400); // after 0.8s
         }
         if (textRatio < 1) {
             counterStarted = false;
@@ -127,10 +127,10 @@ export function initAbout() {
                 clearTimeout(counterTimeout);
                 counterTimeout = null;
             }
-            // 다시 스크롤 올리면 숫자 숨김
+            // reset counters
             document.querySelectorAll('.counter').forEach(c => {
                 c.classList.remove('visible');
-                c.textContent = ''; // 또는 '0' 등 원하는 값
+                c.textContent = ''; // reset value
             });
         }
     }

@@ -1,5 +1,6 @@
 export function initServices() {
 
+    // Accordion img toggle
     function toggleAccordion(headerEl) {
         const block = headerEl.closest('.service-block');
         const contentEl = headerEl.nextElementSibling;
@@ -25,6 +26,7 @@ export function initServices() {
         });
     });
 
+    // service blocks parallax
     const serviceBlocks = document.querySelectorAll(".service-block");
 
     window.addEventListener("scroll", () => {

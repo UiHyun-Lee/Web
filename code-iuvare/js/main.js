@@ -16,6 +16,28 @@ function checkNavbar() {
         navbar.classList.remove("visible");
     }
 }
+// Mobile navbar toggle
+const navToggle = document.querySelector('.nav-toggle');
+const menu = document.querySelector('.menu');
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    if (navToggle && menu) {
+        navToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        const menuLinks = document.querySelectorAll('.menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    menu.classList.remove('active');
+                }
+            });
+        });
+    }
+});
 
 window.addEventListener("scroll", checkNavbar);
 window.addEventListener("resize", checkNavbar);
@@ -111,44 +133,3 @@ window.addEventListener('DOMContentLoaded', () => {
     parallaxHeadline(whyHeadline, whyWrapper, -25, 18, 0.2, 0.2, 1);
 });
 
-
-// menubar
-// const navToggle = document.querySelector('.nav-toggle');
-// const menu      = document.querySelector('.menu');
-
-// navToggle.addEventListener('click', () => {
-//     menu.classList.toggle('active');
-// });
-//
-// // mobile menubar config
-// const menuLinks = document.querySelectorAll('.menu a');
-//
-// menuLinks.forEach(link => {
-//     link.addEventListener('click', () => {
-//         if (window.innerWidth <= 768) {
-//             menu.classList.remove('active');
-//         }
-//     });
-// });
-
-const navToggle = document.querySelector('.nav-toggle');
-const menu = document.querySelector('.menu');
-
-document.addEventListener("DOMContentLoaded", () => {
-
-
-    if (navToggle && menu) {
-        navToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-
-        const menuLinks = document.querySelectorAll('.menu a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    menu.classList.remove('active');
-                }
-            });
-        });
-    }
-});

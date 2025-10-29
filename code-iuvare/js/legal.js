@@ -1,3 +1,4 @@
+// Navigation toggle for legal pages
 const navToggle = document.querySelector('.nav-toggle');
 const menu = document.querySelector('.menu');
 
