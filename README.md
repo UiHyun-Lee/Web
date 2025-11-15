@@ -1,4 +1,4 @@
-## 🏢 About the Project
+## About the Project
 
 This site was created to:
 
@@ -7,8 +7,7 @@ This site was created to:
 - Provide a contact point for investors, partners, and collaborators
 
 
-## 🧑🏻‍💻 Live Preview
+## Link
 
-> Coming soon at: [https://code-iuvare.com](https://code-iuvare.com)
-
-The site will be publicly available starting November.
+The site is publicly available now : 
+https://code-iuvare.com
